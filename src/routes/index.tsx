@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
+import Dither from "@/lib/components/Dither";
 import { ProjectCard } from "@/lib/components/ProjectCard";
 import PixelCard from "@/lib/components/PixelCard";
 import { homepageProjects, projects } from "@/lib/content/projects";
@@ -65,6 +66,64 @@ const process = [
   "Build the smallest useful version.",
   "Polish states, edges, and details.",
 ];
+
+const lightDither = {
+  waveColor: [0.09, 0.43, 0.2] as [number, number, number],
+  backgroundColor: [0.97, 1, 0.97] as [number, number, number],
+  colorNum: 3,
+  pixelSize: 5,
+  waveAmplitude: 0.08,
+  waveFrequency: 1.7,
+};
+
+const darkDither = {
+  waveColor: [0.96, 1, 0.97] as [number, number, number],
+  backgroundColor: [0.03, 0.06, 0.04] as [number, number, number],
+  colorNum: 3,
+  pixelSize: 6,
+  waveAmplitude: 0.06,
+  waveFrequency: 1.35,
+};
+
+function useDarkThemeApplied() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const update = () => setIsDark(root.classList.contains("dark"));
+
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return isDark;
+}
+
+function HeroDither() {
+  const isDark = useDarkThemeApplied();
+  const settings = isDark ? darkDither : lightDither;
+
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 z-0 opacity-[0.22] dark:opacity-[0.3]"
+    >
+      <Dither
+        waveColor={settings.waveColor}
+        backgroundColor={settings.backgroundColor}
+        colorNum={settings.colorNum}
+        pixelSize={settings.pixelSize}
+        waveAmplitude={settings.waveAmplitude}
+        waveFrequency={settings.waveFrequency}
+        waveSpeed={0.025}
+        enableMouseInteraction={false}
+      />
+    </div>
+  );
+}
 
 function Home() {
   const orbit = projects.find((p) => p.slug === "orbit")!;
@@ -134,8 +193,12 @@ function Home() {
       <SiteNav />
       <main id="main" className="flex-1">
         {/* HERO */}
-        <section ref={heroRef} className="relative scan-sweep border-b border-border">
-          <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
+        <section
+          ref={heroRef}
+          className="relative isolate overflow-hidden scan-sweep border-b border-border bg-bg"
+        >
+          <HeroDither />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
             <p data-hero-item className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
               AI Agents · SaaS Products · Mobile / Web Apps
             </p>
