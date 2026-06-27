@@ -88,13 +88,29 @@
   --hero-cloud: rgba(255, 251, 234, 0.9);
   --hero-cloud-soft: rgba(255, 251, 234, 0.6);
   --hero-cloud-dot: rgba(23, 109, 51, 0.13);
-  --hero-far-ridge: #CFE3D4;
+  --hero-haze-ridge: #DDEDE1;
+  --hero-haze-dot: rgba(23, 109, 51, 0.11);
   --hero-far-dot: rgba(15, 74, 35, 0.18);
+  --hero-rear-ridge: #A9C9B2;
+  --hero-rear-shadow: rgba(23, 109, 51, 0.28);
+  --hero-rear-light: rgba(255, 251, 234, 0.34);
+  --hero-fog-soft: rgba(248, 255, 248, 0.55);
   --hero-mountain-base: #176D33;
-  --hero-front-ridge: #0E1A12;
+  --hero-mountain-mid: #2F8B49;
   --hero-mountain-shadow: #050806;
   --hero-mountain-highlight: #FFFBEA;
   --hero-mountain-accent: #B7F03C;
+  --hero-slope-light: rgba(255, 251, 234, 0.72);
+  --hero-slope-mid: rgba(74, 222, 128, 0.34);
+  --hero-slope-shadow: rgba(5, 8, 6, 0.72);
+  --hero-ridge-edge: rgba(5, 8, 6, 0.9);
+  --hero-crevice: rgba(5, 8, 6, 0.72);
+  --hero-front-ridge: #0E1A12;
+  --hero-front-highlight: rgba(255, 251, 234, 0.55);
+  --hero-front-shadow: rgba(0, 0, 0, 0.82);
+  --hero-front-edge: #050806;
+  --hero-front-dot: #176D33;
+  --hero-rock-shelf: #08100B;
   --hero-fog: rgba(248, 255, 248, 0.7);
 }
 
@@ -106,13 +122,29 @@
   --hero-cloud: rgba(244, 255, 246, 0.22);
   --hero-cloud-soft: rgba(244, 255, 246, 0.12);
   --hero-cloud-dot: rgba(244, 255, 246, 0.18);
-  --hero-far-ridge: #132019;
+  --hero-haze-ridge: #111A14;
+  --hero-haze-dot: rgba(244, 255, 246, 0.07);
   --hero-far-dot: rgba(244, 255, 246, 0.1);
-  --hero-mountain-base: #030604;
-  --hero-front-ridge: #000000;
+  --hero-rear-ridge: #132019;
+  --hero-rear-shadow: rgba(0, 0, 0, 0.44);
+  --hero-rear-light: rgba(244, 255, 246, 0.13);
+  --hero-fog-soft: rgba(244, 255, 246, 0.07);
+  --hero-mountain-base: #050A07;
+  --hero-mountain-mid: #132019;
   --hero-mountain-shadow: #000000;
   --hero-mountain-highlight: #F4FFF6;
   --hero-mountain-accent: #BBF7D0;
+  --hero-slope-light: rgba(244, 255, 246, 0.38);
+  --hero-slope-mid: rgba(187, 247, 208, 0.12);
+  --hero-slope-shadow: rgba(0, 0, 0, 0.86);
+  --hero-ridge-edge: rgba(244, 255, 246, 0.48);
+  --hero-crevice: rgba(244, 255, 246, 0.24);
+  --hero-front-ridge: #000000;
+  --hero-front-highlight: rgba(244, 255, 246, 0.28);
+  --hero-front-shadow: rgba(0, 0, 0, 0.94);
+  --hero-front-edge: rgba(244, 255, 246, 0.42);
+  --hero-front-dot: #31573E;
+  --hero-rock-shelf: #000000;
   --hero-fog: rgba(244, 255, 246, 0.12);
 }
 
