@@ -80,6 +80,42 @@
   --shadow-tint: rgba(0, 0, 0, 0.28);
 }
 
+.hero-dither-landscape {
+  --hero-sky-top: #F8FFF8;
+  --hero-sky-mid: #EEF8F0;
+  --hero-sky-bottom: #E6F3EA;
+  --hero-sky-dot: rgba(23, 109, 51, 0.16);
+  --hero-cloud: rgba(255, 251, 234, 0.9);
+  --hero-cloud-soft: rgba(255, 251, 234, 0.6);
+  --hero-cloud-dot: rgba(23, 109, 51, 0.13);
+  --hero-far-ridge: #CFE3D4;
+  --hero-far-dot: rgba(15, 74, 35, 0.18);
+  --hero-mountain-base: #176D33;
+  --hero-front-ridge: #0E1A12;
+  --hero-mountain-shadow: #050806;
+  --hero-mountain-highlight: #FFFBEA;
+  --hero-mountain-accent: #B7F03C;
+  --hero-fog: rgba(248, 255, 248, 0.7);
+}
+
+.dark .hero-dither-landscape {
+  --hero-sky-top: #08100B;
+  --hero-sky-mid: #0A120D;
+  --hero-sky-bottom: #0C1510;
+  --hero-sky-dot: rgba(244, 255, 246, 0.1);
+  --hero-cloud: rgba(244, 255, 246, 0.22);
+  --hero-cloud-soft: rgba(244, 255, 246, 0.12);
+  --hero-cloud-dot: rgba(244, 255, 246, 0.18);
+  --hero-far-ridge: #132019;
+  --hero-far-dot: rgba(244, 255, 246, 0.1);
+  --hero-mountain-base: #030604;
+  --hero-front-ridge: #000000;
+  --hero-mountain-shadow: #000000;
+  --hero-mountain-highlight: #F4FFF6;
+  --hero-mountain-accent: #BBF7D0;
+  --hero-fog: rgba(244, 255, 246, 0.12);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

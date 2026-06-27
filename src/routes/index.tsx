@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
-import Dither from "@/lib/components/Dither";
+import HeroDitherLandscape from "@/lib/components/HeroDitherLandscape";
 import { ProjectCard } from "@/lib/components/ProjectCard";
 import PixelCard from "@/lib/components/PixelCard";
 import { homepageProjects, projects } from "@/lib/content/projects";
@@ -67,64 +67,6 @@ const process = [
   "Polish states, edges, and details.",
 ];
 
-const lightDither = {
-  waveColor: [0.09, 0.43, 0.2] as [number, number, number],
-  backgroundColor: [0.97, 1, 0.97] as [number, number, number],
-  colorNum: 3,
-  pixelSize: 5,
-  waveAmplitude: 0.08,
-  waveFrequency: 1.7,
-};
-
-const darkDither = {
-  waveColor: [0.96, 1, 0.97] as [number, number, number],
-  backgroundColor: [0.03, 0.06, 0.04] as [number, number, number],
-  colorNum: 3,
-  pixelSize: 6,
-  waveAmplitude: 0.06,
-  waveFrequency: 1.35,
-};
-
-function useDarkThemeApplied() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const update = () => setIsDark(root.classList.contains("dark"));
-
-    update();
-    const observer = new MutationObserver(update);
-    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
-
-    return () => observer.disconnect();
-  }, []);
-
-  return isDark;
-}
-
-function HeroDither() {
-  const isDark = useDarkThemeApplied();
-  const settings = isDark ? darkDither : lightDither;
-
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 z-0 opacity-[0.22] dark:opacity-[0.3]"
-    >
-      <Dither
-        waveColor={settings.waveColor}
-        backgroundColor={settings.backgroundColor}
-        colorNum={settings.colorNum}
-        pixelSize={settings.pixelSize}
-        waveAmplitude={settings.waveAmplitude}
-        waveFrequency={settings.waveFrequency}
-        waveSpeed={0.025}
-        enableMouseInteraction={false}
-      />
-    </div>
-  );
-}
-
 function Home() {
   const orbit = projects.find((p) => p.slug === "orbit")!;
   const others = homepageProjects.filter((p) => p.slug !== "orbit");
@@ -132,8 +74,8 @@ function Home() {
   const heroRef = useRef<HTMLElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
 
-  // Tier 1 — hero boot-in: the headline decodes character-by-character (terminal
-  // type-on), then the eyebrow / copy / CTAs / chips snap in on a mechanical stagger.
+  // Tier 1 — hero boot-in: the headline decodes character-by-character, then
+  // the eyebrow / copy / CTAs snap in on a mechanical stagger.
   useEffect(() => {
     registerGsap();
     const el = heroRef.current;
@@ -152,9 +94,7 @@ function Home() {
 
       gsap.set("[data-hero-item]", { opacity: 0, y: 8 });
       gsap.set("[data-hero-caret]", { opacity: 0 });
-      gsap.set("[data-hero-chip]", { scale: 0.6 });
       tl.to("[data-hero-item]", { opacity: 1, y: 0, duration: 0.4, stagger: 0.07 }, 0.18)
-        .to("[data-hero-chip]", { scale: 1, duration: 0.3, stagger: 0.03, ease: "steps(4)" }, ">-0.1")
         .to("[data-hero-caret]", { opacity: 1, duration: 0.1 }, ">-0.05");
     }, el);
 
@@ -195,16 +135,16 @@ function Home() {
         {/* HERO */}
         <section
           ref={heroRef}
-          className="relative isolate overflow-hidden scan-sweep border-b border-border bg-bg"
+          className="relative isolate min-h-[560px] overflow-hidden scan-sweep border-b border-border bg-bg md:min-h-[600px]"
         >
-          <HeroDither />
-          <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
+          <HeroDitherLandscape className="pointer-events-none absolute inset-0 z-0" />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 pb-8 pt-10 text-center md:px-6 md:pt-14">
             <p data-hero-item className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
               AI Agents · SaaS Products · Mobile / Web Apps
             </p>
             <h1
-              className="mt-5 font-bold tracking-tight text-text"
-              style={{ fontSize: "clamp(2.75rem, 5.5vw, 5.5rem)", lineHeight: 1.0 }}
+              className="mx-auto mt-4 max-w-5xl font-bold tracking-tight text-text"
+              style={{ fontSize: "clamp(2.55rem, 5.1vw, 5.25rem)", lineHeight: 1.0 }}
             >
               <span data-hero-title>
                 I build AI-native products that turn{" "}
@@ -212,26 +152,31 @@ function Home() {
               </span>
               <span data-hero-caret className="pixel-caret" aria-hidden />
             </h1>
-            <p data-hero-item className="mt-6 max-w-2xl text-lg text-text-muted leading-relaxed">
+            <p data-hero-item className="mx-auto mt-5 max-w-2xl text-lg text-text-muted leading-relaxed">
               I'm Huzaifa Shahid, a product-focused developer building AI agents, SaaS
               systems, automation workflows, and mobile/web applications.
             </p>
-            <div data-hero-item className="mt-8 flex flex-wrap gap-3">
+            <div data-hero-item className="mt-7 flex flex-wrap justify-center gap-3">
               <Link to="/projects" className="btn-primary">View work</Link>
               <Link to="/contact" className="btn-secondary">Contact me</Link>
             </div>
-            <div data-hero-item className="mt-10 pt-6 border-t border-border">
-              <p className="mono-font text-xs text-text-soft uppercase tracking-wider mb-3">
+          </div>
+        </section>
+
+        <section className="border-b border-border bg-bg-soft">
+          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 md:flex-row md:items-center md:justify-between md:px-6">
+            <div>
+              <p className="mono-font mb-1 text-xs uppercase tracking-wider text-text-soft">
                 Currently building
               </p>
               <p className="text-sm text-text-muted">
                 Orbit, Trimly, Hermes-style workflows, and AI-native product experiments.
               </p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {["AI agents", "SaaS systems", "Expo / React Native", "Next.js", "Hono", "TypeScript", "Product UX"].map((t) => (
-                  <span key={t} data-hero-chip className="pixel-chip">{t}</span>
-                ))}
-              </div>
+            </div>
+            <div className="flex flex-wrap gap-1.5 md:justify-end">
+              {["AI agents", "SaaS systems", "Expo / React Native", "Next.js", "Hono", "TypeScript", "Product UX"].map((t) => (
+                <span key={t} className="pixel-chip">{t}</span>
+              ))}
             </div>
           </div>
         </section>
