@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter } from "../lib/components/SiteChrome";
+import { MotionProvider } from "../lib/anim/MotionProvider";
 
 function NotFoundComponent() {
   return (
@@ -87,7 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Pixelify+Sans:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap",
       },
     ],
   }),
@@ -101,6 +102,11 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
@@ -115,6 +121,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
+      <MotionProvider />
       <Outlet />
     </QueryClientProvider>
   );

@@ -1,7 +1,17 @@
+import { useEffect, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
 import { ProjectCard } from "@/lib/components/ProjectCard";
+import PixelCard from "@/lib/components/PixelCard";
 import { homepageProjects, projects } from "@/lib/content/projects";
+import {
+  registerGsap,
+  reducedMotion,
+  gsap,
+  ScrollTrigger,
+  SplitText,
+  PIXEL_STEPS,
+} from "@/lib/anim/motion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,11 +50,11 @@ const capabilities = [
   },
   {
     title: "Frontend & Product UX",
-    items: ["SvelteKit / React / TS", "Tailwind design systems", "Calm, scannable UI"],
+    items: ["Next.js / React / TS", "Tailwind design systems", "Calm, scannable UI"],
   },
   {
     title: "Backend & Systems Thinking",
-    items: ["FastAPI / Node", "Structured data + memory", "Pragmatic architecture"],
+    items: ["Node / Bun / Hono", "Structured data + memory", "Pragmatic architecture"],
   },
 ];
 
@@ -60,41 +70,103 @@ function Home() {
   const orbit = projects.find((p) => p.slug === "orbit")!;
   const others = homepageProjects.filter((p) => p.slug !== "orbit");
 
+  const heroRef = useRef<HTMLElement>(null);
+  const orbitRef = useRef<HTMLDivElement>(null);
+
+  // Tier 1 — hero boot-in: the headline decodes character-by-character (terminal
+  // type-on), then the eyebrow / copy / CTAs / chips snap in on a mechanical stagger.
+  useEffect(() => {
+    registerGsap();
+    const el = heroRef.current;
+    if (!el || reducedMotion()) return; // content already visible by default
+
+    let split: SplitText | undefined;
+    const ctx = gsap.context(() => {
+      const title = el.querySelector<HTMLElement>("[data-hero-title]");
+      const tl = gsap.timeline({ defaults: { ease: PIXEL_STEPS } });
+
+      if (title) {
+        split = new SplitText(title, { type: "chars" });
+        gsap.set(split.chars, { opacity: 0 });
+        tl.to(split.chars, { opacity: 1, duration: 0.5, stagger: 0.012, ease: "steps(1)" }, 0.05);
+      }
+
+      gsap.set("[data-hero-item]", { opacity: 0, y: 8 });
+      gsap.set("[data-hero-caret]", { opacity: 0 });
+      gsap.set("[data-hero-chip]", { scale: 0.6 });
+      tl.to("[data-hero-item]", { opacity: 1, y: 0, duration: 0.4, stagger: 0.07 }, 0.18)
+        .to("[data-hero-chip]", { scale: 1, duration: 0.3, stagger: 0.03, ease: "steps(4)" }, ">-0.1")
+        .to("[data-hero-caret]", { opacity: 1, duration: 0.1 }, ">-0.05");
+    }, el);
+
+    return () => {
+      split?.revert();
+      ctx.revert();
+    };
+  }, []);
+
+  // Tier 2 — orbit flagship "shadow-drop": the pixel box-shadow snaps into place
+  // as the panel enters, so the flagship feels physically set down.
+  useEffect(() => {
+    registerGsap();
+    const el = orbitRef.current;
+    if (!el || reducedMotion()) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        el,
+        { y: 14, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.45,
+          ease: PIXEL_STEPS,
+          scrollTrigger: { trigger: el, start: "top 80%", once: true },
+        },
+      );
+    }, el);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-bg">
       <SiteNav />
       <main id="main" className="flex-1">
         {/* HERO */}
-        <section className="border-b border-border">
+        <section ref={heroRef} className="relative scan-sweep border-b border-border">
           <div className="mx-auto max-w-6xl px-4 md:px-6 py-16 md:py-24">
-            <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
+            <p data-hero-item className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
               AI Agents · SaaS Products · Mobile / Web Apps
             </p>
             <h1
-              className="mt-5 font-semibold tracking-tight text-text"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 4.75rem)", lineHeight: 1.0 }}
+              className="mt-5 font-bold tracking-tight text-text"
+              style={{ fontSize: "clamp(2.75rem, 5.5vw, 5.5rem)", lineHeight: 1.0 }}
             >
-              I build AI-native products that turn{" "}
-              <span className="text-accent">messy workflows</span> into polished software.
+              <span data-hero-title>
+                I build AI-native products that turn{" "}
+                <span className="text-accent">messy workflows</span> into polished software.
+              </span>
+              <span data-hero-caret className="pixel-caret" aria-hidden />
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-text-muted leading-relaxed">
+            <p data-hero-item className="mt-6 max-w-2xl text-lg text-text-muted leading-relaxed">
               I'm Huzaifa Shahid, a product-focused developer building AI agents, SaaS
               systems, automation workflows, and mobile/web applications.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div data-hero-item className="mt-8 flex flex-wrap gap-3">
               <Link to="/projects" className="btn-primary">View work</Link>
               <Link to="/contact" className="btn-secondary">Contact me</Link>
             </div>
-            <div className="mt-10 pt-6 border-t border-border">
+            <div data-hero-item className="mt-10 pt-6 border-t border-border">
               <p className="mono-font text-xs text-text-soft uppercase tracking-wider mb-3">
-                <span className="status-dot mr-2 align-middle" aria-hidden /> Currently building
+                Currently building
               </p>
               <p className="text-sm text-text-muted">
                 Orbit, Trimly, Hermes-style workflows, and AI-native product experiments.
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {["AI agents", "SaaS systems", "Expo / React Native", "SvelteKit", "FastAPI", "TypeScript", "Product UX"].map((t) => (
-                  <span key={t} className="pixel-chip">{t}</span>
+                {["AI agents", "SaaS systems", "Expo / React Native", "Next.js", "Hono", "TypeScript", "Product UX"].map((t) => (
+                  <span key={t} data-hero-chip className="pixel-chip">{t}</span>
                 ))}
               </div>
             </div>
@@ -106,11 +178,12 @@ function Home() {
           <div className="mx-auto max-w-6xl px-4 md:px-6 py-16">
             <div className="flex items-center gap-3 mb-6">
               <span className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
-                ★ Flagship project
+                Flagship project
               </span>
               <span className="h-px flex-1 bg-border-strong" />
             </div>
             <div
+              ref={orbitRef}
               className="border-2 border-accent-strong bg-surface"
               style={{ boxShadow: "6px 6px 0 0 var(--shadow-tint)" }}
             >
@@ -119,12 +192,13 @@ function Home() {
                   orbit.app · personal AI OS
                 </span>
                 <span className="inline-flex items-center gap-2 mono-font text-xs text-accent-strong">
-                  <span className="status-dot" aria-hidden /> Active build
+                  <span className="status-dot pixel-blink" aria-hidden />
+                  Active build
                 </span>
               </div>
               <div className="grid md:grid-cols-5 gap-0">
                 <div className="md:col-span-3 p-6 md:p-10 border-b md:border-b-0 md:border-r border-border">
-                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">{orbit.title}</h2>
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tight">{orbit.title}</h2>
                   <p className="mt-3 text-xl text-text-muted">{orbit.oneLiner}</p>
                   <p className="mt-5 text-base leading-relaxed">{orbit.summary}</p>
                   <div className="mt-7 flex flex-wrap gap-3">
@@ -178,17 +252,14 @@ function Home() {
             <SectionHeader eyebrow="03 · Capabilities" title="What I actually do." />
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {capabilities.map((c) => (
-                <div key={c.title} className="pixel-panel p-5">
-                  <h3 className="font-semibold">{c.title}</h3>
+                <PixelCard key={c.title} data-reveal className="pixel-panel p-5">
+                  <h3 className="text-lg font-bold">{c.title}</h3>
                   <ul className="mt-3 space-y-1.5 text-sm text-text-muted">
                     {c.items.map((i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="text-accent mono-font" aria-hidden>▸</span>
-                        <span>{i}</span>
-                      </li>
+                      <li key={i}>{i}</li>
                     ))}
                   </ul>
-                </div>
+                </PixelCard>
               ))}
             </div>
           </div>
@@ -200,9 +271,11 @@ function Home() {
             <SectionHeader eyebrow="04 · Process" title="How I build." />
             <ol className="mt-10 grid gap-3 md:grid-cols-5">
               {process.map((step, i) => (
-                <li key={step} className="pixel-panel p-4">
-                  <div className="pixel-font text-accent text-sm">0{i + 1}</div>
-                  <p className="mt-2 text-sm leading-snug">{step}</p>
+                <li key={step}>
+                  <PixelCard data-reveal className="pixel-panel p-4 h-full" gap={4}>
+                    <div className="pixel-font text-accent text-sm">0{i + 1}</div>
+                    <p className="mt-2 text-sm leading-snug">{step}</p>
+                  </PixelCard>
                 </li>
               ))}
             </ol>
@@ -214,11 +287,11 @@ function Home() {
           <div className="mx-auto max-w-6xl px-4 md:px-6 py-16">
             <SectionHeader eyebrow="05 · Stack" title="Tools I reach for." />
             <div className="mt-10 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
-              <StackBlock title="Frontend" items={["SvelteKit", "React", "TypeScript", "Tailwind"]} />
-              <StackBlock title="Mobile" items={["Expo", "React Native"]} />
-              <StackBlock title="Backend" items={["FastAPI", "Node", "Postgres"]} />
-              <StackBlock title="AI & Agents" items={["LLM APIs", "Tool use", "Structured outputs"]} />
-              <StackBlock title="Product" items={["UX flows", "PRDs", "Analytics"]} />
+              <StackBlock title="Frontend" items={["Next.js", "React", "TypeScript", "Shared CNUI"]} />
+              <StackBlock title="Mobile" items={["Expo", "React Native", "Clerk"]} />
+              <StackBlock title="Backend" items={["Node / Bun", "Hono", "BetterAuth"]} />
+              <StackBlock title="AI & Agents" items={["Mastra", "LangGraph", "Vercel AI SDK"]} />
+              <StackBlock title="Spec-Driven Development" items={["BMAD Method", "GitHub Spec Kit"]} />
             </div>
             <div className="mt-8">
               <Link to="/stack" className="btn-secondary">Full stack</Link>
@@ -251,7 +324,7 @@ function Home() {
         <section>
           <div className="mx-auto max-w-6xl px-4 md:px-6 py-20 text-center">
             <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">07 · Contact</p>
-            <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">Let's talk.</h2>
+            <h2 data-reveal className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Let's talk.</h2>
             <p className="mt-4 text-text-muted max-w-xl mx-auto">
               Open to AI agent workflow work, SaaS product builds, mobile apps, product UX, and
               technical collaboration.
@@ -259,7 +332,7 @@ function Home() {
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <Link to="/contact" className="btn-primary">Contact me</Link>
               <Link to="/resume" className="btn-secondary">Resume</Link>
-              <a href="https://github.com/huzaifashahid" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
+              <a href="https://github.com/Huzaifa-Shahid-6ll" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
             </div>
           </div>
         </section>
@@ -280,16 +353,16 @@ function MetaRow({ label, value }: { label: string; value: string }) {
 
 function SectionHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <div>
+    <div data-reveal>
       <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">{eyebrow}</p>
-      <h2 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight">{title}</h2>
     </div>
   );
 }
 
 function StackBlock({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="pixel-panel p-4">
+    <div data-reveal className="pixel-panel p-4">
       <h3 className="pixel-font text-xs uppercase tracking-wider text-accent">{title}</h3>
       <ul className="mt-2 space-y-1 text-sm">
         {items.map((i) => <li key={i}>{i}</li>)}

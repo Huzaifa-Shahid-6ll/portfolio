@@ -23,7 +23,7 @@ function AboutPage() {
         <section className="border-b border-border">
           <div className="mx-auto max-w-3xl px-4 md:px-6 py-16">
             <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">About</p>
-            <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
+            <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
               Product-focused builder of AI-native software.
             </h1>
             <div className="mt-8 space-y-5 text-lg leading-relaxed">

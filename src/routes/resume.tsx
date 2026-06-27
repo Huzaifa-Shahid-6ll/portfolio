@@ -26,7 +26,7 @@ function ResumePage() {
             <div className="flex items-center justify-between flex-wrap gap-3">
               <div>
                 <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Resume</p>
-                <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">Huzaifa Shahid</h1>
+                <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">Huzaifa Shahid</h1>
                 <p className="mt-2 text-text-muted">AI product builder · ergatikós</p>
               </div>
               <button onClick={() => window.print()} className="btn-secondary">Download / Print</button>
@@ -51,7 +51,7 @@ function ResumePage() {
                     "Backend & systems thinking",
                     "Experimentation & growth",
                   ].map((i) => (
-                    <li key={i} className="flex gap-2"><span className="text-accent" aria-hidden>▸</span>{i}</li>
+                    <li key={i}>{i}</li>
                   ))}
                 </ul>
               </Block>
@@ -74,18 +74,18 @@ function ResumePage() {
 
               <Block title="Technical skills">
                 <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                  <SkillRow label="Languages" value="TypeScript, Python, JavaScript" />
-                  <SkillRow label="Frontend" value="SvelteKit, React, Tailwind, TanStack" />
-                  <SkillRow label="Mobile" value="Expo, React Native" />
-                  <SkillRow label="Backend" value="FastAPI, Node, Postgres" />
-                  <SkillRow label="AI" value="LLM APIs, tool use, agent workflows, memory" />
-                  <SkillRow label="Product" value="PRDs, flow design, experiment design, analytics" />
+                  <SkillRow label="Languages" value="TypeScript, JavaScript, Python" />
+                  <SkillRow label="Frontend" value="Next.js, React, Tailwind, Shared CNUI" />
+                  <SkillRow label="Mobile" value="Expo, React Native, Clerk" />
+                  <SkillRow label="Backend" value="Node, Bun, Hono, BetterAuth, Postgres" />
+                  <SkillRow label="AI" value="Mastra, LangGraph, Claude Agent SDK, Vercel AI SDK, MCP" />
+                  <SkillRow label="Spec-Driven Development" value="BMAD Method, GitHub Spec Kit" />
                 </div>
               </Block>
 
               <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
                 <Link to="/contact" className="btn-primary">Contact me</Link>
-                <a href="https://github.com/huzaifashahid" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
+                <a href="https://github.com/Huzaifa-Shahid-6ll" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
               </div>
             </div>
           </div>

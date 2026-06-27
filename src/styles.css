@@ -31,9 +31,11 @@
   --color-muted-foreground: var(--text-muted);
   --color-ring: var(--accent);
 
-  --font-sans: "Geist", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
-  --font-pixel: "Pixelify Sans", "Silkscreen", monospace;
+  /* Everything is a pixel font — variations across roles */
+  --font-sans: "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Silkscreen", "VT323", ui-monospace, monospace;
+  --font-pixel: "Press Start 2P", "Pixelify Sans", monospace;
 
   --radius-sm: 0px;
   --radius-md: 4px;
@@ -92,14 +94,17 @@
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-size: 1.05rem;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-sans);
-    letter-spacing: -0.015em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.05;
+    text-wrap: balance;
   }
 
   *:focus-visible {
@@ -115,7 +120,8 @@
 
 @utility pixel-font {
   font-family: var(--font-pixel);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  line-height: 1.5;
 }
 
 @utility mono-font {
@@ -219,11 +225,114 @@
   );
 }
 
+/* ---- Pixel-native micro-interactions (percussive, stepped) ---- */
+
+/* Blinking status indicator — "this is live" */
+@keyframes pixel-blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0.25; }
+}
+.pixel-blink {
+  animation: pixel-blink 1.1s steps(1) infinite;
+}
+
+/* Hero terminal caret */
+@keyframes caret-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.pixel-caret {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1em;
+  margin-left: 2px;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+/* One-time CRT scanline sweep used on boot */
+@keyframes scan-sweep {
+  0% { transform: translateY(-100%); opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+.scan-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: linear-gradient(180deg, transparent, var(--accent-soft) 50%, transparent);
+  animation: scan-sweep 0.9s steps(12) 1 both;
+}
+
+/* Project-card role label glitches on card hover */
+@keyframes label-glitch {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, 0); }
+  100% { transform: translate(0, 0); }
+}
+.group:hover .glitch-on-hover {
+  animation: label-glitch 0.18s steps(2) 1;
+  color: var(--accent);
+}
+
+/* ---- Theme toggle + light/dark view transition ---- */
+
+@utility theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 2px solid var(--border-strong);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 0 var(--shadow-tint);
+  cursor: pointer;
+  transition: transform 120ms steps(2), box-shadow 120ms steps(2),
+    color 120ms ease, background 120ms ease;
+  &:hover {
+    color: var(--accent);
+    background: var(--surface-strong);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 var(--shadow-tint);
+  }
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 0 var(--shadow-tint);
+  }
+}
+
+/* Show the icon for the action you'll take: moon in light mode, sun in dark. */
+.theme-icon-sun { display: none; }
+.theme-icon-moon { display: inline-block; }
+.dark .theme-icon-sun { display: inline-block; }
+.dark .theme-icon-moon { display: none; }
+
+/* Drive the reveal ourselves — kill the default cross-fade, stack new over old. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 9999; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .scan-sweep::after { display: none; }
+  ::view-transition-group(*),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
   }
 }

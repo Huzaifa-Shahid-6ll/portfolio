@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ThemeToggle } from "../theme/ThemeToggle";
 
 export function SiteNav() {
   const linkCls =
@@ -14,12 +15,7 @@ export function SiteNav() {
         Skip to content
       </a>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <Link to="/" className="flex items-center gap-2 group">
-          <span
-            className="inline-block size-3 bg-accent"
-            aria-hidden
-            style={{ boxShadow: "2px 2px 0 0 var(--accent-strong)" }}
-          />
+        <Link to="/" className="flex items-baseline gap-2 group">
           <span className="font-semibold tracking-tight">Huzaifa Shahid</span>
           <span className="hidden sm:inline pixel-font text-[0.7rem] text-text-soft uppercase tracking-wider">
             / ergatikós
@@ -42,17 +38,19 @@ export function SiteNav() {
             Contact
           </Link>
           <a
-            href="https://github.com/huzaifashahid"
+            href="https://github.com/Huzaifa-Shahid-6ll"
             target="_blank"
             rel="noreferrer"
             className="btn-secondary !py-1.5 !px-3 !text-xs ml-2"
           >
             GitHub
           </a>
+          <ThemeToggle className="ml-1" />
         </nav>
         <nav aria-label="Primary mobile" className="flex md:hidden items-center gap-1">
           <Link to="/projects" className={linkCls}>Work</Link>
           <Link to="/contact" className={linkCls}>Contact</Link>
+          <ThemeToggle className="ml-1" />
         </nav>
       </div>
     </header>
@@ -65,7 +63,6 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 md:px-6 py-12 grid gap-8 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-block size-3 bg-accent" aria-hidden />
             <span className="font-semibold">Huzaifa Shahid</span>
           </div>
           <p className="mt-3 text-sm text-text-muted max-w-xs">
@@ -89,10 +86,10 @@ export function SiteFooter() {
             Elsewhere
           </h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="https://github.com/huzaifashahid" target="_blank" rel="noreferrer" className="hover:text-accent">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/huzaifashahid" target="_blank" rel="noreferrer" className="hover:text-accent">LinkedIn</a></li>
-            <li><a href="https://x.com/huzaifashahid" target="_blank" rel="noreferrer" className="hover:text-accent">X / Twitter</a></li>
-            <li><a href="mailto:hello@huzaifashahid.com" className="hover:text-accent">Email</a></li>
+            <li><a href="https://github.com/Huzaifa-Shahid-6ll" target="_blank" rel="noreferrer" className="hover:text-accent">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/huzaifa-shahid-596bb2361/" target="_blank" rel="noreferrer" className="hover:text-accent">LinkedIn</a></li>
+            <li><a href="https://x.com/Huzaifa_shd" target="_blank" rel="noreferrer" className="hover:text-accent">X / Twitter</a></li>
+            <li><a href="mailto:huzaifa.shd@gmail.com" className="hover:text-accent">Email</a></li>
           </ul>
         </div>
       </div>

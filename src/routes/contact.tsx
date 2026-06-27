@@ -33,7 +33,7 @@ function ContactPage() {
     const body =
       `Building: ${data.get("building")}\n\n` +
       `Need help with: ${data.get("help")}\n\n— ${name}`;
-    window.location.href = `mailto:hello@huzaifashahid.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:huzaifa.shd@gmail.com?subject=${encodeURIComponent(
       `Portfolio contact from ${name}`,
     )}&body=${encodeURIComponent(body)}`;
     setStatus("success");
@@ -47,7 +47,7 @@ function ContactPage() {
           <div className="mx-auto max-w-5xl px-4 md:px-6 py-16 grid gap-10 md:grid-cols-2">
             <div>
               <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-              <h1 className="mt-3 text-5xl font-semibold tracking-tight">Let's talk.</h1>
+              <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">Let's talk.</h1>
               <p className="mt-5 text-lg text-text-muted leading-relaxed">
                 I'm open to conversations around AI agents, SaaS products, automation workflows,
                 mobile apps, and product-focused development.
@@ -61,17 +61,34 @@ function ContactPage() {
                   "Technical collaboration",
                   "Product idea exploration",
                 ].map((i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-accent mono-font" aria-hidden>▸</span>
-                    {i}
-                  </li>
+                  <li key={i}>{i}</li>
                 ))}
               </ul>
-              <div className="mt-8 pixel-panel p-5 space-y-2 text-sm">
-                <Row label="Email" href="mailto:hello@huzaifashahid.com" value="hello@huzaifashahid.com" />
-                <Row label="GitHub" href="https://github.com/huzaifashahid" value="@huzaifashahid" />
-                <Row label="LinkedIn" href="https://www.linkedin.com/in/huzaifashahid" value="huzaifashahid" />
-                <Row label="X / Twitter" href="https://x.com/huzaifashahid" value="@huzaifashahid" />
+
+              {/* GitHub, shown as a git command — clone the builder */}
+              <a
+                href="https://github.com/Huzaifa-Shahid-6ll"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 block pixel-panel p-4 mono-font text-sm group"
+                aria-label="GitHub: Huzaifa-Shahid-6ll"
+              >
+                <span className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">GitHub</span>
+                <p className="mt-2 leading-relaxed">
+                  <span className="text-text-soft">huzaifa@orbit</span>
+                  <span className="text-text-soft">:~$ </span>
+                  <span className="text-text">git clone </span>
+                  <span className="text-accent group-hover:text-accent-hover break-all">
+                    github.com/Huzaifa-Shahid-6ll
+                  </span>
+                  <span className="ml-1 inline-block w-2 h-4 bg-accent align-middle" aria-hidden />
+                </p>
+              </a>
+
+              <div className="mt-4 pixel-panel p-5 space-y-2 text-sm">
+                <Row label="Email" href="mailto:huzaifa.shd@gmail.com" value="huzaifa.shd@gmail.com" />
+                <Row label="LinkedIn" href="https://www.linkedin.com/in/huzaifa-shahid-596bb2361/" value="huzaifa-shahid" />
+                <Row label="X / Twitter" href="https://x.com/Huzaifa_shd" value="@Huzaifa_shd" />
               </div>
             </div>
 
