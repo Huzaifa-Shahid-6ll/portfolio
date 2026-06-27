@@ -5,7 +5,10 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Huzaifa Shahid" },
-      { name: "description", content: "Product-focused builder of AI-native software, agents, SaaS, and apps." },
+      {
+        name: "description",
+        content: "Product-focused builder of AI-native software, agents, SaaS, and apps.",
+      },
       { property: "og:title", content: "About — Huzaifa Shahid" },
       { property: "og:description", content: "Product-focused builder of AI-native software." },
       { property: "og:url", content: "/about" },
@@ -22,11 +25,13 @@ function AboutPage() {
       <main id="main" className="flex-1">
         <section className="border-b border-border">
           <div className="mx-auto max-w-3xl px-4 md:px-6 py-16">
-            <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">About</p>
-            <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
-              Product-focused builder of AI-native software.
-            </h1>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed">
+            <div data-reveal="snap">
+              <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">About</p>
+              <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
+                Product-focused builder of AI-native software.
+              </h1>
+            </div>
+            <div data-reveal className="mt-8 space-y-5 text-lg leading-relaxed">
               <p>
                 I'm Huzaifa Shahid. I build AI-native products — software where AI isn't a feature
                 bolted on top, it's the way the product works.
@@ -47,9 +52,19 @@ function AboutPage() {
                 and I'd rather ship a small thing that works than a big thing that doesn't.
               </p>
             </div>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link to="/projects" className="btn-primary">See the work</Link>
-              <Link to="/contact" className="btn-secondary">Get in touch</Link>
+            <div data-reveal className="mt-10 flex flex-wrap gap-3">
+              <Link to="/projects" className="btn-primary">
+                See the work{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
+              <Link to="/contact" className="btn-secondary">
+                Get in touch{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
             </div>
           </div>
         </section>

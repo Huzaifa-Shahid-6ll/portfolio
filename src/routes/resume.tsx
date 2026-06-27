@@ -23,13 +23,20 @@ function ResumePage() {
       <main id="main" className="flex-1">
         <section className="border-b border-border">
           <div className="mx-auto max-w-3xl px-4 md:px-6 py-16">
-            <div className="flex items-center justify-between flex-wrap gap-3">
+            <div data-reveal="snap" className="flex items-center justify-between flex-wrap gap-3">
               <div>
                 <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Resume</p>
-                <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">Huzaifa Shahid</h1>
+                <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
+                  Huzaifa Shahid
+                </h1>
                 <p className="mt-2 text-text-muted">AI product builder · ergatikós</p>
               </div>
-              <button onClick={() => window.print()} className="btn-secondary">Download / Print</button>
+              <button onClick={() => window.print()} className="btn-secondary">
+                Download / Print{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </button>
             </div>
 
             <div className="mt-10 space-y-10">
@@ -61,10 +68,16 @@ function ResumePage() {
                   {projects.map((p) => (
                     <li key={p.slug} className="border-l-2 border-accent pl-4">
                       <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                        <Link to="/projects/$slug" params={{ slug: p.slug }} className="font-semibold hover:text-accent">
+                        <Link
+                          to="/projects/$slug"
+                          params={{ slug: p.slug }}
+                          className="font-semibold hover:text-accent"
+                        >
                           {p.title}
                         </Link>
-                        <span className="mono-font text-xs text-text-soft">{p.status} · {p.type}</span>
+                        <span className="mono-font text-xs text-text-soft">
+                          {p.status} · {p.type}
+                        </span>
                       </div>
                       <p className="text-sm text-text-muted mt-1">{p.oneLiner}</p>
                     </li>
@@ -78,14 +91,32 @@ function ResumePage() {
                   <SkillRow label="Frontend" value="Next.js, React, Tailwind, Shared CNUI" />
                   <SkillRow label="Mobile" value="Expo, React Native, Clerk" />
                   <SkillRow label="Backend" value="Node, Bun, Hono, BetterAuth, Postgres" />
-                  <SkillRow label="AI" value="Mastra, LangGraph, Claude Agent SDK, Vercel AI SDK, MCP" />
+                  <SkillRow
+                    label="AI"
+                    value="Mastra, LangGraph, Claude Agent SDK, Vercel AI SDK, MCP"
+                  />
                   <SkillRow label="Spec-Driven Development" value="BMAD Method, GitHub Spec Kit" />
                 </div>
               </Block>
 
               <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
-                <Link to="/contact" className="btn-primary">Contact me</Link>
-                <a href="https://github.com/Huzaifa-Shahid-6ll" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
+                <Link to="/contact" className="btn-primary">
+                  Contact me{" "}
+                  <span className="cta-arrow" aria-hidden>
+                    -&gt;
+                  </span>
+                </Link>
+                <a
+                  href="https://github.com/Huzaifa-Shahid-6ll"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                >
+                  GitHub{" "}
+                  <span className="cta-arrow" aria-hidden>
+                    -&gt;
+                  </span>
+                </a>
               </div>
             </div>
           </div>
@@ -98,7 +129,7 @@ function ResumePage() {
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section>
+    <section data-reveal>
       <h2 className="pixel-font text-sm uppercase tracking-wider text-accent">{title}</h2>
       <div className="mt-3 text-base leading-relaxed">{children}</div>
     </section>

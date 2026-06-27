@@ -6,7 +6,10 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Huzaifa Shahid" },
-      { name: "description", content: "Let's talk. Open to AI agents, SaaS, mobile, and product work." },
+      {
+        name: "description",
+        content: "Let's talk. Open to AI agents, SaaS, mobile, and product work.",
+      },
       { property: "og:title", content: "Contact — Huzaifa Shahid" },
       { property: "og:description", content: "Open to AI agents, SaaS, mobile, and product work." },
       { property: "og:url", content: "/contact" },
@@ -31,8 +34,7 @@ function ContactPage() {
     }
     // No backend wired yet — open mailto as a graceful fallback.
     const body =
-      `Building: ${data.get("building")}\n\n` +
-      `Need help with: ${data.get("help")}\n\n— ${name}`;
+      `Building: ${data.get("building")}\n\n` + `Need help with: ${data.get("help")}\n\n— ${name}`;
     window.location.href = `mailto:huzaifa.shd@gmail.com?subject=${encodeURIComponent(
       `Portfolio contact from ${name}`,
     )}&body=${encodeURIComponent(body)}`;
@@ -46,12 +48,16 @@ function ContactPage() {
         <section className="border-b border-border">
           <div className="mx-auto max-w-5xl px-4 md:px-6 py-16 grid gap-10 md:grid-cols-2">
             <div>
-              <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Contact</p>
-              <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">Let's talk.</h1>
-              <p className="mt-5 text-lg text-text-muted leading-relaxed">
-                I'm open to conversations around AI agents, SaaS products, automation workflows,
-                mobile apps, and product-focused development.
-              </p>
+              <div data-reveal="snap">
+                <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
+                  Contact
+                </p>
+                <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">Let's talk.</h1>
+                <p className="mt-5 text-lg text-text-muted leading-relaxed">
+                  I'm open to conversations around AI agents, SaaS products, automation workflows,
+                  mobile apps, and product-focused development.
+                </p>
+              </div>
               <ul className="mt-6 space-y-2 text-sm">
                 {[
                   "AI agent workflow work",
@@ -70,10 +76,13 @@ function ContactPage() {
                 href="https://github.com/Huzaifa-Shahid-6ll"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 block pixel-panel p-4 mono-font text-sm group"
+                className="mt-8 block pixel-panel pixel-hover p-4 mono-font text-sm group"
                 aria-label="GitHub: Huzaifa-Shahid-6ll"
+                data-reveal
               >
-                <span className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">GitHub</span>
+                <span className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">
+                  GitHub
+                </span>
                 <p className="mt-2 leading-relaxed">
                   <span className="text-text-soft">huzaifa@orbit</span>
                   <span className="text-text-soft">:~$ </span>
@@ -81,23 +90,44 @@ function ContactPage() {
                   <span className="text-accent group-hover:text-accent-hover break-all">
                     github.com/Huzaifa-Shahid-6ll
                   </span>
-                  <span className="ml-1 inline-block w-2 h-4 bg-accent align-middle" aria-hidden />
+                  <span
+                    className="ml-1 inline-block w-2 h-4 bg-accent align-middle pixel-blink"
+                    aria-hidden
+                  />
                 </p>
               </a>
 
-              <div className="mt-4 pixel-panel p-5 space-y-2 text-sm">
-                <Row label="Email" href="mailto:huzaifa.shd@gmail.com" value="huzaifa.shd@gmail.com" />
-                <Row label="LinkedIn" href="https://www.linkedin.com/in/huzaifa-shahid-596bb2361/" value="huzaifa-shahid" />
+              <div data-reveal className="mt-4 pixel-panel pixel-hover p-5 space-y-2 text-sm">
+                <Row
+                  label="Email"
+                  href="mailto:huzaifa.shd@gmail.com"
+                  value="huzaifa.shd@gmail.com"
+                />
+                <Row
+                  label="LinkedIn"
+                  href="https://www.linkedin.com/in/huzaifa-shahid-596bb2361/"
+                  value="huzaifa-shahid"
+                />
                 <Row label="X / Twitter" href="https://x.com/Huzaifa_shd" value="@Huzaifa_shd" />
               </div>
             </div>
 
-            <form onSubmit={onSubmit} className="pixel-panel p-6 space-y-5" noValidate>
+            <form
+              onSubmit={onSubmit}
+              className="pixel-panel pixel-hover p-6 space-y-5"
+              noValidate
+              data-reveal
+            >
               <Field id="name" label="Name" required />
               <Field id="email" label="Email" type="email" required />
               <Field id="building" label="What are you building?" textarea rows={3} />
               <Field id="help" label="What do you need help with?" textarea rows={4} />
-              <button type="submit" className="btn-primary w-full">Send message</button>
+              <button type="submit" className="btn-primary w-full">
+                Send message{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </button>
               {status === "success" && (
                 <p role="status" className="text-sm text-success">
                   Thanks for reaching out. I'll get back to you soon.
@@ -120,23 +150,42 @@ function ContactPage() {
 function Row({ label, value, href }: { label: string; value: string; href: string }) {
   return (
     <div className="flex items-center justify-between gap-3 py-1.5 border-b border-border last:border-0">
-      <span className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">{label}</span>
-      <a href={href} className="text-accent hover:text-accent-hover">{value}</a>
+      <span className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">
+        {label}
+      </span>
+      <a href={href} className="text-accent hover:text-accent-hover">
+        {value}
+      </a>
     </div>
   );
 }
 
 function Field({
-  id, label, type = "text", required, textarea, rows,
+  id,
+  label,
+  type = "text",
+  required,
+  textarea,
+  rows,
 }: {
-  id: string; label: string; type?: string; required?: boolean; textarea?: boolean; rows?: number;
+  id: string;
+  label: string;
+  type?: string;
+  required?: boolean;
+  textarea?: boolean;
+  rows?: number;
 }) {
   const cls =
-    "w-full bg-surface border-2 border-border-strong px-3 py-2 text-sm focus:outline-none focus:border-accent";
+    "field-glow w-full bg-surface border-2 border-border-strong px-3 py-2 text-sm focus:outline-none focus:border-accent";
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium mb-1.5">
-        {label} {required && <span className="text-accent" aria-hidden>*</span>}
+        {label}{" "}
+        {required && (
+          <span className="text-accent" aria-hidden>
+            *
+          </span>
+        )}
       </label>
       {textarea ? (
         <textarea id={id} name={id} rows={rows} required={required} className={cls} />

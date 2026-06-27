@@ -15,15 +15,43 @@ export function MotionProvider() {
 
   useEffect(() => {
     registerGsap();
-    if (reducedMotion()) return;
+    const shouldReduceMotion = reducedMotion();
 
     // Wait one frame so the freshly-navigated route DOM is in place.
     const raf = requestAnimationFrame(() => {
       const ctx = gsap.context(() => {
-        const els = gsap.utils.toArray<HTMLElement>("[data-reveal]");
-        if (!els.length) return;
+        const progress = document.querySelector<HTMLElement>("[data-scroll-progress]");
+        if (progress) {
+          gsap.set(progress, { scaleX: 0 });
+          ScrollTrigger.create({
+            start: 0,
+            end: "max",
+            onUpdate: (self) => {
+              gsap.to(progress, {
+                scaleX: self.progress,
+                duration: shouldReduceMotion ? 0 : 0.12,
+                ease: shouldReduceMotion ? "none" : PIXEL_STEPS,
+                overwrite: true,
+              });
+            },
+          });
+        }
 
-        gsap.set(els, { opacity: 0, y: 10 });
+        if (shouldReduceMotion) {
+          ScrollTrigger.refresh();
+          return;
+        }
+
+        const els = gsap.utils.toArray<HTMLElement>("[data-reveal]");
+        if (!els.length) {
+          ScrollTrigger.refresh();
+          return;
+        }
+
+        gsap.set(els, {
+          opacity: 0,
+          y: (_index, target: HTMLElement) => (target.dataset.reveal === "snap" ? 4 : 10),
+        });
         ScrollTrigger.batch(els, {
           start: "top 90%",
           once: true,
@@ -31,7 +59,7 @@ export function MotionProvider() {
             gsap.to(batch, {
               opacity: 1,
               y: 0,
-              duration: 0.4,
+              duration: 0.42,
               ease: PIXEL_STEPS,
               stagger: 0.06,
               overwrite: true,

@@ -39,7 +39,11 @@ export const Route = createFileRoute("/")({
 const capabilities = [
   {
     title: "AI Agents & Workflow Automation",
-    items: ["Multi-step agent workflows", "Tool use and structured outputs", "Verification and approval points"],
+    items: [
+      "Multi-step agent workflows",
+      "Tool use and structured outputs",
+      "Verification and approval points",
+    ],
   },
   {
     title: "SaaS Products & Dashboards",
@@ -65,6 +69,16 @@ const process = [
   "Design for clarity and trust.",
   "Build the smallest useful version.",
   "Polish states, edges, and details.",
+];
+
+const marqueeItems = [
+  "AI agents",
+  "SaaS systems",
+  "Expo / React Native",
+  "Next.js",
+  "Hono",
+  "TypeScript",
+  "Product UX",
 ];
 
 function Home() {
@@ -94,8 +108,11 @@ function Home() {
 
       gsap.set("[data-hero-item]", { opacity: 0, y: 8 });
       gsap.set("[data-hero-caret]", { opacity: 0 });
-      tl.to("[data-hero-item]", { opacity: 1, y: 0, duration: 0.4, stagger: 0.07 }, 0.18)
-        .to("[data-hero-caret]", { opacity: 1, duration: 0.1 }, ">-0.05");
+      tl.to("[data-hero-item]", { opacity: 1, y: 0, duration: 0.4, stagger: 0.07 }, 0.18).to(
+        "[data-hero-caret]",
+        { opacity: 1, duration: 0.1 },
+        ">-0.05",
+      );
     }, el);
 
     return () => {
@@ -139,7 +156,10 @@ function Home() {
         >
           <HeroDitherLandscape className="pointer-events-none absolute inset-0 z-0" />
           <div className="relative z-10 mx-auto max-w-6xl px-4 pb-8 pt-10 text-center md:px-6 md:pt-14">
-            <p data-hero-item className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
+            <p
+              data-hero-item
+              className="pixel-font text-xs uppercase tracking-[0.18em] text-accent"
+            >
               AI Agents · SaaS Products · Mobile / Web Apps
             </p>
             <h1
@@ -152,18 +172,31 @@ function Home() {
               </span>
               <span data-hero-caret className="pixel-caret" aria-hidden />
             </h1>
-            <p data-hero-item className="mx-auto mt-5 max-w-2xl text-lg text-text-muted leading-relaxed">
-              I'm Huzaifa Shahid, a product-focused developer building AI agents, SaaS
-              systems, automation workflows, and mobile/web applications.
+            <p
+              data-hero-item
+              className="mx-auto mt-5 max-w-2xl text-lg text-text-muted leading-relaxed"
+            >
+              I'm Huzaifa Shahid, a product-focused developer building AI agents, SaaS systems,
+              automation workflows, and mobile/web applications.
             </p>
             <div data-hero-item className="mt-7 flex flex-wrap justify-center gap-3">
-              <Link to="/projects" className="btn-primary">View work</Link>
-              <Link to="/contact" className="btn-secondary">Contact me</Link>
+              <Link to="/projects" className="btn-primary">
+                View work{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
+              <Link to="/contact" className="btn-secondary">
+                Contact me{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-border bg-bg-soft">
+        <section data-reveal="snap" className="border-b border-border bg-bg-soft">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-5 md:flex-row md:items-center md:justify-between md:px-6">
             <div>
               <p className="mono-font mb-1 text-xs uppercase tracking-wider text-text-soft">
@@ -173,10 +206,17 @@ function Home() {
                 Orbit, Trimly, Hermes-style workflows, and AI-native product experiments.
               </p>
             </div>
-            <div className="flex flex-wrap gap-1.5 md:justify-end">
-              {["AI agents", "SaaS systems", "Expo / React Native", "Next.js", "Hono", "TypeScript", "Product UX"].map((t) => (
-                <span key={t} className="pixel-chip">{t}</span>
-              ))}
+            <div
+              className="pixel-marquee -mx-1 max-w-full md:max-w-xl"
+              aria-label={`Capabilities: ${marqueeItems.join(", ")}`}
+            >
+              <div className="pixel-marquee-track flex gap-1.5 px-1" aria-hidden="true">
+                {[...marqueeItems, ...marqueeItems].map((t, index) => (
+                  <span key={`${t}-${index}`} className="pixel-chip micro-shake shrink-0">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -200,7 +240,7 @@ function Home() {
                   orbit.app · personal AI OS
                 </span>
                 <span className="inline-flex items-center gap-2 mono-font text-xs text-accent-strong">
-                  <span className="status-dot pixel-blink" aria-hidden />
+                  <span className="status-dot status-pulse" aria-hidden />
                   Active build
                 </span>
               </div>
@@ -210,14 +250,18 @@ function Home() {
                   <p className="mt-3 text-xl text-text-muted">{orbit.oneLiner}</p>
                   <p className="mt-5 text-base leading-relaxed">{orbit.summary}</p>
                   <div className="mt-7 flex flex-wrap gap-3">
-                    <Link
-                      to="/projects/$slug"
-                      params={{ slug: "orbit" }}
-                      className="btn-primary"
-                    >
-                      View Orbit case study
+                    <Link to="/projects/$slug" params={{ slug: "orbit" }} className="btn-primary">
+                      View Orbit case study{" "}
+                      <span className="cta-arrow" aria-hidden>
+                        -&gt;
+                      </span>
                     </Link>
-                    <Link to="/contact" className="btn-secondary">Contact me</Link>
+                    <Link to="/contact" className="btn-secondary">
+                      Contact me{" "}
+                      <span className="cta-arrow" aria-hidden>
+                        -&gt;
+                      </span>
+                    </Link>
                   </div>
                 </div>
                 <div className="md:col-span-2 p-6 md:p-8 bg-surface-soft text-sm">
@@ -225,10 +269,14 @@ function Home() {
                   <MetaRow label="Status" value={orbit.status} />
                   <MetaRow label="Role" value={orbit.role} />
                   <div className="py-3 border-t border-border">
-                    <p className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft mb-2">Focus</p>
+                    <p className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft mb-2">
+                      Focus
+                    </p>
                     <div className="flex flex-wrap gap-1.5">
                       {orbit.tags.map((t) => (
-                        <span key={t} className="pixel-chip !py-0.5">{t}</span>
+                        <span key={t} className="pixel-chip micro-shake !py-0.5">
+                          {t}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -246,10 +294,17 @@ function Home() {
               Four projects I'm building or refining. Curated, not exhaustive.
             </p>
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              {others.map((p) => <ProjectCard key={p.slug} project={p} />)}
+              {others.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
             </div>
             <div className="mt-8">
-              <Link to="/projects" className="btn-secondary">See all projects</Link>
+              <Link to="/projects" className="btn-secondary">
+                See all projects{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
             </div>
           </div>
         </section>
@@ -260,7 +315,7 @@ function Home() {
             <SectionHeader eyebrow="03 · Capabilities" title="What I actually do." />
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {capabilities.map((c) => (
-                <PixelCard key={c.title} data-reveal className="pixel-panel p-5">
+                <PixelCard key={c.title} data-reveal className="pixel-panel pixel-hover p-5">
                   <h3 className="text-lg font-bold">{c.title}</h3>
                   <ul className="mt-3 space-y-1.5 text-sm text-text-muted">
                     {c.items.map((i) => (
@@ -280,7 +335,7 @@ function Home() {
             <ol className="mt-10 grid gap-3 md:grid-cols-5">
               {process.map((step, i) => (
                 <li key={step}>
-                  <PixelCard data-reveal className="pixel-panel p-4 h-full" gap={4}>
+                  <PixelCard data-reveal className="pixel-panel pixel-hover p-4 h-full" gap={4}>
                     <div className="pixel-font text-accent text-sm">0{i + 1}</div>
                     <p className="mt-2 text-sm leading-snug">{step}</p>
                   </PixelCard>
@@ -295,14 +350,25 @@ function Home() {
           <div className="mx-auto max-w-6xl px-4 md:px-6 py-16">
             <SectionHeader eyebrow="05 · Stack" title="Tools I reach for." />
             <div className="mt-10 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
-              <StackBlock title="Frontend" items={["Next.js", "React", "TypeScript", "Shared CNUI"]} />
+              <StackBlock
+                title="Frontend"
+                items={["Next.js", "React", "TypeScript", "Shared CNUI"]}
+              />
               <StackBlock title="Mobile" items={["Expo", "React Native", "Clerk"]} />
               <StackBlock title="Backend" items={["Node / Bun", "Hono", "BetterAuth"]} />
               <StackBlock title="AI & Agents" items={["Mastra", "LangGraph", "Vercel AI SDK"]} />
-              <StackBlock title="Spec-Driven Development" items={["BMAD Method", "GitHub Spec Kit"]} />
+              <StackBlock
+                title="Spec-Driven Development"
+                items={["BMAD Method", "GitHub Spec Kit"]}
+              />
             </div>
             <div className="mt-8">
-              <Link to="/stack" className="btn-secondary">Full stack</Link>
+              <Link to="/stack" className="btn-secondary">
+                Full stack{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
             </div>
           </div>
         </section>
@@ -313,17 +379,22 @@ function Home() {
             <div>
               <SectionHeader eyebrow="06 · About" title="Builder, not a template." />
             </div>
-            <div className="md:col-span-2 space-y-4 text-base leading-relaxed">
+            <div data-reveal className="md:col-span-2 space-y-4 text-base leading-relaxed">
               <p>
                 I focus on AI-native products: software where AI isn't a feature bolted on, it's the
-                way the product works. The interesting work is in the workflow, the trust model, and the
-                small details that make a system feel reliable.
+                way the product works. The interesting work is in the workflow, the trust model, and
+                the small details that make a system feel reliable.
               </p>
               <p className="text-text-muted">
                 Current focus: Orbit, Trimly, Hermes-style agent workflows, and AI-native SaaS
                 experiments. I care about leverage, real workflows, and product thinking over hype.
               </p>
-              <Link to="/about" className="btn-secondary mt-2">More about me</Link>
+              <Link to="/about" className="btn-secondary mt-2">
+                More about me{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
             </div>
           </div>
         </section>
@@ -331,16 +402,40 @@ function Home() {
         {/* CONTACT CTA */}
         <section>
           <div className="mx-auto max-w-6xl px-4 md:px-6 py-20 text-center">
-            <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">07 · Contact</p>
-            <h2 data-reveal className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">Let's talk.</h2>
+            <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">
+              07 · Contact
+            </p>
+            <h2 data-reveal className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+              Let's talk.
+            </h2>
             <p className="mt-4 text-text-muted max-w-xl mx-auto">
               Open to AI agent workflow work, SaaS product builds, mobile apps, product UX, and
               technical collaboration.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <Link to="/contact" className="btn-primary">Contact me</Link>
-              <Link to="/resume" className="btn-secondary">Resume</Link>
-              <a href="https://github.com/Huzaifa-Shahid-6ll" target="_blank" rel="noreferrer" className="btn-secondary">GitHub</a>
+              <Link to="/contact" className="btn-primary">
+                Contact me{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
+              <Link to="/resume" className="btn-secondary">
+                Resume{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </Link>
+              <a
+                href="https://github.com/Huzaifa-Shahid-6ll"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+              >
+                GitHub{" "}
+                <span className="cta-arrow" aria-hidden>
+                  -&gt;
+                </span>
+              </a>
             </div>
           </div>
         </section>
@@ -370,10 +465,12 @@ function SectionHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
 
 function StackBlock({ title, items }: { title: string; items: string[] }) {
   return (
-    <div data-reveal className="pixel-panel p-4">
+    <div data-reveal className="pixel-panel pixel-hover p-4">
       <h3 className="pixel-font text-xs uppercase tracking-wider text-accent">{title}</h3>
       <ul className="mt-2 space-y-1 text-sm">
-        {items.map((i) => <li key={i}>{i}</li>)}
+        {items.map((i) => (
+          <li key={i}>{i}</li>
+        ))}
       </ul>
     </div>
   );

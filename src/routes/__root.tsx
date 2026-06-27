@@ -7,12 +7,15 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter } from "../lib/components/SiteChrome";
 import { MotionProvider } from "../lib/anim/MotionProvider";
+import { BootLoader } from "../lib/components/BootLoader";
+
+const PixelTrail = lazy(() => import("../lib/components/PixelTrail"));
 
 function NotFoundComponent() {
   return (
@@ -28,7 +31,9 @@ function NotFoundComponent() {
             The page you are looking for does not exist, was moved, or never shipped.
           </p>
           <div className="mt-6 flex justify-center">
-            <Link to="/" className="btn-primary">Back to home</Link>
+            <Link to="/" className="btn-primary">
+              Back to home
+            </Link>
           </div>
         </div>
       </main>
@@ -53,12 +58,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="btn-primary"
           >
             Try again
           </button>
-          <a href="/" className="btn-secondary">Go home</a>
+          <a href="/" className="btn-secondary">
+            Go home
+          </a>
         </div>
       </div>
     </div>
@@ -119,10 +129,44 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pixelTrailSourceRef = useRef<HTMLDivElement>(null);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <MotionProvider />
-      <Outlet />
+      <div ref={pixelTrailSourceRef} className="relative min-h-screen">
+        <MotionProvider />
+        <BootLoader />
+        <GlobalPixelTrail eventSource={pixelTrailSourceRef as RefObject<HTMLElement>} />
+        <Outlet />
+      </div>
     </QueryClientProvider>
+  );
+}
+
+function GlobalPixelTrail({ eventSource }: { eventSource: RefObject<HTMLElement> }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  return (
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-50 mix-blend-difference">
+      <Suspense fallback={null}>
+        <PixelTrail
+          gridSize={50}
+          trailSize={0.08}
+          maxAge={250}
+          interpolate={5}
+          color="#ffffff"
+          gooeyFilter={{ id: "site-pixel-trail-goo", strength: 2 }}
+          className="h-full w-full"
+          canvasProps={{
+            eventSource,
+            eventPrefix: "client",
+          }}
+        />
+      </Suspense>
+    </div>
   );
 }
