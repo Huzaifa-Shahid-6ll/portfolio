@@ -152,10 +152,10 @@ function Home() {
         {/* HERO */}
         <section
           ref={heroRef}
-          className="relative isolate min-h-[560px] overflow-hidden scan-sweep border-b border-border bg-bg md:min-h-[600px]"
+          className="relative isolate min-h-[620px] overflow-hidden scan-sweep border-b border-border bg-bg md:min-h-[680px]"
         >
-          <HeroDitherLandscape className="pointer-events-none absolute inset-0 z-0" />
-          <div className="relative z-10 mx-auto max-w-6xl px-4 pb-8 pt-10 text-center md:px-6 md:pt-14">
+          <HeroDitherLandscape className="pointer-events-none absolute inset-0 z-0 translate-y-10 md:translate-y-16" />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 pb-28 pt-10 text-center md:px-6 md:pb-36 md:pt-14">
             <p
               data-hero-item
               className="pixel-font text-xs uppercase tracking-[0.18em] text-accent"
