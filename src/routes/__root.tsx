@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter } from "../lib/components/SiteChrome";
 import { MotionProvider } from "../lib/anim/MotionProvider";
+import { LenisProvider } from "../lib/anim/LenisProvider";
 import { BootLoader } from "../lib/components/BootLoader";
 
 const PixelTrail = lazy(() => import("../lib/components/PixelTrail"));
@@ -133,12 +134,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div ref={pixelTrailSourceRef} className="relative min-h-screen">
-        <MotionProvider />
-        <BootLoader />
-        <GlobalPixelTrail eventSource={pixelTrailSourceRef as RefObject<HTMLElement>} />
-        <Outlet />
-      </div>
+      <LenisProvider>
+        <div ref={pixelTrailSourceRef} className="relative min-h-screen">
+          <MotionProvider />
+          <BootLoader />
+          <GlobalPixelTrail eventSource={pixelTrailSourceRef as RefObject<HTMLElement>} />
+          <Outlet />
+        </div>
+      </LenisProvider>
     </QueryClientProvider>
   );
 }

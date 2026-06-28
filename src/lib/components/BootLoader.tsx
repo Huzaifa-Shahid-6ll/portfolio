@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLenis } from "lenis/react";
 import TextType from "./TextType";
 
 const bootLines = [
@@ -17,6 +18,7 @@ function prefersReducedMotion() {
 }
 
 export function BootLoader() {
+  const lenis = useLenis();
   const [visible, setVisible] = useState(true);
   const [exiting, setExiting] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -47,13 +49,18 @@ export function BootLoader() {
   useEffect(() => {
     if (!visible || typeof document === "undefined") return;
 
-    const previousOverflow = document.body.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    lenis?.stop();
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      lenis?.start();
     };
-  }, [visible]);
+  }, [visible, lenis]);
 
   if (!visible) return null;
 
