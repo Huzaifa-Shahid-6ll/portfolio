@@ -1,0 +1,51 @@
+{
+  "generator": "Built-in image_gen tool",
+  "notes": "Eight generated concept covers replace code-drawn interface illustrations. Encoded as WebP quality84 at original dimensions. Transparent logo exported as256px PNG, with64px favicon. Originals remain in Codex generated_images.",
+  "assets": [
+    {
+      "slug": "orbit",
+      "file": "public/images/projects/orbit.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. A personal AI workspace that remembers context: a sculptural cobalt-blue orbital ring suspended around three frosted-glass memory tiles and a small polished silver sphere, precise balanced composition. Suggest interconnected thoughts and human control. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "skilltube",
+      "file": "public/images/projects/skilltube.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. A developer tool turning video tutorials into reusable instructions: a warm coral translucent play triangle on the left, a ribbon of tiny frosted tiles flowing toward a neat stack of white instruction cards on the right, one cobalt binding clip. Physical editorial still life, not a UI. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "errby",
+      "file": "public/images/projects/errby.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. A learning partner you teach: a friendly small sage-green sculptural companion with two simple recessed eyes sitting beside an open ivory notebook and a translucent amber question-mark sculpture. Thoughtful, not childish; tactile designer objects. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "taypr",
+      "file": "public/images/projects/taypr.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. A haircut decision and barber handoff: beautifully machined silver barber scissors, a matte dark-green comb and two thick ivory consultation cards arranged as an elegant grooming still life. Soft sage studio backdrop, fashion editorial lighting. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "listing-desk",
+      "file": "public/images/projects/listing-desk.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. An operations workspace organizing marketplace listings: a tidy grid of miniature ivory product plinths, a single beautifully crafted ceramic vessel on one plinth, frosted document cards aligned next to it, subtle cobalt indexing tabs. Warm stone studio backdrop, architectural order. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "boundary",
+      "file": "public/images/projects/boundary.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. An experiment in guarded agent tools: a cobalt glass cube enclosed by an open precision-machined brushed-aluminum protective frame, a thin amber line marking a threshold. Calm architectural still life, visibility and careful boundaries, no lock or security stock cliché. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "trimly",
+      "file": "public/images/projects/trimly.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. A mobile haircut exploration: matte silver electric hair clipper, a pale-sage curved comb, and a folded ivory style-reference booklet with a small abstract charcoal hair silhouette. Airy grooming editorial still life on a very pale mint backdrop. Distinct from scissors image. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "paywall-lab",
+      "file": "public/images/projects/paywall-lab.webp",
+      "prompt": "Generate one premium portfolio project cover image, wide landscape 16:9 composition. A subscription experiment concept: two freestanding frosted-glass panels side by side on small ivory plinths, each holding different simple geometric arrangements, one small amber measuring sphere between them. Subtle pale lilac backdrop and cobalt accents. Physical comparison lab still life, no charts or UI. Art direction: refined Apple product photography meets tactile contemporary design objects, soft ivory surfaces, natural diffused studio light, delicate realistic contact shadows, restrained material palette, subtle grain, ample negative space. Three-quarter camera angle, objects centered within middle 65% of frame to survive a 16:9 crop. Photorealistic 3D still-life. No lettering, no text, no interface screenshots, no browser chrome, no gradients that look like generic AI wallpaper, no watermark. One finished image, no collage. "
+    },
+    {
+      "slug": "logo",
+      "file": "public/images/brand-mark.png",
+      "prompt": "Create one distinctive abstract logo symbol for a premium independent product builder portfolio. Square canvas, truly transparent background. A compact geometric folded ribbon that makes an unexpected sculptural knot or open aperture, two interlocking angular strokes, clever negative space, strong silhouette readable at 32 pixels. Main color near-black ink #202124 with one small cobalt-blue #2866df folded face. Flat vector-like crisp edges, refined minimal Swiss identity design. Center symbol filling 80% of square canvas. No letters, no H, no dots, no wordmark, no text, no rounded app tile, no drop shadow, no 3D lighting, no gradients, no surrounding mockup. One final mark only."
+    }
+  ]
+}

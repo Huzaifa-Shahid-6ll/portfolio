@@ -5,6 +5,7 @@ import { ProjectGrid } from "@/lib/components/ProjectGrid";
 import { ProjectVisual } from "@/lib/components/ProjectVisual";
 import { homepageProjects } from "@/lib/content/projects";
 import { ProductWalkthrough } from "@/lib/components/ProductWalkthrough";
+import { GridPattern } from "@/components/ui/grid-pattern";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,6 +34,7 @@ function Home() {
       <SiteNav />
       <main id="main" className="flex-1">
         <section className="home-hero" aria-labelledby="hero-title">
+          <GridPattern className="hero-background" focusable="false" />
           <p className="hero-intro">Huzaifa Shahid · AI product builder</p>
           <h1 id="hero-title" className="hero-title">
             Useful software.
@@ -56,7 +58,7 @@ function Home() {
 
         <section className="page-shell" aria-label="Featured project: Orbit">
           <Link to="/projects/$slug" params={{ slug: "orbit" }} className="block hero-project">
-            <ProjectVisual slug="orbit" />
+            <ProjectVisual slug="orbit" loading="eager" />
           </Link>
           <div className="hero-project-meta">
             <p className="hero-project-name">

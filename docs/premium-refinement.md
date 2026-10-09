@@ -42,4 +42,16 @@ The registry installer updated unrelated Radix packages while resolving its depe
 
 After restoration, the mobile catalogue filter, command search, Escape, and focus return passed again. The hydrated mobile Lighthouse snapshot still scored 100 for accessibility with zero failures.
 
-The production build still reports a shared JavaScript chunk above its warning threshold (about 571 kB before gzip). Physical-device behavior and PDF pagination were not tested. These are local commits; no deployment or push was performed.
+The production build still reports a shared JavaScript chunk above its warning threshold (about 571 kB before gzip). Physical-device behavior and PDF pagination were not tested. At the initial refinement stage, these were local commits; no deployment or push had been performed.
+
+## Generated artwork, background, and typography
+
+The project covers now use eight images produced with the built-in image generation tool. Each subject follows its project's purpose; shared studio lighting and materials keep the collection consistent. They are labeled "Concept artwork" rather than presented as product screenshots. The generated transparent geometric mark replaces the header monogram and supplies the favicon. Full prompts and asset paths are recorded in [generated-artwork.json](generated-artwork.json).
+
+Covers retain their original dimensions and are encoded as WebP (about 70–167 kB each). Cards load lazily; the homepage and case-study hero images load eagerly. No image-processing dependency was added to the application.
+
+The hero uses Magic UI's static [Grid Pattern](https://magicui.design/docs/components/grid-pattern), found through [Shoogle](https://shoogle.dev/directory). It fades behind the heading, follows the theme, ignores pointer input, and is hidden in high-contrast modes. It has no animation or additional runtime dependencies. Its MIT notice is retained with the other component notices.
+
+Typography pairs [Manrope](https://fonts.google.com/specimen/Manrope) headings with [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) body text and controls. Latin variable WOFF2 files are served locally with swap and preload, totaling about 54 kB. Missing glyphs fall back to the system stack. Original SIL Open Font License notices accompany both files in `public/fonts/`. Font sources: Google's Fonts CSS service and the [Manrope](https://github.com/google/fonts/tree/main/ofl/manrope) / [Source Sans 3](https://github.com/google/fonts/tree/main/ofl/sourcesans3) source directories.
+
+Final verification passed: production build, TypeScript, targeted ESLint, existing accordion SSR assertions, and whitespace checks. Browser review covered the homepage, catalogue, and SkillTube case at desktop and 390 px, loaded font faces, all eight covers, the logo, and overflow. Dark mode was checked and restored. The hero grid has no animation, is hidden from accessibility, and ignores pointer events. The emitted production assets include all font and image files. The dependency manifest and lockfile remain unchanged. [Catalogue preview](generated-artwork-preview.png).

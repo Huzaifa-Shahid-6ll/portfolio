@@ -120,7 +120,7 @@ function ProjectPage() {
           )}
         </header>
         <div className="page-shell case-visual">
-          <ProjectVisual slug={project.slug} />
+          <ProjectVisual slug={project.slug} loading="eager" />
         </div>
         <div className="page-shell case-study-layout">
           <aside className="case-study-sidebar">

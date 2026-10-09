@@ -50,8 +50,8 @@ export function SiteNav() {
       </a>
       <div className="nav-inner">
         <Link to="/" className="wordmark">
-          <span className="monogram" aria-hidden>
-            h.
+          <span className="brand-mark" aria-hidden>
+            <img src="/images/brand-mark.png" alt="" width={48} height={48} />
           </span>
           <span>
             Huzaifa Shahid<span className="wordmark-role">Product builder</span>

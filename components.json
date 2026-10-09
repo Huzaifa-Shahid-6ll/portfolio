@@ -20,6 +20,7 @@
   },
   "registries": {
     "@motion-primitives": "https://motion-primitives.com/c/{name}.json",
-    "@animate-ui": "https://animate-ui.com/r/{name}.json"
+    "@animate-ui": "https://animate-ui.com/r/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}"
   }
 }
