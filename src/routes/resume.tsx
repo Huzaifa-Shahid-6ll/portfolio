@@ -1,14 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
-import { projects } from "@/lib/content/projects";
+import { homepageProjects, site } from "@/lib/content/projects";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
     meta: [
       { title: "Resume — Huzaifa Shahid" },
-      { name: "description", content: "Summary, focus areas, selected projects, and skills." },
+      { name: "description", content: "Huzaifa Shahid's project experience and technical focus." },
       { property: "og:title", content: "Resume — Huzaifa Shahid" },
-      { property: "og:description", content: "AI product builder — resume." },
+      { property: "og:description", content: "Project experience and technical focus." },
       { property: "og:url", content: "/resume" },
     ],
     links: [{ rel: "canonical", href: "/resume" }],
@@ -21,126 +22,107 @@ function ResumePage() {
     <div className="min-h-screen flex flex-col bg-bg">
       <SiteNav />
       <main id="main" className="flex-1">
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-3xl px-4 md:px-6 py-16">
-            <div data-reveal="snap" className="flex items-center justify-between flex-wrap gap-3">
+        <div className="page-shell py-20 md:py-28 print:py-0">
+          <div className="mx-auto max-w-3xl">
+            <div className="flex flex-wrap items-start justify-between gap-6">
               <div>
-                <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Resume</p>
-                <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
-                  Huzaifa Shahid
-                </h1>
-                <p className="mt-2 text-text-muted">AI product builder · ergatikós</p>
+                <p className="eyebrow">Resume</p>
+                <h1 className="page-heading mt-5">{site.name}</h1>
+                <p className="mt-4 text-lg text-text-muted">AI product builder</p>
+                <a href={`mailto:${site.email}`} className="text-link mt-3 inline-flex text-sm">
+                  {site.email}
+                </a>
               </div>
-              <button onClick={() => window.print()} className="btn-secondary">
-                Download / Print{" "}
-                <span className="cta-arrow" aria-hidden>
-                  -&gt;
-                </span>
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="btn-secondary print:hidden"
+              >
+                Print / save PDF <span aria-hidden="true">↗</span>
               </button>
             </div>
-
-            <div className="mt-10 space-y-10">
-              <Block title="Summary">
+            <div className="mt-14 space-y-10">
+              <Block title="Profile">
                 <p>
-                  Product-focused developer building AI-native products: agents, SaaS systems,
-                  mobile/web apps, and automation workflows. Strong on UX, system design, and
-                  shipping the smallest useful version.
+                  I build AI products and the interfaces around them. My project work spans agent
+                  workspaces and consumer apps, with particular attention to private data and the
+                  points where a person needs to stay in control.
                 </p>
               </Block>
-
-              <Block title="Focus areas">
-                <ul className="grid sm:grid-cols-2 gap-1.5 text-sm">
+              <Block title="Focus">
+                <ul className="grid gap-3 text-sm sm:grid-cols-2">
                   {[
-                    "AI agents & workflows",
-                    "SaaS products & dashboards",
-                    "Mobile (Expo / React Native)",
-                    "Frontend / product UX",
-                    "Backend & systems thinking",
-                    "Experimentation & growth",
-                  ].map((i) => (
-                    <li key={i}>{i}</li>
+                    "AI agent workflows",
+                    "Product interfaces",
+                    "Web application development",
+                    "Mobile prototypes",
+                  ].map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </Block>
-
-              <Block title="Selected projects">
-                <ul className="space-y-4">
-                  {projects.map((p) => (
-                    <li key={p.slug} className="border-l-2 border-accent pl-4">
-                      <div className="flex items-baseline justify-between gap-2 flex-wrap">
+              <Block title="Selected project work">
+                <ul className="space-y-6">
+                  {homepageProjects.map((project) => (
+                    <li key={project.slug} className="break-inside-avoid">
+                      <div className="flex flex-wrap items-baseline justify-between gap-2">
                         <Link
                           to="/projects/$slug"
-                          params={{ slug: p.slug }}
-                          className="font-semibold hover:text-accent"
+                          params={{ slug: project.slug }}
+                          className="text-lg font-semibold hover:text-accent"
                         >
-                          {p.title}
+                          {project.title}
                         </Link>
-                        <span className="mono-font text-xs text-text-soft">
-                          {p.status} · {p.type}
-                        </span>
+                        <span className="text-xs text-text-muted">{project.status}</span>
                       </div>
-                      <p className="text-sm text-text-muted mt-1">{p.oneLiner}</p>
+                      <p className="mt-1 text-sm text-text-muted">{project.oneLiner}</p>
+                      <p className="mt-2 text-xs text-text-muted">{project.role}</p>
                     </li>
                   ))}
                 </ul>
               </Block>
-
-              <Block title="Technical skills">
-                <div className="grid sm:grid-cols-2 gap-4 text-sm">
-                  <SkillRow label="Languages" value="TypeScript, JavaScript, Python" />
-                  <SkillRow label="Frontend" value="Next.js, React, Tailwind, Shared CNUI" />
-                  <SkillRow label="Mobile" value="Expo, React Native, Clerk" />
-                  <SkillRow label="Backend" value="Node, Bun, Hono, BetterAuth, Postgres" />
-                  <SkillRow
-                    label="AI"
-                    value="Mastra, LangGraph, Claude Agent SDK, Vercel AI SDK, MCP"
-                  />
-                  <SkillRow label="Spec-Driven Development" value="BMAD Method, GitHub Spec Kit" />
+              <Block title="Tools used across projects">
+                <div className="grid gap-5 text-sm sm:grid-cols-2">
+                  <SkillRow label="Web" value="TypeScript, React, Next.js, Tailwind CSS" />
+                  <SkillRow label="Mobile" value="Expo, React Native" />
+                  <SkillRow label="Data & backend" value="Node.js, Postgres, Supabase, Convex" />
+                  <SkillRow label="AI workflows" value="Vercel AI SDK, OpenRouter, MCP" />
                 </div>
               </Block>
-
-              <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
+              <div className="flex flex-wrap gap-4 border-t border-border pt-8 print:hidden">
                 <Link to="/contact" className="btn-primary">
-                  Contact me{" "}
-                  <span className="cta-arrow" aria-hidden>
-                    -&gt;
-                  </span>
+                  Get in touch <span aria-hidden="true">↗</span>
                 </Link>
-                <a
-                  href="https://github.com/Huzaifa-Shahid-6ll"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-secondary"
-                >
-                  GitHub{" "}
-                  <span className="cta-arrow" aria-hidden>
-                    -&gt;
-                  </span>
+                <a href={site.github} target="_blank" rel="noreferrer" className="btn-secondary">
+                  GitHub <span aria-hidden="true">↗</span>
                 </a>
               </div>
+              <a href={site.github} className="hidden text-sm print:block">
+                {site.github}
+              </a>
             </div>
           </div>
-        </section>
+        </div>
       </main>
       <SiteFooter />
     </div>
   );
 }
 
-function Block({ title, children }: { title: string; children: React.ReactNode }) {
+function Block({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section data-reveal>
-      <h2 className="pixel-font text-sm uppercase tracking-wider text-accent">{title}</h2>
-      <div className="mt-3 text-base leading-relaxed">{children}</div>
+    <section>
+      <h2 className="eyebrow">{title}</h2>
+      <div className="mt-4 leading-relaxed text-text-muted">{children}</div>
     </section>
   );
 }
 
 function SkillRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border-b border-border pb-2">
-      <p className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">{label}</p>
-      <p className="mt-0.5">{value}</p>
+    <div>
+      <p className="font-medium text-text">{label}</p>
+      <p className="mt-1">{value}</p>
     </div>
   );
 }

@@ -1,21 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
-import PixelCard from "@/lib/components/PixelCard";
 
 export const Route = createFileRoute("/stack")({
   head: () => ({
     meta: [
       { title: "Stack — Huzaifa Shahid" },
-      {
-        name: "description",
-        content:
-          "Tools and technologies I reach for across frontend, mobile, backend, AI, and product.",
-      },
+      { name: "description", content: "The tools behind my web apps and AI workflows." },
       { property: "og:title", content: "Stack — Huzaifa Shahid" },
-      {
-        property: "og:description",
-        content: "Frontend, mobile, backend, AI, and product tooling.",
-      },
+      { property: "og:description", content: "The tools behind the work." },
       { property: "og:url", content: "/stack" },
     ],
     links: [{ rel: "canonical", href: "/stack" }],
@@ -25,33 +17,25 @@ export const Route = createFileRoute("/stack")({
 
 const groups = [
   {
-    title: "Frontend",
-    items: ["Next.js", "React", "Shared CNUI", "TypeScript", "Tailwind CSS", "Vite"],
-  },
-  { title: "Mobile", items: ["Expo", "React Native", "Clerk", "Image / camera pipelines"] },
-  {
-    title: "Backend",
-    items: [
-      "TypeScript",
-      "Node / Bun",
-      "Hono",
-      "BetterAuth",
-      "Drizzle + Postgres",
-      "Edge runtimes & RLS",
-    ],
+    title: "Web interfaces",
+    context: "Product screens and the interactions between them.",
+    items: ["TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
-    title: "AI & Agents",
-    items: [
-      "Mastra",
-      "LangGraph",
-      "Claude Agent SDK",
-      "Vercel AI SDK",
-      "MCP + Composio",
-      "Memory + retrieval",
-    ],
+    title: "Mobile",
+    context: "Camera flows and practical output in TAYPR.",
+    items: ["Expo", "React Native", "Clerk", "Convex"],
   },
-  { title: "Spec-Driven Development", items: ["BMAD Method", "GitHub Spec Kit"] },
+  {
+    title: "Data & backend",
+    context: "Private workspaces and jobs that take time to finish.",
+    items: ["Node.js / Bun", "Hono", "Postgres / Supabase", "Drizzle"],
+  },
+  {
+    title: "AI workflows",
+    context: "Tool use and clear points for human review.",
+    items: ["Vercel AI SDK", "OpenRouter", "MCP", "Structured outputs"],
+  },
 ];
 
 function StackPage() {
@@ -59,33 +43,34 @@ function StackPage() {
     <div className="min-h-screen flex flex-col bg-bg">
       <SiteNav />
       <main id="main" className="flex-1">
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-5xl px-4 md:px-6 py-16">
-            <div data-reveal="snap">
-              <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Stack</p>
-              <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
-                Tools I reach for.
-              </h1>
-              <p className="mt-4 max-w-2xl text-text-muted text-lg">
-                Pragmatic choices, picked because they make me faster or make the product better.
-              </p>
-            </div>
-            <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {groups.map((g) => (
-                <PixelCard key={g.title} data-reveal className="pixel-panel pixel-hover p-5">
-                  <h2 className="pixel-font text-sm uppercase tracking-wider text-accent">
-                    {g.title}
-                  </h2>
-                  <ul className="mt-3 space-y-1.5 text-sm">
-                    {g.items.map((i) => (
-                      <li key={i}>{i}</li>
-                    ))}
-                  </ul>
-                </PixelCard>
-              ))}
-            </div>
+        <div className="page-shell py-20 md:py-28">
+          <p className="eyebrow">Stack</p>
+          <h1 className="page-heading mt-5">
+            The tools
+            <br />
+            behind the work.
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-text-muted">
+            The stack changes with the problem. These are tools you'll find across my current
+            projects, including prototypes still taking shape.
+          </p>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {groups.map((group) => (
+              <section key={group.title} className="panel p-7 md:p-9">
+                <h2 className="text-2xl font-semibold tracking-tight">{group.title}</h2>
+                <p className="mt-3 text-text-muted">{group.context}</p>
+                <ul className="mt-7 grid grid-cols-2 gap-x-5 gap-y-3 text-sm">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            ))}
           </div>
-        </section>
+          <Link to="/projects" className="text-link mt-10 inline-flex">
+            See them in context <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
       </main>
       <SiteFooter />
     </div>

@@ -104,7 +104,9 @@ const TextType = ({
       ease: "power2.inOut",
     });
 
-    return () => tween.kill();
+    return () => {
+      tween.kill();
+    };
   }, [showCursor, cursorBlinkDuration]);
 
   useEffect(() => {

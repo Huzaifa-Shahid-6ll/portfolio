@@ -1,18 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
-import { ProjectCard } from "@/lib/components/ProjectCard";
+import { ProjectGrid } from "@/lib/components/ProjectGrid";
 import { projects } from "@/lib/content/projects";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
-      { title: "Projects — Huzaifa Shahid" },
+      { title: "Work — Huzaifa Shahid" },
       {
         name: "description",
-        content: "Selected projects: Orbit, Trimly, Hermes, and Paywall Lab.",
+        content:
+          "AI products, mobile applications, and experiments. Explore Orbit, SkillTube, Errby, TAYPR, Listing Desk, and work in progress.",
       },
-      { property: "og:title", content: "Projects — Huzaifa Shahid" },
-      { property: "og:description", content: "AI-native products and product-focused builds." },
+      { property: "og:title", content: "Work — Huzaifa Shahid" },
+      {
+        property: "og:description",
+        content: "The projects, the decisions, and the work still ahead.",
+      },
       { property: "og:url", content: "/projects" },
     ],
     links: [{ rel: "canonical", href: "/projects" }],
@@ -22,29 +26,26 @@ export const Route = createFileRoute("/projects/")({
 
 function ProjectsPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-bg">
+    <div className="min-h-screen flex flex-col">
       <SiteNav />
       <main id="main" className="flex-1">
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-6xl px-4 md:px-6 py-16">
-            <div data-reveal="snap">
-              <p className="pixel-font text-xs uppercase tracking-[0.18em] text-accent">Projects</p>
-              <h1 className="mt-3 text-5xl md:text-6xl font-bold tracking-tight">
-                A curated set of builds.
-              </h1>
-              <p className="mt-4 max-w-2xl text-text-muted text-lg">
-                Four projects across AI agents, SaaS, mobile, and product experiments. Each one is
-                real work — shipped, in build, or actively prototyped.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="mx-auto max-w-6xl px-4 md:px-6 py-12">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
-            {projects.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
-            ))}
-          </div>
+        <header className="page-shell projects-header">
+          <p className="eyebrow">Work & experiments</p>
+          <h1 className="page-heading">
+            A closer look
+            <br />
+            at what I’m building.
+          </h1>
+          <p>
+            From an agent workspace to a barber brief. Each project includes the decisions behind it
+            and a clear account of what’s still in progress.
+          </p>
+        </header>
+        <section className="page-shell projects-main" aria-labelledby="catalogue-title">
+          <h2 id="catalogue-title" className="sr-only">
+            Project catalogue
+          </h2>
+          <ProjectGrid projects={projects} />
         </section>
       </main>
       <SiteFooter />

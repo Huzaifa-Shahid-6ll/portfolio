@@ -1,7 +1,9 @@
-import { shaderMaterial, useTrailTexture } from "@react-three/drei";
-import { Canvas, CanvasProps, ThreeEvent, useThree } from "@react-three/fiber";
+import { shaderMaterial } from "@react-three/drei";
+import { Canvas, CanvasProps, useThree } from "@react-three/fiber";
 import React, { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
+// Perf-patched vendored copy — see src/lib/third-party/useTrailTexture.ts.
+import { useTrailTexture } from "../third-party/useTrailTexture";
 
 interface GooeyFilterProps {
   id?: string;
@@ -15,6 +17,8 @@ interface SceneProps {
   interpolate: number;
   easingFunction: (x: number) => number;
   pixelColor: string;
+  maxPoints: number;
+  maxInterpolatedPerTouch: number;
 }
 
 interface PixelTrailProps {
@@ -28,6 +32,10 @@ interface PixelTrailProps {
   gooeyFilter?: { id: string; strength: number };
   color?: string;
   className?: string;
+  /** Hard cap on live trail points (oldest dropped first). */
+  maxPoints?: number;
+  /** Max interpolated points a single pointer move may inject. */
+  maxInterpolatedPerTouch?: number;
 }
 
 const GooeyFilter: React.FC<GooeyFilterProps> = ({ id = "goo-filter", strength = 10 }) => {
@@ -101,6 +109,8 @@ function Scene({
   interpolate,
   easingFunction,
   pixelColor,
+  maxPoints,
+  maxInterpolatedPerTouch,
 }: SceneProps) {
   const size = useThree((s) => s.size);
   const viewport = useThree((s) => s.viewport);
@@ -122,7 +132,9 @@ function Scene({
     maxAge: maxAge,
     interpolate: interpolate || 0.1,
     ease: easingFunction || identityEase,
-  }) as [THREE.Texture | null, (e: ThreeEvent<PointerEvent>) => void];
+    maxPoints,
+    maxInterpolatedPerTouch,
+  });
 
   useEffect(() => {
     if (!trail) return;
@@ -162,6 +174,8 @@ export default function PixelTrail({
   gooeyFilter,
   color = "#ffffff",
   className = "",
+  maxPoints = 600,
+  maxInterpolatedPerTouch = 20,
 }: PixelTrailProps) {
   // SSR guard: this renderer needs WebGL + `window`, which don't exist during
   // server rendering (TanStack Start). Defer the <Canvas> until after hydration
@@ -190,6 +204,8 @@ export default function PixelTrail({
           interpolate={interpolate}
           easingFunction={easingFunction}
           pixelColor={color}
+          maxPoints={maxPoints}
+          maxInterpolatedPerTouch={maxInterpolatedPerTouch}
         />
       </Canvas>
     </>

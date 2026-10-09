@@ -1,24 +1,26 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
 import { StatusBadge } from "@/lib/components/ProjectCard";
-import { projects, type Project } from "@/lib/content/projects";
+import { ProjectVisual } from "@/lib/components/ProjectVisual";
+import { projects } from "@/lib/content/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
-    const project = projects.find((p) => p.slug === params.slug);
+    const project = projects.find((project) => project.slug === params.slug);
     if (!project) throw notFound();
     return { project };
   },
   head: ({ loaderData, params }) => {
-    const p = loaderData?.project;
-    const title = p ? `${p.title} — Huzaifa Shahid` : "Project — Huzaifa Shahid";
-    const desc = p?.oneLiner ?? "Project case study.";
+    const project = loaderData?.project;
+    const title = project ? `${project.title} — Huzaifa Shahid` : "Project — Huzaifa Shahid";
+    const description = project?.oneLiner ?? "A closer look at the work.";
     return {
       meta: [
         { title },
-        { name: "description", content: desc },
+        { name: "description", content: description },
         { property: "og:title", content: title },
-        { property: "og:description", content: desc },
+        { property: "og:description", content: description },
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/projects/${params.slug}` },
       ],
@@ -26,116 +28,126 @@ export const Route = createFileRoute("/projects/$slug")({
     };
   },
   notFoundComponent: () => (
-    <div className="min-h-screen flex flex-col bg-bg">
-      <SiteNav />
-      <main className="flex-1 flex items-center justify-center px-4">
-        <div className="pixel-panel p-8 text-center max-w-md">
-          <h1 className="text-2xl font-semibold">Project not found</h1>
-          <p className="mt-2 text-text-muted text-sm">That case study doesn't exist.</p>
-          <Link to="/projects" className="btn-primary mt-6">
-            Back to projects
-          </Link>
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
+    <ProjectFallback
+      title="Project not found."
+      body="That project page doesn't exist. The rest of the work is a step away."
+    />
   ),
-  errorComponent: ({ error }) => (
-    <div className="min-h-screen flex flex-col bg-bg">
-      <SiteNav />
-      <main className="flex-1 flex items-center justify-center px-4">
-        <div className="pixel-panel p-8 text-center max-w-md">
-          <h1 className="text-2xl font-semibold">Something went wrong</h1>
-          <p className="mt-2 text-text-muted text-sm">{error.message}</p>
-          <Link to="/projects" className="btn-primary mt-6">
-            Back to projects
-          </Link>
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
+  errorComponent: () => (
+    <ProjectFallback
+      title="This page couldn't load."
+      body="Please try again, or return to the project catalogue."
+    />
   ),
   component: ProjectPage,
 });
 
+function ProjectFallback({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <SiteNav />
+      <main id="main" className="page-shell flex-1 py-24">
+        <h1 className="page-heading">{title}</h1>
+        <p className="mt-6 text-text-muted">{body}</p>
+        <Link to="/projects" className="btn-primary mt-8">
+          <ArrowLeft size={16} aria-hidden />
+          Back to work
+        </Link>
+      </main>
+      <SiteFooter />
+    </div>
+  );
+}
+
 function ProjectPage() {
   const { project } = Route.useLoaderData();
+  const next =
+    projects[(projects.findIndex((item) => item.slug === project.slug) + 1) % projects.length];
   return (
-    <div className="min-h-screen flex flex-col bg-bg">
+    <div className="min-h-screen flex flex-col">
       <SiteNav />
       <main id="main" className="flex-1">
-        {/* Hero */}
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-4xl px-4 md:px-6 py-16">
-            <Link
-              to="/projects"
-              className="pixel-nav-link pixel-font text-xs uppercase tracking-wider text-text-soft hover:text-accent"
-            >
-              All projects
-            </Link>
-            <div data-reveal="snap" className="mt-6 flex flex-wrap items-center gap-3">
-              <span className="pixel-chip micro-shake">
-                <span className="mono-font">{project.type}</span>
-              </span>
-              <StatusBadge status={project.status} />
-            </div>
-            <div data-reveal>
-              <h1 className="mt-5 text-5xl md:text-7xl font-bold tracking-tight">
-                {project.title}
-              </h1>
-              <p className="mt-4 text-xl text-text-muted">{project.oneLiner}</p>
-              <p className="mt-4 text-base leading-relaxed max-w-2xl">{project.summary}</p>
-            </div>
-            <div data-reveal className="mt-8 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-primary">
-                Contact me about {project.title}{" "}
-                <span className="cta-arrow" aria-hidden>
-                  -&gt;
-                </span>
-              </Link>
-              <a
-                href="https://github.com/Huzaifa-Shahid-6ll"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary"
-              >
-                GitHub{" "}
-                <span className="cta-arrow" aria-hidden>
-                  -&gt;
-                </span>
-              </a>
-            </div>
-            <div className="mt-10 grid sm:grid-cols-2 gap-4 text-sm">
-              <MetaCard label="Role" value={project.role} />
-              <MetaCard label="Status" value={project.status} />
-            </div>
-          </div>
-        </section>
-
-        {/* Case study */}
-        <article className="mx-auto max-w-4xl px-4 md:px-6 py-12 space-y-12">
-          <CaseSection eyebrow="01" title="Problem" body={project.problem} />
-          <CaseSection eyebrow="02" title="Solution" body={project.solution} />
-          <CaseSection eyebrow="03" title="My Role" body={project.myRole} />
-          <CaseList eyebrow="04" title="Stack" items={project.stack} />
-          <CaseList eyebrow="05" title="Hard Parts" items={project.hardParts} />
-          <CaseSection eyebrow="06" title="Learnings" body={project.learnings} />
-
-          <div
-            data-reveal
-            className="pixel-panel pixel-hover p-6 flex flex-wrap items-center justify-between gap-4"
-          >
+        <header className="page-shell case-header">
+          <Link to="/projects" className="text-link">
+            <ArrowLeft size={14} aria-hidden />
+            All work
+          </Link>
+          <h1 className="page-heading">
+            {project.title}
+            <span className="accent-dot">.</span>
+          </h1>
+          <p className="case-description">{project.summary}</p>
+          <dl className="case-meta">
             <div>
-              <p className="pixel-font text-xs uppercase tracking-wider text-text-soft">
-                Next step
-              </p>
-              <p className="mt-1 font-semibold">Want to talk about {project.title}?</p>
+              <dt>Project</dt>
+              <dd>{project.type}</dd>
             </div>
-            <Link to="/contact" className="btn-primary">
-              Contact me{" "}
-              <span className="cta-arrow" aria-hidden>
-                -&gt;
-              </span>
+            <div>
+              <dt>Focus</dt>
+              <dd>{project.role}</dd>
+            </div>
+            <div>
+              <dt>Stage</dt>
+              <dd>
+                <StatusBadge status={project.status} />
+              </dd>
+            </div>
+          </dl>
+          {project.links && (
+            <div className="mt-6 flex flex-wrap gap-4">
+              {project.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-link"
+                >
+                  {link.label}
+                  <ArrowUpRight size={14} aria-hidden />
+                </a>
+              ))}
+            </div>
+          )}
+        </header>
+        <div className="page-shell case-visual">
+          <ProjectVisual slug={project.slug} />
+        </div>
+        <article className="case-content" aria-label={`Inside ${project.title}`}>
+          <CaseSection title="The problem">
+            <p>{project.problem}</p>
+          </CaseSection>
+          <CaseSection title="The approach">
+            <p>{project.solution}</p>
+          </CaseSection>
+          <CaseSection title="My focus">
+            <p>{project.myRole}</p>
+          </CaseSection>
+          <CaseSection title="Built with">
+            <ul>
+              {project.stack.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </CaseSection>
+          <CaseSection title="The hard parts">
+            <ul>
+              {project.hardParts.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </CaseSection>
+          <CaseSection title="What I’m learning">
+            <p>{project.learnings}</p>
+          </CaseSection>
+          <div className="case-next">
+            <div>
+              <p className="eyebrow">Keep exploring</p>
+              <h2>{next.title}</h2>
+              <p className="mt-1 text-sm text-text-muted">{next.oneLiner}</p>
+            </div>
+            <Link to="/projects/$slug" params={{ slug: next.slug }} className="btn-secondary">
+              Next project <ArrowRight size={16} aria-hidden />
             </Link>
           </div>
         </article>
@@ -145,43 +157,11 @@ function ProjectPage() {
   );
 }
 
-function MetaCard({ label, value }: { label: string; value: string }) {
+function CaseSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div data-reveal className="pixel-panel pixel-hover p-4">
-      <p className="pixel-font text-[0.7rem] uppercase tracking-wider text-text-soft">{label}</p>
-      <p className="mt-1">{value}</p>
-    </div>
-  );
-}
-
-function CaseSection({ eyebrow, title, body }: { eyebrow: string; title: string; body: string }) {
-  return (
-    <section data-reveal className="grid md:grid-cols-4 gap-6 border-t border-border pt-8">
-      <div>
-        <p className="pixel-font text-accent text-sm">{eyebrow}</p>
-        <h2 className="text-3xl font-bold tracking-tight mt-1">{title}</h2>
-      </div>
-      <div className="md:col-span-3">
-        <p className="text-base leading-relaxed">{body}</p>
-      </div>
-    </section>
-  );
-}
-
-function CaseList({ eyebrow, title, items }: { eyebrow: string; title: string; items: string[] }) {
-  return (
-    <section data-reveal className="grid md:grid-cols-4 gap-6 border-t border-border pt-8">
-      <div>
-        <p className="pixel-font text-accent text-sm">{eyebrow}</p>
-        <h2 className="text-3xl font-bold tracking-tight mt-1">{title}</h2>
-      </div>
-      <ul className="md:col-span-3 space-y-2">
-        {items.map((i) => (
-          <li key={i} className="text-base">
-            {i}
-          </li>
-        ))}
-      </ul>
+    <section className="case-section">
+      <h2>{title}</h2>
+      <div>{children}</div>
     </section>
   );
 }
