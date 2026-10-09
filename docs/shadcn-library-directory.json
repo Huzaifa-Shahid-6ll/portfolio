@@ -1,0 +1,2181 @@
+{
+  "retrievedAt": "2026-10-09",
+  "directory": "https://shoogle.dev/directory",
+  "source": "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/registry/directory.json",
+  "runtimeIndex": "https://ui.shadcn.com/r/registries.json",
+  "count": 434,
+  "verification": "All 44 live Shoogle directory pages fetched; 434 unique registry names equal official directory source.",
+  "licenseScope": "Only Magic UI, Motion Primitives, and Animate UI reviewed individually; other entries are not verified free or license-compatible.",
+  "registries": [
+    {
+      "name": "@000h-cojeev",
+      "homepage": "https://000h.cojeev.com",
+      "url": "https://000h.cojeev.com/r/{name}.json"
+    },
+    {
+      "name": "@1st-pouf",
+      "homepage": "https://1st-pouf.worksonmy.dev",
+      "url": "https://1st-pouf.worksonmy.dev/r/{name}.json"
+    },
+    {
+      "name": "@23rd",
+      "homepage": "https://23rd.dev",
+      "url": "https://23rd.dev/r/{name}.json"
+    },
+    {
+      "name": "@3d-viewer",
+      "homepage": "https://shadcn-3d-viewer.vercel.app",
+      "url": "https://shadcn-3d-viewer.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@7ovr",
+      "homepage": "https://7ovr.com",
+      "url": "https://7ovr.com/r/{name}.json"
+    },
+    {
+      "name": "@8bitcn",
+      "homepage": "https://www.8bitcn.com",
+      "url": "https://www.8bitcn.com/r/{name}.json"
+    },
+    {
+      "name": "@8starlabs-ui",
+      "homepage": "https://ui.8starlabs.com",
+      "url": "https://ui.8starlabs.com/r/{name}.json"
+    },
+    {
+      "name": "@aayurt",
+      "homepage": "https://8848.aayurtshrestha.com.np",
+      "url": "https://8848.aayurtshrestha.com.np/r/{name}.json"
+    },
+    {
+      "name": "@abstract",
+      "homepage": "https://build.abs.xyz",
+      "url": "https://build.abs.xyz/r/{name}/json"
+    },
+    {
+      "name": "@abui",
+      "homepage": "https://abui.io",
+      "url": "https://abui.io/r/{name}.json"
+    },
+    {
+      "name": "@aceternity",
+      "homepage": "https://ui.aceternity.com",
+      "url": "https://ui.aceternity.com/registry/{name}.json"
+    },
+    {
+      "name": "@aevr",
+      "homepage": "https://ui.aevr.online",
+      "url": "https://ui.aevr.online/r/{name}.json"
+    },
+    {
+      "name": "@afterglow",
+      "homepage": "https://afterglow.thebuilder.dk",
+      "url": "https://afterglow.thebuilder.dk/r/{name}.json"
+    },
+    {
+      "name": "@agent-ui-kit",
+      "homepage": "https://agent-ui-kit-demo.vercel.app",
+      "url": "https://agent-ui-kit-demo.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@agentblog",
+      "homepage": "https://agentblog.dev",
+      "url": "https://agentblog.dev/r/{name}.json"
+    },
+    {
+      "name": "@agentcn",
+      "homepage": "https://agentcn.vercel.app",
+      "url": "https://agentcn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@agentfaces",
+      "homepage": "https://ajibadedapo.github.io/agentfaces/",
+      "url": "https://ajibadedapo.github.io/agentfaces/r/{name}.json"
+    },
+    {
+      "name": "@agents-ui",
+      "homepage": "https://livekit.com/ui",
+      "url": "https://livekit.com/ui/r/{name}.json"
+    },
+    {
+      "name": "@agentui",
+      "homepage": "https://www.agentui.pro",
+      "url": "https://www.agentui.pro/r/{name}.json"
+    },
+    {
+      "name": "@ai-blocks",
+      "homepage": "https://webllm.org/blocks",
+      "url": "https://webllm.org/r/{name}.json"
+    },
+    {
+      "name": "@ai-elements",
+      "homepage": "https://ai-sdk.dev/elements",
+      "url": "https://ai-sdk.dev/elements/api/registry/{name}.json"
+    },
+    {
+      "name": "@ai2",
+      "homepage": "https://ai2.design",
+      "url": "https://ai2.design/r/{name}.json"
+    },
+    {
+      "name": "@aicanvas",
+      "homepage": "https://aicanvas.me",
+      "url": "https://aicanvas.me/r/{name}.json"
+    },
+    {
+      "name": "@akoder",
+      "homepage": "https://akoder.xyz",
+      "url": "https://akoder.xyz/r/{name}.json"
+    },
+    {
+      "name": "@algolia",
+      "homepage": "https://sitesearch.algolia.com",
+      "url": "https://sitesearch.algolia.com/r/{name}.json"
+    },
+    {
+      "name": "@amap",
+      "homepage": "https://map.ling.pub",
+      "url": "https://map.ling.pub/r/{name}.json"
+    },
+    {
+      "name": "@amarjay-ui",
+      "homepage": "https://ui.amarjay.com",
+      "url": "https://ui.amarjay.com/r/{name}.json"
+    },
+    {
+      "name": "@amicro",
+      "homepage": "https://amicro.vercel.app",
+      "url": "https://amicro.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@amplo",
+      "homepage": "https://amplo.ale.design",
+      "url": "https://amplo.ale.design/r/{name}.json"
+    },
+    {
+      "name": "@animate-ui",
+      "homepage": "https://animate-ui.com",
+      "url": "https://animate-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@animateicons",
+      "homepage": "https://animateicons.in",
+      "url": "https://animateicons.in/r/{name}.json"
+    },
+    {
+      "name": "@animbits",
+      "homepage": "https://animbits.dev",
+      "url": "https://animbits.dev/r/{name}.json"
+    },
+    {
+      "name": "@aniui",
+      "homepage": "https://aniui.dev",
+      "url": "https://aniui.dev/r/{name}.json"
+    },
+    {
+      "name": "@approvals-ui",
+      "homepage": "https://approvals-ui.vercel.app",
+      "url": "https://approvals-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@arc",
+      "homepage": "https://witharc.co/components",
+      "url": "https://witharc.co/r/{name}.json"
+    },
+    {
+      "name": "@ark-cn",
+      "homepage": "https://ark-cn.vercel.app",
+      "url": "https://ark-cn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@asanshay",
+      "homepage": "https://ds.asanshay.com",
+      "url": "https://ds.asanshay.com/r/{name}.json"
+    },
+    {
+      "name": "@assistant-ui",
+      "homepage": "https://www.assistant-ui.com",
+      "url": "https://r.assistant-ui.com/{name}.json"
+    },
+    {
+      "name": "@atelier",
+      "homepage": "https://www.atelier-ui.com",
+      "url": "https://www.atelier-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@atomloader",
+      "homepage": "https://atomloader.roothq.tech",
+      "url": "https://atomloader.roothq.tech/r/{name}.json"
+    },
+    {
+      "name": "@atroui",
+      "homepage": "https://www.atroui.com",
+      "url": "https://www.atroui.com/r/{name}.json"
+    },
+    {
+      "name": "@audiocn",
+      "homepage": "https://audiocn.dev",
+      "url": "https://www.audiocn.dev/r/{name}.json"
+    },
+    {
+      "name": "@auth0",
+      "homepage": "https://auth0.com",
+      "url": "https://ui.auth0.com/r/{name}.json"
+    },
+    {
+      "name": "@avertra-ui",
+      "homepage": "https://micomponents.micustomer.io",
+      "url": "https://micomponents.micustomer.io/r/{name}.json"
+    },
+    {
+      "name": "@awwwardedui",
+      "homepage": "https://awwwardedui.vercel.app",
+      "url": "https://awwwardedui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@axicharts",
+      "homepage": "https://axidify.github.io/axicharts/shadcn/registry",
+      "url": "https://axidify.github.io/axicharts/registry/{name}.json"
+    },
+    {
+      "name": "@balick",
+      "homepage": "https://ui.balick.me",
+      "url": "https://ui.balick.me/r/{name}.json"
+    },
+    {
+      "name": "@ballmac",
+      "homepage": "https://ui.ballmac.com",
+      "url": "https://ui.ballmac.com/r/{name}.json"
+    },
+    {
+      "name": "@baraile-loader",
+      "homepage": "https://shadcn-braille-loader.vercel.app",
+      "url": "https://shadcn-braille-loader.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@basecn",
+      "homepage": "https://basecn.dev",
+      "url": "https://basecn.dev/r/{name}.json"
+    },
+    {
+      "name": "@baselayer",
+      "homepage": "https://www.baselayer.dev",
+      "url": "https://www.baselayer.dev/r/{name}.json"
+    },
+    {
+      "name": "@benday",
+      "homepage": "https://benday.kacemmathlouthi.dev",
+      "url": "https://benday.kacemmathlouthi.dev/r/{name}.json"
+    },
+    {
+      "name": "@beste-ui",
+      "homepage": "https://ui.beste.co",
+      "url": "https://ui.beste.co/r/{name}.json"
+    },
+    {
+      "name": "@better-auth-ui",
+      "homepage": "https://better-auth-ui.com",
+      "url": "https://better-auth-ui.com/r/{style}/{name}.json"
+    },
+    {
+      "name": "@better-upload",
+      "homepage": "https://better-upload.com",
+      "url": "https://better-upload.com/r/{name}.json"
+    },
+    {
+      "name": "@beui",
+      "homepage": "https://beui.dev",
+      "url": "https://beui.dev/r/{name}.json"
+    },
+    {
+      "name": "@billingsdk",
+      "homepage": "https://billingsdk.com",
+      "url": "https://billingsdk.com/r/{name}.json"
+    },
+    {
+      "name": "@bits-ui",
+      "homepage": "https://bits-ui.netlify.app",
+      "url": "https://bits-ui.netlify.app/r/{name}.json"
+    },
+    {
+      "name": "@bjork-ui",
+      "homepage": "https://ui.isaiahbjork.com",
+      "url": "https://ui.isaiahbjork.com/{name}.json"
+    },
+    {
+      "name": "@bklit",
+      "homepage": "https://ui.bklit.com",
+      "url": "https://ui.bklit.com/r/{name}.json"
+    },
+    {
+      "name": "@blobatar",
+      "homepage": "https://blobatar.dev",
+      "url": "https://blobatar.dev/r/{name}.json"
+    },
+    {
+      "name": "@blockforge",
+      "homepage": "https://blockforge.terravidhal.me",
+      "url": "https://blockforge.terravidhal.me/r/{name}.json"
+    },
+    {
+      "name": "@blocks-so",
+      "homepage": "https://blocks.so",
+      "url": "https://blocks.so/r/{name}.json"
+    },
+    {
+      "name": "@blockus",
+      "homepage": "https://blockus.lndevui.com",
+      "url": "https://blockus.lndevui.com/r/{name}.json"
+    },
+    {
+      "name": "@blode",
+      "homepage": "https://blode.co/ui",
+      "url": "https://blode.co/ui/r/{name}.json"
+    },
+    {
+      "name": "@boldkit",
+      "homepage": "https://boldkit.dev",
+      "url": "https://boldkit.dev/r/{name}.json"
+    },
+    {
+      "name": "@brainless",
+      "homepage": "https://brainless.swerdlow.dev",
+      "url": "https://brainless.swerdlow.dev/r/{name}.json"
+    },
+    {
+      "name": "@brut-ui",
+      "homepage": "https://www.brut-ui.site",
+      "url": "https://www.brut-ui.site/r/{name}.json"
+    },
+    {
+      "name": "@bundui",
+      "homepage": "https://bundui.io",
+      "url": "https://bundui.io/r/{name}.json"
+    },
+    {
+      "name": "@buzzform",
+      "homepage": "https://form.buildnbuzz.com",
+      "url": "https://form.buildnbuzz.com/r/{name}.json"
+    },
+    {
+      "name": "@canvas-ui",
+      "homepage": "https://canvasui.dev/",
+      "url": "https://canvasui.dev/r/{name}.json"
+    },
+    {
+      "name": "@cardcn",
+      "homepage": "https://cardcn.dev",
+      "url": "https://cardcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@catalogs",
+      "homepage": "https://catalogs.dev",
+      "url": "https://api.catalogs.dev/shadcn/{name}.json"
+    },
+    {
+      "name": "@chamaac",
+      "homepage": "https://chamaac.com",
+      "url": "https://chamaac.com/r/{name}.json"
+    },
+    {
+      "name": "@channel3",
+      "homepage": "https://trychannel3.com/developers/ui",
+      "url": "https://ui.trychannel3.com/r/{name}.json"
+    },
+    {
+      "name": "@clerk",
+      "homepage": "https://clerk.com/docs/guides/development/shadcn-cli",
+      "url": "https://clerk.com/r/{name}.json"
+    },
+    {
+      "name": "@cligentic",
+      "homepage": "https://cligentic.railly.dev",
+      "url": "https://cligentic.railly.dev/r/{name}.json"
+    },
+    {
+      "name": "@cnippet",
+      "homepage": "https://ui.cnippet.dev/",
+      "url": "https://ui.cnippet.dev/r/{name}.json"
+    },
+    {
+      "name": "@cognicatch",
+      "homepage": "https://cognicatch.dev",
+      "url": "https://cognicatch.dev/registry/{name}.json"
+    },
+    {
+      "name": "@colorshot",
+      "homepage": "https://orshot.com/open-source/colorshot",
+      "url": "https://orshot.com/r/{name}.json"
+    },
+    {
+      "name": "@commercn",
+      "homepage": "https://commercn.com",
+      "url": "https://commercn.com/r/{name}.json"
+    },
+    {
+      "name": "@componentry",
+      "homepage": "https://componentry.fun",
+      "url": "https://componentry.fun/r/{name}.json"
+    },
+    {
+      "name": "@contentbit",
+      "homepage": "https://contentbit.dev",
+      "url": "https://contentbit.dev/r/{name}.json"
+    },
+    {
+      "name": "@corecn",
+      "homepage": "https://corecn.vercel.app",
+      "url": "https://corecn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@corr",
+      "homepage": "https://ui.corr.sh",
+      "url": "https://ui.corr.sh/r/{name}.json"
+    },
+    {
+      "name": "@corsair-ui",
+      "homepage": "https://corsairui.vercel.app",
+      "url": "https://kevingirelli.github.io/corsair-ui/r/{name}.json"
+    },
+    {
+      "name": "@coss",
+      "homepage": "https://coss.com/ui",
+      "url": "https://coss.com/ui/r/{name}.json"
+    },
+    {
+      "name": "@crafterui",
+      "homepage": "https://crafterui.com",
+      "url": "https://crafterui.com/r/{name}.json"
+    },
+    {
+      "name": "@craftui",
+      "homepage": "https://www.craftui.space",
+      "url": "https://www.craftui.space/r/{name}.json"
+    },
+    {
+      "name": "@creative-tim",
+      "homepage": "https://www.creative-tim.com/ui",
+      "url": "https://www.creative-tim.com/ui/r/{name}.json"
+    },
+    {
+      "name": "@cubby-ui",
+      "homepage": "https://www.cubby-ui.dev",
+      "url": "https://www.cubby-ui.dev/r/{name}.json"
+    },
+    {
+      "name": "@cult-ui",
+      "homepage": "https://www.cult-ui.com",
+      "url": "https://cult-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@d2",
+      "homepage": "https://ui.d2studio.dev",
+      "url": "https://ui.d2studio.dev/r/{name}.json"
+    },
+    {
+      "name": "@darx",
+      "homepage": "https://darshitdev.in/arts",
+      "url": "https://darshitdev.in/r/{name}.json"
+    },
+    {
+      "name": "@dashboardblocks",
+      "homepage": "https://www.dashboardblocks.com",
+      "url": "https://www.dashboardblocks.com/r/{style}/{name}.json"
+    },
+    {
+      "name": "@dashboardcn",
+      "homepage": "https://dashboardcn.com",
+      "url": "https://dashboardcn.com/r/{name}.json"
+    },
+    {
+      "name": "@data-table-filters",
+      "homepage": "https://data-table.openstatus.dev",
+      "url": "https://data-table.openstatus.dev/r/{name}.json"
+    },
+    {
+      "name": "@delego",
+      "homepage": "https://github.com/Delego-Dev/registry",
+      "url": "https://raw.githubusercontent.com/Delego-Dev/registry/main/public/r/{name}.json"
+    },
+    {
+      "name": "@delta",
+      "homepage": "https://deltacomponents.dev",
+      "url": "https://deltacomponents.dev/r/{name}.json"
+    },
+    {
+      "name": "@designali",
+      "homepage": "https://designali.com",
+      "url": "https://designali.com/r/{name}.json"
+    },
+    {
+      "name": "@devl",
+      "homepage": "https://devl.dev",
+      "url": "https://devl.dev/r/{name}.json"
+    },
+    {
+      "name": "@dgit",
+      "homepage": "https://ui.dgit.co",
+      "url": "https://ui.dgit.co/r/{name}.json"
+    },
+    {
+      "name": "@diarmuradi",
+      "homepage": "https://diarmuradi.com",
+      "url": "https://diarmuradi.com/r/{name}.json"
+    },
+    {
+      "name": "@diceui",
+      "homepage": "https://www.diceui.com/",
+      "url": "https://diceui.com/r/{style}/{name}.json"
+    },
+    {
+      "name": "@diklein",
+      "homepage": "https://diklein.com/components",
+      "url": "https://diklein.com/r/{name}.json"
+    },
+    {
+      "name": "@docscn",
+      "homepage": "https://docscn.dev",
+      "url": "https://docscn.dev/r/{name}.json"
+    },
+    {
+      "name": "@dominik-ui",
+      "homepage": "https://dominikkoch.dev/ui",
+      "url": "https://dominikkoch.dev/r/{name}.json"
+    },
+    {
+      "name": "@doras-ui",
+      "homepage": "https://ui.doras.to/",
+      "url": "https://ui.doras.to/r/{name}.json"
+    },
+    {
+      "name": "@dotmatrix",
+      "homepage": "https://dotmatrix.zzzzshawn.cloud",
+      "url": "https://dotmatrix.zzzzshawn.cloud/r/{name}.json"
+    },
+    {
+      "name": "@dsikeres1",
+      "homepage": "https://dsikeres1.github.io/react-date-range-picker/",
+      "url": "https://dsikeres1.github.io/react-date-range-picker/r/{name}.json"
+    },
+    {
+      "name": "@easeui",
+      "homepage": "https://easeui.dev",
+      "url": "https://easeui.dev/r/{name}.json"
+    },
+    {
+      "name": "@ecomcn",
+      "homepage": "https://ecomcn.vercel.app",
+      "url": "https://ecomcn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@efferd",
+      "homepage": "https://efferd.com/",
+      "url": "https://efferd.com/r/{name}.json"
+    },
+    {
+      "name": "@einui",
+      "homepage": "https://ui.eindev.ir",
+      "url": "https://ui.eindev.ir/r/{name}.json"
+    },
+    {
+      "name": "@eldoraui",
+      "homepage": "https://eldoraui.site",
+      "url": "https://eldoraui.site/r/{name}.json"
+    },
+    {
+      "name": "@elements",
+      "homepage": "https://www.tryelements.dev",
+      "url": "https://www.tryelements.dev/r/{name}.json"
+    },
+    {
+      "name": "@elevenlabs-ui",
+      "homepage": "https://ui.elevenlabs.io",
+      "url": "https://ui.elevenlabs.io/r/{name}.json"
+    },
+    {
+      "name": "@elsecase",
+      "homepage": "https://elsecase.vercel.app",
+      "url": "https://elsecase.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@emailcn",
+      "homepage": "https://emailcn.vercel.app",
+      "url": "https://emailcn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@emerald-ui",
+      "homepage": "https://emerald-ui.com",
+      "url": "https://emerald-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@emstein-ui",
+      "homepage": "https://ui.emstein.com",
+      "url": "https://ui.emstein.com/r/{name}.json"
+    },
+    {
+      "name": "@ericts",
+      "homepage": "https://ui.ericts.com",
+      "url": "https://ui.ericts.com/r/{name}.json"
+    },
+    {
+      "name": "@evex",
+      "homepage": "https://evex.sh",
+      "url": "https://evex.sh/r/{name}.json"
+    },
+    {
+      "name": "@evilbuttons",
+      "homepage": "https://evilbuttons.radiumcoders.com/docs",
+      "url": "https://evilbuttons.radiumcoders.com/r/{name}.json"
+    },
+    {
+      "name": "@evilcharts",
+      "homepage": "https://evilcharts.com",
+      "url": "https://evilcharts.com/r/{name}.json"
+    },
+    {
+      "name": "@exabase",
+      "homepage": "https://exawizards.com/exabase/design/",
+      "url": "https://exawizards.com/exabase/design/registry/{name}.json"
+    },
+    {
+      "name": "@extend",
+      "homepage": "https://ui.extend.ai",
+      "url": "https://ui.extend.ai/r/{name}.json"
+    },
+    {
+      "name": "@fab-ui",
+      "homepage": "https://fab-ui.com",
+      "url": "https://fab-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@facade",
+      "homepage": "https://facadeui.dev",
+      "url": "https://facadeui.dev/r/{name}.json"
+    },
+    {
+      "name": "@fibo",
+      "homepage": "https://fibo.toribryan.com",
+      "url": "https://fibo.toribryan.com/r/{name}.json"
+    },
+    {
+      "name": "@flagcn",
+      "homepage": "https://flagcn.dev",
+      "url": "https://flagcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@flightcn",
+      "homepage": "https://flightcn.yencheng.dev",
+      "url": "https://flightcn.yencheng.dev/r/{name}.json"
+    },
+    {
+      "name": "@flowkit-ui",
+      "homepage": "https://flowkit-ui.vzkiss.com",
+      "url": "https://flowkit-ui.vzkiss.com/r/{name}.json"
+    },
+    {
+      "name": "@flowui",
+      "homepage": "https://flowui-registry.vercel.app",
+      "url": "https://flowui-registry.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@fluent2-react-kit",
+      "homepage": "https://fluent2-react-kit.graund.io",
+      "url": "https://fluent2-react-kit.graund.io/r/{name}.json"
+    },
+    {
+      "name": "@fluid",
+      "homepage": "https://www.fluidfunctionalism.com",
+      "url": "https://www.fluidfunctionalism.com/r/{name}.json"
+    },
+    {
+      "name": "@flx",
+      "homepage": "https://ui.flexnative.com",
+      "url": "https://ui.flexnative.com/r/{name}.json"
+    },
+    {
+      "name": "@fonttrio",
+      "homepage": "https://www.fonttrio.xyz",
+      "url": "https://www.fonttrio.xyz/r/{name}.json"
+    },
+    {
+      "name": "@forgeui",
+      "homepage": "https://forgeui.in/",
+      "url": "https://forgeui.in/r/{name}.json"
+    },
+    {
+      "name": "@formcn",
+      "homepage": "https://formcn.dev",
+      "url": "https://formcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@formscn",
+      "homepage": "https://www.formscn.space",
+      "url": "https://www.formscn.space/r/{name}.json"
+    },
+    {
+      "name": "@framecn",
+      "homepage": "https://framecn.vercel.app",
+      "url": "https://framecn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@gaia",
+      "homepage": "https://ui.heygaia.io",
+      "url": "https://ui.heygaia.io/r/{name}.json"
+    },
+    {
+      "name": "@gamekitui",
+      "homepage": "https://gamekitui.com",
+      "url": "https://gamekitui.com/r/{name}.json"
+    },
+    {
+      "name": "@gamifykit",
+      "homepage": "https://gamifykit.com",
+      "url": "https://gamifykit.com/r/{name}.json"
+    },
+    {
+      "name": "@gammaui",
+      "homepage": "https://www.gammaui.com",
+      "url": "https://www.gammaui.com/r/{name}.json"
+    },
+    {
+      "name": "@gauge-ui",
+      "homepage": "https://www.gauge-ui.dev",
+      "url": "https://www.gauge-ui.dev/r/{name}.json"
+    },
+    {
+      "name": "@gc-solid",
+      "homepage": "https://binnodon.github.io/gc-solid-ui",
+      "url": "https://binnodon.github.io/gc-solid-ui/r/{name}.json"
+    },
+    {
+      "name": "@glass-ui",
+      "homepage": "https://glass-ui.crenspire.com",
+      "url": "https://glass-ui.crenspire.com/r/{name}.json"
+    },
+    {
+      "name": "@glasscn",
+      "homepage": "https://glasscn-components.vercel.app/",
+      "url": "https://glasscn-components.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@glint-ui",
+      "homepage": "https://glint-ui-seven.vercel.app",
+      "url": "https://glint-ui-seven.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@gooseui",
+      "homepage": "https://gooseui.pro",
+      "url": "https://gooseui.pro/r/{name}.json"
+    },
+    {
+      "name": "@gpt-vis",
+      "homepage": "https://gpt-vis.antv.vision",
+      "url": "https://gpt-vis.antv.vision/r/{name}.json"
+    },
+    {
+      "name": "@grainly-icons",
+      "homepage": "https://grainlyicons.abhii.space",
+      "url": "https://grainlyicons.abhii.space/r/{name}.json"
+    },
+    {
+      "name": "@gridcn",
+      "homepage": "https://gridcn.vercel.app",
+      "url": "https://gridcn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@grootstudio",
+      "homepage": "https://grootstudio.vercel.app",
+      "url": "https://grootstudio.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@gtm",
+      "homepage": "https://pumpgtm.com",
+      "url": "https://pumpgtm.com/r/{name}.json"
+    },
+    {
+      "name": "@gymnopedies",
+      "homepage": "https://gymnopedies.shoota.work",
+      "url": "https://gymnopedies.shoota.work/r/{name}.json"
+    },
+    {
+      "name": "@ha-components",
+      "homepage": "https://hacomponents.keshuac.com",
+      "url": "https://hacomponents.keshuac.com/r/{name}.json"
+    },
+    {
+      "name": "@harshj",
+      "homepage": "https://shadcn-transfer-list-d4gb-two.vercel.app",
+      "url": "https://shadcn-transfer-list-d4gb-two.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@headcodecms",
+      "homepage": "https://headcodecms.com",
+      "url": "https://headcodecms.com/r/{name}.json"
+    },
+    {
+      "name": "@heatmap",
+      "homepage": "https://shadcn-heatmap.pages.dev",
+      "url": "https://shadcn-heatmap.pages.dev/r/{name}.json"
+    },
+    {
+      "name": "@herocn",
+      "homepage": "https://herocn.dev/",
+      "url": "https://herocn.dev/r/{name}.json"
+    },
+    {
+      "name": "@heroicons-animated",
+      "homepage": "https://www.heroicons-animated.com/",
+      "url": "https://www.heroicons-animated.com/r/{name}.json"
+    },
+    {
+      "name": "@hextaui",
+      "homepage": "https://hextaui.com",
+      "url": "https://hextaui.com/r/{name}.json"
+    },
+    {
+      "name": "@hexui",
+      "homepage": "https://hexui.sh",
+      "url": "https://hexui.sh/r/{name}.json"
+    },
+    {
+      "name": "@hirael",
+      "homepage": "https://hirael.com",
+      "url": "https://hirael.com/r/{name}.json"
+    },
+    {
+      "name": "@honestui",
+      "homepage": "https://www.honestui.com",
+      "url": "https://www.honestui.com/r/{name}.json"
+    },
+    {
+      "name": "@hugeicons-animated",
+      "homepage": "https://hugeicons-animated.com",
+      "url": "https://hugeicons-animated.com/r/{name}.json"
+    },
+    {
+      "name": "@hugeicons-animated-vue",
+      "homepage": "https://hugeicons-animated-vue.rebeaumickael.fr",
+      "url": "https://hugeicons-animated-vue.rebeaumickael.fr/r/{name}.json"
+    },
+    {
+      "name": "@iandefined",
+      "homepage": "https://ui.iandefined.com",
+      "url": "https://ui.iandefined.com/r/{name}.json"
+    },
+    {
+      "name": "@iconiq",
+      "homepage": "https://iconiqui.com",
+      "url": "https://iconiqui.com/r/{name}.json"
+    },
+    {
+      "name": "@icons-animated",
+      "homepage": "https://icons.lndev.me",
+      "url": "https://icons.lndev.me/r/{name}.json"
+    },
+    {
+      "name": "@ilinxa",
+      "homepage": "https://ui.ilinxa.com",
+      "url": "https://ui.ilinxa.com/r/{name}.json"
+    },
+    {
+      "name": "@indiacn",
+      "homepage": "https://indiacn.in",
+      "url": "https://indiacn.in/r/{name}.json"
+    },
+    {
+      "name": "@inferencesh",
+      "homepage": "https://ui.inference.sh",
+      "url": "https://ui.inference.sh/r/{name}.json"
+    },
+    {
+      "name": "@initium",
+      "homepage": "https://initium.sh",
+      "url": "https://app.initium.sh/r/styles/{style}/{name}.json"
+    },
+    {
+      "name": "@intentui",
+      "homepage": "https://intentui.com",
+      "url": "https://intentui.com/r/{name}"
+    },
+    {
+      "name": "@interior",
+      "homepage": "https://www.interior.dev",
+      "url": "https://www.interior.dev/r/{name}.json"
+    },
+    {
+      "name": "@isometric",
+      "homepage": "https://isometric.buildlab.in",
+      "url": "https://isometric.buildlab.in/r/{name}.json"
+    },
+    {
+      "name": "@jalco",
+      "homepage": "https://ui.justinlevine.me",
+      "url": "https://ui.justinlevine.me/r/{name}.json"
+    },
+    {
+      "name": "@jolyui",
+      "homepage": "https://www.jolyui.dev",
+      "url": "https://www.jolyui.dev/r/{name}.json"
+    },
+    {
+      "name": "@joyco",
+      "homepage": "https://registry.joyco.studio",
+      "url": "https://registry.joyco.studio/r/{name}.json"
+    },
+    {
+      "name": "@jpmarques",
+      "homepage": "https://piemenu.jpmarqu.es",
+      "url": "https://piemenu.jpmarqu.es/r/{name}.json"
+    },
+    {
+      "name": "@json-view-cn",
+      "homepage": "https://json-view-cn.vercel.app",
+      "url": "https://json-view-cn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@kanpeki",
+      "homepage": "https://kanpeki.vercel.app",
+      "url": "https://kanpeki.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@kapwa",
+      "homepage": "https://kapwa-two.vercel.app",
+      "url": "https://kapwa-two.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@kaui",
+      "homepage": "https://kaui-shadcn-registry.vercel.app",
+      "url": "https://kaui-shadcn-registry.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@keyframery",
+      "homepage": "https://keyframery.com",
+      "url": "https://keyframery.com/r/{name}.json"
+    },
+    {
+      "name": "@keyline",
+      "homepage": "https://keylineicons.com",
+      "url": "https://keylineicons.com/r/{name}.json"
+    },
+    {
+      "name": "@kibo-ui",
+      "homepage": "https://www.kibo-ui.com/",
+      "url": "https://www.kibo-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@kinetic",
+      "homepage": "https://kinetic.itsjay.in",
+      "url": "https://kinetic.itsjay.in/r/{name}.json"
+    },
+    {
+      "name": "@knock-codes",
+      "homepage": "https://knock.codes",
+      "url": "https://knock.codes/r/react/{name}.json"
+    },
+    {
+      "name": "@knot-ui",
+      "homepage": "https://knot-ui.trupal.me",
+      "url": "https://knot-ui.trupal.me/r/{name}.json"
+    },
+    {
+      "name": "@kobra",
+      "homepage": "https://kobra.systems",
+      "url": "https://kobra.systems/r/{name}.json"
+    },
+    {
+      "name": "@kokonutui",
+      "homepage": "https://kokonutui.com",
+      "url": "https://kokonutui.com/r/{name}.json"
+    },
+    {
+      "name": "@launchui",
+      "homepage": "https://www.launchuicomponents.com/",
+      "url": "https://www.launchuicomponents.com/r/{name}.json"
+    },
+    {
+      "name": "@layish",
+      "homepage": "https://layish.vercel.app",
+      "url": "https://layish.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@lema-ds",
+      "homepage": "https://ds.lema.ufpb.br",
+      "url": "https://ds.lema.ufpb.br/r/{name}.json"
+    },
+    {
+      "name": "@lens-blocks",
+      "homepage": "https://lensblocks.com",
+      "url": "https://lensblocks.com/r/{name}.json"
+    },
+    {
+      "name": "@limeplay",
+      "homepage": "https://limeplay.winoffrg.dev",
+      "url": "https://limeplay.winoffrg.dev/r/{name}.json"
+    },
+    {
+      "name": "@liquefy-ui",
+      "homepage": "https://liquefy-ui.com",
+      "url": "https://liquefy-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@livedocs",
+      "homepage": "https://livedocs.xyz",
+      "url": "https://livedocs.xyz/r/{name}.json"
+    },
+    {
+      "name": "@lmscn",
+      "homepage": "https://lmscn.vercel.app",
+      "url": "https://lmscn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@loadercn",
+      "homepage": "https://loadercn.vercel.app",
+      "url": "https://loadercn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@loading-ui",
+      "homepage": "https://loading-ui.com",
+      "url": "https://loading-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@localmode",
+      "homepage": "https://localmode.ai",
+      "url": "https://localmode.ai/r/{name}.json"
+    },
+    {
+      "name": "@logoforge",
+      "homepage": "https://logoforge.terravidhal.me",
+      "url": "https://logoforge.terravidhal.me/r/{name}.json"
+    },
+    {
+      "name": "@lucide-animated",
+      "homepage": "https://lucide-animated.com",
+      "url": "https://lucide-animated.com/r/{name}.json"
+    },
+    {
+      "name": "@lumiui",
+      "homepage": "https://www.lumiui.dev",
+      "url": "https://www.lumiui.dev/r/{name}.json"
+    },
+    {
+      "name": "@lytenyte",
+      "homepage": "https://www.1771technologies.com",
+      "url": "https://www.1771technologies.com/r/{name}.json"
+    },
+    {
+      "name": "@magicui",
+      "homepage": "https://magicui.design",
+      "url": "https://magicui.design/r/{name}"
+    },
+    {
+      "name": "@manifest",
+      "homepage": "https://ui.manifest.build",
+      "url": "https://ui.manifest.build/r/{name}.json"
+    },
+    {
+      "name": "@mapcn",
+      "homepage": "https://mapcn.dev",
+      "url": "https://mapcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@materialcn",
+      "homepage": "https://github.com/guillermo-rebolledo/materialcn",
+      "url": "https://guillermo-rebolledo.github.io/materialcn/r/{name}.json"
+    },
+    {
+      "name": "@mediadrop",
+      "homepage": "https://www.mediadrop.dev",
+      "url": "https://www.mediadrop.dev/r/{name}.json"
+    },
+    {
+      "name": "@mewo",
+      "homepage": "https://mewo-ui.vercel.app",
+      "url": "https://mewo-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@microkit",
+      "homepage": "https://microkit.co",
+      "url": "https://microkit.co/r/{name}.json"
+    },
+    {
+      "name": "@minidev",
+      "homepage": "https://ui.minidev.pro",
+      "url": "https://ui.minidev.pro/r/{name}.json"
+    },
+    {
+      "name": "@mischief",
+      "homepage": "https://ui.tinkererslabs.com",
+      "url": "https://ui.tinkererslabs.com/r/{name}.json"
+    },
+    {
+      "name": "@mksingh",
+      "homepage": "https://mksingh.dev/docs",
+      "url": "https://mksingh.dev/r/{name}.json"
+    },
+    {
+      "name": "@moduix-react",
+      "homepage": "https://moduix.dev",
+      "url": "https://moduix.dev/r/react/{name}.json"
+    },
+    {
+      "name": "@moleculeui",
+      "homepage": "https://www.moleculeui.design/",
+      "url": "https://www.moleculeui.design/r/{name}.json"
+    },
+    {
+      "name": "@morphiq",
+      "homepage": "https://morphiq.prathampatel.design",
+      "url": "https://morphiq.prathampatel.design/r/{name}.json"
+    },
+    {
+      "name": "@motion-lexicon",
+      "homepage": "https://motion-lexicon.pages.dev",
+      "url": "https://motion-lexicon.pages.dev/r/{name}.json"
+    },
+    {
+      "name": "@motion-menu",
+      "homepage": "https://motion-menu-two.vercel.app",
+      "url": "https://motion-menu-two.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@motion-primitives",
+      "homepage": "https://www.motion-primitives.com",
+      "url": "https://motion-primitives.com/c/{name}.json"
+    },
+    {
+      "name": "@motiq",
+      "homepage": "https://motiq.dev",
+      "url": "https://motiq.dev/r/{name}.json"
+    },
+    {
+      "name": "@motokoui",
+      "homepage": "https://motokoui.com",
+      "url": "https://www.motokoui.com/r/{name}.json"
+    },
+    {
+      "name": "@moumenlab",
+      "homepage": "https://lab.moumen.dev",
+      "url": "https://lab.moumen.dev/r/{name}.json"
+    },
+    {
+      "name": "@mozaika",
+      "homepage": "https://mozaika.design",
+      "url": "https://mozaika.design/r/{name}.json"
+    },
+    {
+      "name": "@mui-treasury",
+      "homepage": "https://www.mui-treasury.com",
+      "url": "https://mui-treasury.com/r/{name}.json"
+    },
+    {
+      "name": "@n3wth",
+      "homepage": "https://kit.n3wth.com",
+      "url": "https://kit.n3wth.com/r/{name}.json"
+    },
+    {
+      "name": "@navui",
+      "homepage": "https://ui.navdeepsingh.dev",
+      "url": "https://ui.navdeepsingh.dev/r/{name}.json"
+    },
+    {
+      "name": "@ncdai",
+      "homepage": "https://chanhdai.com/components",
+      "url": "https://chanhdai.com/r/{name}.json"
+    },
+    {
+      "name": "@nekode",
+      "homepage": "https://ui.nekode.id",
+      "url": "https://ui.nekode.id/r/{name}.json"
+    },
+    {
+      "name": "@neobrutal-ui",
+      "homepage": "https://neobrutal-ui.andongmin.com",
+      "url": "https://neobrutal-ui.andongmin.com/r/{name}.json"
+    },
+    {
+      "name": "@neobrutalism",
+      "homepage": "https://www.neobrutalism.dev",
+      "url": "https://www.neobrutalism.dev/r/{name}.json"
+    },
+    {
+      "name": "@neon-ui",
+      "homepage": "https://ui.neon.com",
+      "url": "https://ui.neon.com/r/{name}.json"
+    },
+    {
+      "name": "@nessra-ui",
+      "homepage": "https://nessra-ui.vercel.app",
+      "url": "https://nessra-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@nexus-elements",
+      "homepage": "https://elements.nexus.availproject.org/docs/view-components",
+      "url": "https://elements.nexus.availproject.org/r/{name}.json"
+    },
+    {
+      "name": "@nexus-labs",
+      "homepage": "https://nexus-ui.com",
+      "url": "https://nexus-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@nexus-ui",
+      "homepage": "https://nexus-ui.dev",
+      "url": "https://nexus-ui.dev/r/{name}.json"
+    },
+    {
+      "name": "@niko-table",
+      "homepage": "https://niko-table.com",
+      "url": "https://niko-table.com/r/{name}.json"
+    },
+    {
+      "name": "@nordaun",
+      "homepage": "https://ui.nordaun.com",
+      "url": "https://ui.nordaun.com/r/{name}.json"
+    },
+    {
+      "name": "@nostalgia-ui",
+      "homepage": "https://nostalgia-ui.com",
+      "url": "https://nostalgia-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@notra",
+      "homepage": "https://ui.usenotra.com",
+      "url": "https://ui.usenotra.com/r/{name}.json"
+    },
+    {
+      "name": "@ns-ui",
+      "homepage": "https://design.helpmarq.com",
+      "url": "https://design.helpmarq.com/r/{name}.json"
+    },
+    {
+      "name": "@nteract",
+      "homepage": "https://nteract-elements.vercel.app/",
+      "url": "https://nteract-elements.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@nuqs",
+      "homepage": "https://nuqs.dev/registry",
+      "url": "https://nuqs.dev/r/{name}.json"
+    },
+    {
+      "name": "@nusaiba",
+      "homepage": "https://nusaiba.dev",
+      "url": "https://nusaiba.dev/r/base-nova/{name}.json"
+    },
+    {
+      "name": "@nysgpt",
+      "homepage": "https://gov.nysgpt.com",
+      "url": "https://gov.nysgpt.com/r/{name}.json"
+    },
+    {
+      "name": "@odysseyui",
+      "homepage": "https://www.odysseyui.com/docs",
+      "url": "https://www.odysseyui.com/r/{name}.json"
+    },
+    {
+      "name": "@ogimagecn",
+      "homepage": "https://ogimagecn.vercel.app",
+      "url": "https://ogimagecn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@oidc",
+      "homepage": "https://ui.shadcn.com/oidc",
+      "url": "https://ui.shadcn.com/oidc/r/{name}.json"
+    },
+    {
+      "name": "@onchain-ui",
+      "homepage": "https://onchain-ui.dev",
+      "url": "https://onchain-ui.dev/r/{name}.json"
+    },
+    {
+      "name": "@opaline",
+      "homepage": "https://opaline.buildlab.in",
+      "url": "https://opaline.buildlab.in/r/{name}.json"
+    },
+    {
+      "name": "@openmirai",
+      "homepage": "https://www.openmirai.dev",
+      "url": "https://www.openmirai.dev/r/{name}.json"
+    },
+    {
+      "name": "@openpolicy",
+      "homepage": "https://www.openpolicy.sh",
+      "url": "https://www.openpolicy.sh/r/{name}.json"
+    },
+    {
+      "name": "@openstatus",
+      "homepage": "https://openstatus.dev/registry",
+      "url": "https://openstatus.dev/r/{name}.json"
+    },
+    {
+      "name": "@optics",
+      "homepage": "https://optics.agusmayol.com.ar",
+      "url": "https://optics.agusmayol.com.ar/r/{name}.json"
+    },
+    {
+      "name": "@oui",
+      "homepage": "https://oui.mw10013.workers.dev",
+      "url": "https://oui.mw10013.workers.dev/r/{name}.json"
+    },
+    {
+      "name": "@pacekit",
+      "homepage": "https://ui.pacekit.dev",
+      "url": "https://ui.pacekit.dev/r/{name}.json"
+    },
+    {
+      "name": "@paceui",
+      "homepage": "https://paceui.com",
+      "url": "https://paceui.com/r/{name}.json"
+    },
+    {
+      "name": "@paceui-gsap",
+      "homepage": "https://gsap.paceui.com",
+      "url": "https://gsap.paceui.com/r/{name}.json"
+    },
+    {
+      "name": "@paddle",
+      "homepage": "https://developer.paddle.com/",
+      "url": "https://developer.paddle.com/r/{name}.json"
+    },
+    {
+      "name": "@paletteui",
+      "homepage": "https://paletteui.xyz",
+      "url": "https://paletteui.xyz/r/{name}.json"
+    },
+    {
+      "name": "@pane",
+      "homepage": "https://pane.theui.company",
+      "url": "https://pane.theui.company/r/{name}.json"
+    },
+    {
+      "name": "@pantoken",
+      "homepage": "https://pantoken.app",
+      "url": "https://pantoken.app/r/{name}.json"
+    },
+    {
+      "name": "@pastaui",
+      "homepage": "https://pastaui.com",
+      "url": "https://pastaui.com/r/{name}.json"
+    },
+    {
+      "name": "@pastecn",
+      "homepage": "https://pastecn.com",
+      "url": "https://pastecn.com/r/{name}"
+    },
+    {
+      "name": "@paykit-sdk",
+      "homepage": "https://www.usepaykit.dev",
+      "url": "https://www.usepaykit.dev/r/{name}.json"
+    },
+    {
+      "name": "@payload-components",
+      "homepage": "https://www.payload-components.xyz",
+      "url": "https://www.payload-components.xyz/r/{name}.json"
+    },
+    {
+      "name": "@persianlabsui",
+      "homepage": "https://ui.persian-labs.ir",
+      "url": "https://ui.persian-labs.ir/r/{name}.json"
+    },
+    {
+      "name": "@photocn",
+      "homepage": "https://photocn.dev",
+      "url": "https://photocn.dev/r/{name}.json"
+    },
+    {
+      "name": "@phucbm",
+      "homepage": "https://phucbm.com/components",
+      "url": "https://phucbm.com/r/{name}.json"
+    },
+    {
+      "name": "@pipecat",
+      "homepage": "https://ui.pipecat.ai",
+      "url": "https://ui.pipecat.ai/r/{name}.json"
+    },
+    {
+      "name": "@pixel-openspace",
+      "homepage": "https://pixel-openspace.vercel.app",
+      "url": "https://pixel-openspace.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@pixelact-ui",
+      "homepage": "https://pixelactui.com",
+      "url": "https://pixelactui.com/r/{name}.json"
+    },
+    {
+      "name": "@plate",
+      "homepage": "https://platejs.org",
+      "url": "https://platejs.org/r/{name}.json"
+    },
+    {
+      "name": "@plotcn",
+      "homepage": "https://plotcn.vercel.app",
+      "url": "https://plotcn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@preskok",
+      "homepage": "https://ui-three-mu.vercel.app",
+      "url": "https://ui-three-mu.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@prompt-kit",
+      "homepage": "https://www.prompt-kit.com",
+      "url": "https://www.prompt-kit.com/c/{name}.json"
+    },
+    {
+      "name": "@prosekit",
+      "homepage": "https://prosekit.dev",
+      "url": "https://prosekit.dev/r/{name}.json"
+    },
+    {
+      "name": "@pulkitxm",
+      "homepage": "https://pulkit.page",
+      "url": "https://pulkit.page/components/{name}.json"
+    },
+    {
+      "name": "@pulld",
+      "homepage": "https://pulld.pages.dev",
+      "url": "https://pulld.pages.dev/r/{name}.json"
+    },
+    {
+      "name": "@pureui",
+      "homepage": "https://pure.kam-ui.com/",
+      "url": "https://pure.kam-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@quill",
+      "homepage": "https://www.quilldesignsystem.com",
+      "url": "https://www.quilldesignsystem.com/r/{name}.json"
+    },
+    {
+      "name": "@quiz-ui",
+      "homepage": "https://quiz-ui-phi.vercel.app",
+      "url": "https://quiz-ui-phi.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@ramonclaudio-coderabbit",
+      "homepage": "https://ramonclaudio.com/registries/coderabbit",
+      "url": "https://coderabbit-shadcn-registry.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@ratneshc",
+      "homepage": "https://ratneshc.com/components",
+      "url": "https://ratneshc.com/r/{name}.json"
+    },
+    {
+      "name": "@rawkitui",
+      "homepage": "https://rawkitui.zerodegree.tech",
+      "url": "https://rawkitui.zerodegree.tech/r/{name}.json"
+    },
+    {
+      "name": "@react-aria",
+      "homepage": "https://react-aria.adobe.com",
+      "url": "https://react-aria.adobe.com/registry/{name}.json"
+    },
+    {
+      "name": "@react-bits",
+      "homepage": "https://reactbits.dev",
+      "url": "https://reactbits.dev/r/{name}.json"
+    },
+    {
+      "name": "@react-easy-modals",
+      "homepage": "https://react-easy-modals-docs.vercel.app",
+      "url": "https://react-easy-modals-docs.vercel.app/r/styles/{style}/{name}.json"
+    },
+    {
+      "name": "@react-slot",
+      "homepage": "https://react-slot.vercel.app/",
+      "url": "https://react-slot.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@reactframe",
+      "homepage": "https://reactframe.com",
+      "url": "https://reactframe.com/r/{name}.json"
+    },
+    {
+      "name": "@registrydirectory",
+      "homepage": "https://registry.directory",
+      "url": "https://registry.directory/r/{name}.json"
+    },
+    {
+      "name": "@remocn",
+      "homepage": "https://www.remocn.dev/",
+      "url": "https://www.remocn.dev/r/{name}.json"
+    },
+    {
+      "name": "@remotionui",
+      "homepage": "https://remotionui.com",
+      "url": "https://remotionui.com/r/{name}.json"
+    },
+    {
+      "name": "@rescript-shadcn",
+      "homepage": "https://rescript-shadcn.miriad.studio",
+      "url": "https://rescript-shadcn.miriad.studio/r/{name}.json"
+    },
+    {
+      "name": "@retab",
+      "homepage": "https://ui.retab.com",
+      "url": "https://ui.retab.com/r/{name}.json"
+    },
+    {
+      "name": "@retroui",
+      "homepage": "https://retroui.dev",
+      "url": "https://retroui.dev/r/{name}.json"
+    },
+    {
+      "name": "@reui",
+      "homepage": "https://reui.io",
+      "url": "https://reui.io/r/{style}/{name}.json"
+    },
+    {
+      "name": "@roiui",
+      "homepage": "https://roiui.com",
+      "url": "https://roiui.com/r/{name}.json"
+    },
+    {
+      "name": "@saaskit",
+      "homepage": "https://saaskit-theta.vercel.app",
+      "url": "https://saaskit-theta.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@saastro",
+      "homepage": "https://ui.saastro.io",
+      "url": "https://ui.saastro.io/r/{name}.json"
+    },
+    {
+      "name": "@sabraman",
+      "homepage": "https://sabraman.ru/components",
+      "url": "https://sabraman.ru/r/{name}.json"
+    },
+    {
+      "name": "@sans",
+      "homepage": "https://sans.sansorigin.com",
+      "url": "https://sans.sansorigin.com/r/{name}.json"
+    },
+    {
+      "name": "@satoriui",
+      "homepage": "https://satoriui.site",
+      "url": "https://satoriui.site/r/{name}.json"
+    },
+    {
+      "name": "@sc1m",
+      "homepage": "https://sc1m.vercel.app",
+      "url": "https://sc1m.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@scrimui",
+      "homepage": "https://scrimui.dev",
+      "url": "https://scrimui.dev/r/{name}.json"
+    },
+    {
+      "name": "@scrollxui",
+      "homepage": "https://www.scrollxui.dev",
+      "url": "https://www.scrollxui.dev/registry/{name}.json"
+    },
+    {
+      "name": "@seamui",
+      "homepage": "https://seamui.dev",
+      "url": "https://seamui.dev/r/{name}.json"
+    },
+    {
+      "name": "@sekei",
+      "homepage": "https://www.sekei.design/shad-fx",
+      "url": "https://www.sekei.design/registry/{name}.json"
+    },
+    {
+      "name": "@sevenui",
+      "homepage": "https://sevenui.dev",
+      "url": "https://sevenui.dev/r/{name}.json"
+    },
+    {
+      "name": "@sf-fleet-hud",
+      "homepage": "https://sf-fleet-hud.vercel.app",
+      "url": "https://sf-fleet-hud.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@shadcn-dashboard",
+      "homepage": "https://shadcndashboard.dev",
+      "url": "https://shadcndashboard.dev/r/{name}.json"
+    },
+    {
+      "name": "@shadcn-editor",
+      "homepage": "https://shadcn-editor.vercel.app",
+      "url": "https://raw.githubusercontent.com/htmujahid/shadcn-editor/refs/heads/main/public/r/{name}.json"
+    },
+    {
+      "name": "@shadcn-map",
+      "homepage": "https://shadcn-map.vercel.app",
+      "url": "http://shadcn-map.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@shadcn-space",
+      "homepage": "https://shadcnspace.com",
+      "url": "https://shadcnspace.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcn-studio",
+      "homepage": "https://shadcnstudio.com",
+      "url": "https://shadcnstudio.com/r/{style}/{name}.json"
+    },
+    {
+      "name": "@shadcn-ui-blocks",
+      "homepage": "https://www.shadcn-ui-blocks.com",
+      "url": "https://www.shadcn-ui-blocks.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcnblocks",
+      "homepage": "https://shadcnblocks.com",
+      "url": "https://shadcnblocks.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcncraft",
+      "homepage": "https://shadcncraft.com",
+      "url": "https://shadcncraft.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcndesign",
+      "homepage": "https://www.shadcndesign.com",
+      "url": "https://shadcndesign-free.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@shadcnhooks",
+      "homepage": "https://shadcn-hooks.com",
+      "url": "https://shadcn-hooks.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcnloaders",
+      "homepage": "https://shadcn-loaders.vercel.app",
+      "url": "https://shadcn-loaders.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@shadcnmaps",
+      "homepage": "https://shadcnmaps.com",
+      "url": "https://shadcnmaps.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcnstore",
+      "homepage": "https://www.shadcnstore.com",
+      "url": "https://shadcnstore.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcnui-blocks",
+      "homepage": "https://shadcnui-blocks.com",
+      "url": "https://shadcnui-blocks.com/r/{name}.json"
+    },
+    {
+      "name": "@shadcnuikit",
+      "homepage": "https://shadcnuikit.com",
+      "url": "https://shadcnuikit.com/r/{name}.json"
+    },
+    {
+      "name": "@shaderscn",
+      "homepage": "https://www.shaderscn.com",
+      "url": "https://www.shaderscn.com/r/{name}.json"
+    },
+    {
+      "name": "@shark",
+      "homepage": "https://shark.vini.one",
+      "url": "https://shark.vini.one/r/{name}.json"
+    },
+    {
+      "name": "@shieldcn",
+      "homepage": "https://shieldcn.dev",
+      "url": "https://shieldcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@shivraj-roy",
+      "homepage": "https://www.shivrajroy.in",
+      "url": "https://www.shivrajroy.in/r/{name}.json"
+    },
+    {
+      "name": "@shoogle",
+      "homepage": "https://shoogle.dev",
+      "url": "https://shoogle.dev/r/{name}.json"
+    },
+    {
+      "name": "@shover",
+      "homepage": "https://shover-ui.vercel.app",
+      "url": "https://shover-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@simple-ai",
+      "homepage": "https://www.simple-ai.dev",
+      "url": "https://www.simple-ai.dev/r/{name}.json"
+    },
+    {
+      "name": "@skecher-ui",
+      "homepage": "https://skecher-ui.com",
+      "url": "https://skecher-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@skiper-ui",
+      "homepage": "https://skiper-ui.com/",
+      "url": "https://skiper-ui.com/registry/{name}.json"
+    },
+    {
+      "name": "@skrewww",
+      "homepage": "https://skrewww.com",
+      "url": "https://skrewww.com/r/{name}.json"
+    },
+    {
+      "name": "@slide-cn",
+      "homepage": "https://slide-cn.com",
+      "url": "https://slide-cn.com/r/{name}.json"
+    },
+    {
+      "name": "@slidecn",
+      "homepage": "https://slidecn.vercel.app",
+      "url": "https://slidecn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@smoothui",
+      "homepage": "https://smoothui.dev",
+      "url": "https://smoothui.dev/r/{name}.json"
+    },
+    {
+      "name": "@snapcn",
+      "homepage": "https://snapcn.dev",
+      "url": "https://snapcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@solaceui",
+      "homepage": "https://www.solaceui.com",
+      "url": "https://www.solaceui.com/r/{name}.json"
+    },
+    {
+      "name": "@soldevelo",
+      "homepage": "https://registry.soldevelo.com",
+      "url": "https://registry.soldevelo.com/r/{name}.json"
+    },
+    {
+      "name": "@sona-ui",
+      "homepage": "https://sonaui.com",
+      "url": "https://sonaui.com/r/{name}.json"
+    },
+    {
+      "name": "@soonish",
+      "homepage": "https://soonish.rushikeshmahajan.com",
+      "url": "https://soonish.rushikeshmahajan.com/r/{name}.json"
+    },
+    {
+      "name": "@soralabs",
+      "homepage": "https://ui.soralabs.studio",
+      "url": "https://ui.soralabs.studio/r/{name}.json"
+    },
+    {
+      "name": "@soundcn",
+      "homepage": "https://soundcn.xyz",
+      "url": "https://soundcn.xyz/r/{name}.json"
+    },
+    {
+      "name": "@spaceui",
+      "homepage": "https://www.spaceui.one",
+      "url": "https://www.spaceui.one/r/{name}.json"
+    },
+    {
+      "name": "@spark-ui",
+      "homepage": "https://spark-ui-olive.vercel.app",
+      "url": "https://spark-ui-olive.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@spectrumui",
+      "homepage": "https://ui.spectrumhq.in",
+      "url": "https://ui.spectrumhq.in/r/{name}.json"
+    },
+    {
+      "name": "@spell",
+      "homepage": "https://spell.sh",
+      "url": "https://spell.sh/r/{name}.json"
+    },
+    {
+      "name": "@square-ui",
+      "homepage": "https://square.lndev.me",
+      "url": "https://square.lndev.me/registry/{name}.json"
+    },
+    {
+      "name": "@ssych",
+      "homepage": "https://ui.ssych.com",
+      "url": "https://ui.ssych.com/r/{name}.json"
+    },
+    {
+      "name": "@stacklyui",
+      "homepage": "https://dev.stacklyui.in",
+      "url": "https://dev.stacklyui.in/r/{name}.json"
+    },
+    {
+      "name": "@starck",
+      "homepage": "https://ui.starck.studio",
+      "url": "https://ui.starck.studio/r/{name}.json"
+    },
+    {
+      "name": "@starseam",
+      "homepage": "https://starseam.astroicers.link",
+      "url": "https://starseam.astroicers.link/r/{name}.json"
+    },
+    {
+      "name": "@stealth",
+      "homepage": "https://www.stealth.pm/ui",
+      "url": "https://www.stealth.pm/r/{name}.json"
+    },
+    {
+      "name": "@stepper",
+      "homepage": "https://francozeta-stepper.vercel.app",
+      "url": "https://francozeta-stepper.vercel.app/{name}.json"
+    },
+    {
+      "name": "@styleui",
+      "homepage": "https://www.styleui.dev/",
+      "url": "https://www.styleui.dev/r/{name}.json"
+    },
+    {
+      "name": "@stylexui",
+      "homepage": "https://stylexui.dev",
+      "url": "https://stylexui.dev/r/{name}.json"
+    },
+    {
+      "name": "@supabase",
+      "homepage": "https://supabase.com/ui",
+      "url": "https://supabase.com/ui/r/{name}.json"
+    },
+    {
+      "name": "@sureui",
+      "homepage": "https://sureui.com",
+      "url": "https://sureui.com/r/{name}.json"
+    },
+    {
+      "name": "@svelte-bits",
+      "homepage": "https://sveltebits.xyz",
+      "url": "https://sveltebits.xyz/r/{name}.json"
+    },
+    {
+      "name": "@svgl",
+      "homepage": "https://svgl.app",
+      "url": "https://svgl.app/r/{name}.json"
+    },
+    {
+      "name": "@swiftui-flx",
+      "homepage": "https://swiftui.flexnative.com",
+      "url": "https://swiftui.flexnative.com/r/{name}.json"
+    },
+    {
+      "name": "@systaliko-ui",
+      "homepage": "https://systaliko-ui.vercel.app",
+      "url": "https://systaliko-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@tablecn",
+      "homepage": "https://table-cn.vercel.app",
+      "url": "https://table-cn.vercel.app/r/{style}/{name}.json"
+    },
+    {
+      "name": "@tailark",
+      "homepage": "https://tailark.com",
+      "url": "https://tailark.com/r/{name}.json"
+    },
+    {
+      "name": "@tailgrids",
+      "homepage": "https://tailgrids.com",
+      "url": "https://tailgrids.com/docs/r/{name}.json"
+    },
+    {
+      "name": "@tailwind-admin",
+      "homepage": "https://tailwind-admin.com/",
+      "url": "https://tailwind-admin.com/r/{name}.json"
+    },
+    {
+      "name": "@tailwind-builder",
+      "homepage": "https://tailwindbuilder.ai/",
+      "url": "https://tailwindbuilder.ai/r/{name}.json"
+    },
+    {
+      "name": "@taki",
+      "homepage": "https://taki-ui.com",
+      "url": "https://taki-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@termcn",
+      "homepage": "https://termcn.vercel.app",
+      "url": "https://termcn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@terrae",
+      "homepage": "https://www.terrae.dev",
+      "url": "https://www.terrae.dev/{name}.json"
+    },
+    {
+      "name": "@tetra-ui",
+      "homepage": "https://tetra-ui.com",
+      "url": "https://tetra-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@text-ui",
+      "homepage": "https://joelachance.github.io/text-ui/docs",
+      "url": "https://joelachance.github.io/text-ui/r/{name}.json"
+    },
+    {
+      "name": "@thegridcn",
+      "homepage": "https://thegridcn.com",
+      "url": "https://thegridcn.com/r/{name}.json"
+    },
+    {
+      "name": "@threecn",
+      "homepage": "https://threecn.dev",
+      "url": "https://threecn.dev/r/{name}.json"
+    },
+    {
+      "name": "@tile-ui",
+      "homepage": "https://github.com/zmide/tile-ui",
+      "url": "https://react.tileui.zmorg.cn/r/{name}.json"
+    },
+    {
+      "name": "@toc-cn",
+      "homepage": "https://tocn.vercel.app",
+      "url": "https://tocn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@toggles",
+      "homepage": "https://toggles.dev",
+      "url": "https://toggles.dev/r/{name}.json"
+    },
+    {
+      "name": "@tokenui",
+      "homepage": "https://www.tokenui.dev",
+      "url": "https://www.tokenui.dev/r/{name}.json"
+    },
+    {
+      "name": "@tool-ui",
+      "homepage": "https://www.tool-ui.com",
+      "url": "https://www.tool-ui.com/r/{name}.json"
+    },
+    {
+      "name": "@tour",
+      "homepage": "https://onboarding-tour.vercel.app",
+      "url": "https://onboarding-tour.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@trophy-ui",
+      "homepage": "https://ui.trophy.so",
+      "url": "https://ui.trophy.so/r/{name}.json"
+    },
+    {
+      "name": "@tuiparts",
+      "homepage": "https://tuiparts.sh",
+      "url": "https://tuiparts.sh/r/{name}.json"
+    },
+    {
+      "name": "@turbopills-ui",
+      "homepage": "https://www.turbopills.com/ui/docs",
+      "url": "https://ui.turbopills.com/r/{name}.json"
+    },
+    {
+      "name": "@tween-ui",
+      "homepage": "https://tween-ui.vercel.app",
+      "url": "https://tween-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@tweenly",
+      "homepage": "https://trytweenly.vercel.app",
+      "url": "https://trytweenly.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@typedora-ui",
+      "homepage": "https://typedora-ui.netlify.app",
+      "url": "https://typedora-ui.netlify.app/r/{name}.json"
+    },
+    {
+      "name": "@ui-layouts",
+      "homepage": "https://ui-layouts.com/",
+      "url": "https://ui-layouts.com/r/{name}.json"
+    },
+    {
+      "name": "@ui-shrushank",
+      "homepage": "https://www.shrutishankarnarayanan.com/components",
+      "url": "https://raw.githubusercontent.com/Shrootiiii/ui/main/r/{name}.json"
+    },
+    {
+      "name": "@uiable",
+      "homepage": "https://uiable.com",
+      "url": "https://uiable.com/r/{name}.json"
+    },
+    {
+      "name": "@uiarc",
+      "homepage": "https://uiarc.dev",
+      "url": "https://uiarc.dev/r/{name}.json"
+    },
+    {
+      "name": "@uicapsule",
+      "homepage": "https://uicapsule.com",
+      "url": "https://uicapsule.com/r/{name}.json"
+    },
+    {
+      "name": "@uiception",
+      "homepage": "https://uiception.com",
+      "url": "https://uiception.com/r/{name}.json"
+    },
+    {
+      "name": "@uitripled",
+      "homepage": "https://ui.tripled.work",
+      "url": "https://ui.tripled.work/r/{name}.json"
+    },
+    {
+      "name": "@uniquel",
+      "homepage": "https://uniquel.io",
+      "url": "https://uniquel.io/r/{name}.json"
+    },
+    {
+      "name": "@unlumen-ui",
+      "homepage": "https://ui.unlumen.com",
+      "url": "https://ui.unlumen.com/r/{name}.json"
+    },
+    {
+      "name": "@untld",
+      "homepage": "https://ui.untldlabs.com",
+      "url": "https://ui.untldlabs.com/r/{name}.json"
+    },
+    {
+      "name": "@uselayouts",
+      "homepage": "https://uselayouts.com",
+      "url": "https://uselayouts.com/r/{name}.json"
+    },
+    {
+      "name": "@usva",
+      "homepage": "https://usva.build",
+      "url": "https://usva.build/r/{name}.json"
+    },
+    {
+      "name": "@utilcn",
+      "homepage": "https://utilcn.dev",
+      "url": "https://utilcn.dev/r/{name}.json"
+    },
+    {
+      "name": "@uui",
+      "homepage": "https://uui.app",
+      "url": "https://uui.app/r/{name}.json"
+    },
+    {
+      "name": "@vectorstudio-ir",
+      "homepage": "https://github.com/vectorstudio-ir/ui",
+      "url": "https://raw.githubusercontent.com/vectorstudio-ir/ui/develop/public/r/{name}.json"
+    },
+    {
+      "name": "@velobits",
+      "homepage": "https://ui.velobits.dev",
+      "url": "https://ui.velobits.dev/r/{name}.json"
+    },
+    {
+      "name": "@velora",
+      "homepage": "https://velora.colorlib.com",
+      "url": "https://velora.colorlib.com/r/{name}.json"
+    },
+    {
+      "name": "@vernostudio",
+      "homepage": "https://verno-studio.vercel.app/components",
+      "url": "https://verno-studio.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@viberdy",
+      "homepage": "https://viberdy.dev",
+      "url": "https://viberdy.dev/r/{name}.json"
+    },
+    {
+      "name": "@videocn",
+      "homepage": "https://videocn.dev",
+      "url": "https://videocn.dev/r/{name}.json"
+    },
+    {
+      "name": "@vllnt-ui",
+      "homepage": "https://ui.vllnt.com",
+      "url": "https://ui.vllnt.com/r/{name}.json"
+    },
+    {
+      "name": "@voraui",
+      "homepage": "https://voraui.vercel.app",
+      "url": "https://voraui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@vue-bits",
+      "homepage": "https://vue-bits.dev",
+      "url": "https://vue-bits.dev/r/{name}.json"
+    },
+    {
+      "name": "@w3-kit",
+      "homepage": "https://w3-kit.com",
+      "url": "https://w3-kit.com/registry/{name}.json"
+    },
+    {
+      "name": "@wa-ui",
+      "homepage": "https://ui.meta-cloud-api.site",
+      "url": "https://ui.meta-cloud-api.site/r/{name}.json"
+    },
+    {
+      "name": "@wandry-ui",
+      "homepage": "http://ui.wandry.com.ua/",
+      "url": "https://ui.wandry.com.ua/r/{name}.json"
+    },
+    {
+      "name": "@washiveil",
+      "homepage": "https://washiveil.alexchih.com",
+      "url": "https://washiveil.alexchih.com/r/{name}.json"
+    },
+    {
+      "name": "@watermelon",
+      "homepage": "https://ui.watermelon.sh",
+      "url": "https://registry.watermelon.sh/r/{name}.json"
+    },
+    {
+      "name": "@waves-cn",
+      "homepage": "https://waves-cn.vercel.app",
+      "url": "https://waves-cn.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@wds",
+      "homepage": "https://wds-shadcn-registry.netlify.app/",
+      "url": "https://wds-shadcn-registry.netlify.app/r/{name}.json"
+    },
+    {
+      "name": "@wensity",
+      "homepage": "https://ui.wensity.com/components",
+      "url": "https://raw.githubusercontent.com/wensity/registry/main/{name}.json"
+    },
+    {
+      "name": "@whiskeyjack",
+      "homepage": "https://whiskeyjack.net",
+      "url": "https://whiskeyjack.net/r/{name}.json"
+    },
+    {
+      "name": "@wigggle-ui",
+      "homepage": "https://wigggle-ui.vercel.app",
+      "url": "https://wigggle-ui.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@wxcn",
+      "homepage": "https://wxcn.dev/react",
+      "url": "https://wxcn.dev/r/react/{name}.json"
+    },
+    {
+      "name": "@xcn",
+      "homepage": "https://ui.radiumcoders.com",
+      "url": "https://ui.radiumcoders.com/r/xcn/{name}.json"
+    },
+    {
+      "name": "@xevrion",
+      "homepage": "https://lab.xevrion.dev",
+      "url": "https://lab.xevrion.dev/r/{name}.json"
+    },
+    {
+      "name": "@yukihi",
+      "homepage": "https://github.com/yukihito-jokyu/design-system",
+      "url": "https://design.yukihi.tokyo/v1/r/{name}.json"
+    },
+    {
+      "name": "@zenoadmin",
+      "homepage": "https://github.com/zeno-admin/shadcn-editor",
+      "url": "https://shadcn-editor-nu.vercel.app/r/{name}.json"
+    },
+    {
+      "name": "@zippystarter",
+      "homepage": "https://zippystarter.com",
+      "url": "https://zippystarter.com/r/{name}.json"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { useId, useState } from "react";
 import { LayoutGroup, motion } from "motion/react";
 import { ProjectCard } from "./ProjectCard";
 import type { Project, ProjectCategory } from "../content/projects";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const filters = ["All work", "AI & tools", "Mobile", "Experiments"] as const;
 
@@ -19,33 +20,35 @@ export function ProjectGrid({
   return (
     <LayoutGroup id={groupId}>
       {showFilters && (
-        <div className="project-filters" role="group" aria-label="Filter projects">
+        <ToggleGroup
+          type="single"
+          value={filter}
+          onValueChange={(value) => {
+            if (filters.some((item) => item === value)) setFilter(value as typeof filter);
+          }}
+          className="project-filters"
+          aria-label="Filter projects"
+        >
           {filters
             .filter(
               (value) =>
                 value === "All work" || projects.some((project) => project.category === value),
             )
             .map((value) => (
-              <motion.button
-                key={value}
-                type="button"
-                className="filter-button"
-                aria-pressed={filter === value}
-                aria-controls={groupId}
-                onClick={() => setFilter(value)}
-                whileTap={{ scale: 0.97 }}
-              >
-                {filter === value && (
-                  <motion.span
-                    className="filter-selected"
-                    layoutId="selected-filter"
-                    transition={{ type: "spring", bounce: 0, duration: 0.35 }}
-                  />
-                )}
-                <span className="filter-label">{value}</span>
-              </motion.button>
+              <ToggleGroupItem asChild value={value} key={value} aria-controls={groupId}>
+                <motion.button type="button" className="filter-button" whileTap={{ scale: 0.97 }}>
+                  {filter === value && (
+                    <motion.span
+                      className="filter-selected"
+                      layoutId="selected-filter"
+                      transition={{ type: "spring", bounce: 0, duration: 0.35 }}
+                    />
+                  )}
+                  <span className="filter-label">{value}</span>
+                </motion.button>
+              </ToggleGroupItem>
             ))}
-        </div>
+        </ToggleGroup>
       )}
       <p className="sr-only" aria-live="polite" aria-atomic="true">
         {visible.length} {visible.length === 1 ? "project" : "projects"} shown

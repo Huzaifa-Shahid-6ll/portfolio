@@ -1,5 +1,7 @@
 # Portfolio redesign
 
+The subsequent [premium refinement](premium-refinement.md) adds the Shoogle registry research, community components, and updated verification record.
+
 The portfolio now uses system typography, neutral light/dark surfaces, and a restrained blue accent. The opening Orbit illustration leads into four selected projects, with the full catalogue and experiments on `/projects`.
 
 ## Design and implementation

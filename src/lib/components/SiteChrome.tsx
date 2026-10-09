@@ -3,6 +3,7 @@ import { ArrowUpRight, Github, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { ThemeToggle } from "../theme/ThemeToggle";
+import { CommandMenu } from "./CommandMenu";
 
 const links = [
   { to: "/projects", label: "Work" },
@@ -69,6 +70,7 @@ export function SiteNav() {
           ))}
         </nav>
         <div className="nav-actions">
+          <CommandMenu onOpen={() => setOpen(false)} />
           <ThemeToggle />
           <Link to="/contact" className="nav-contact">
             Let’s talk <ArrowUpRight size={14} aria-hidden />

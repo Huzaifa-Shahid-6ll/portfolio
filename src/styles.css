@@ -462,8 +462,9 @@
   font-weight: 550;
   color: var(--text-muted);
 }
-.filter-button[aria-pressed="true"] {
+.project-filters .filter-button[data-state="on"] {
   color: var(--text);
+  background: transparent;
 }
 .filter-selected {
   position: absolute;
@@ -475,6 +476,69 @@
 .filter-label {
   position: relative;
   z-index: 1;
+}
+.project-filters {
+  justify-content: flex-start;
+}
+.command-menu {
+  width: min(36rem, calc(100% - 2rem));
+  max-width: 36rem;
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
+}
+.command-menu [cmdk-root] {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: inherit;
+}
+.command-menu [cmdk-input-wrapper] {
+  padding: 0.5rem 3.25rem 0.5rem 1.25rem;
+}
+.command-menu [cmdk-input] {
+  font-size: 1rem;
+}
+.command-menu [cmdk-list] {
+  padding: 0.5rem;
+  max-height: min(25rem, 60dvh);
+  overscroll-behavior: contain;
+}
+.command-menu [cmdk-group-heading] {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+.command-menu [cmdk-item] {
+  padding: 0.8rem 0.75rem;
+  border-radius: 0.65rem;
+  gap: 0.8rem;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+.command-menu [cmdk-item][data-selected="true"] {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+.command-menu [cmdk-item] > svg {
+  color: var(--text-muted);
+}
+.command-status {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.command-menu > button {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: grid;
+  place-items: center;
+}
+@media (max-width: 399px) {
+  .command-status {
+    display: none;
+  }
 }
 .work-grid {
   display: grid;

@@ -536,7 +536,7 @@
 }
 .pv-barber-card .pv-kicker {
   font-size: 6px;
-  color: #7c9483;
+  color: #596d60;
 }
 .pv-barber-card strong {
   display: block;
@@ -551,7 +551,7 @@
   align-items: center;
   gap: 6px;
   font-size: 8px;
-  color: #7c8b81;
+  color: #596d60;
   padding: 6px 0;
   border-top: 1px solid #edf0ed;
 }
@@ -747,7 +747,7 @@
   padding: 20px 24px;
 }
 .pv-learning-body .pv-kicker {
-  color: #a4967e;
+  color: #776950;
   font-size: 7px;
 }
 .pv-learning-body > strong {
@@ -769,7 +769,7 @@
 .pv-learning-topic > span {
   display: block;
   font-size: 7px;
-  color: #a4967e;
+  color: #776950;
 }
 .pv-learning-topic b {
   display: block;
@@ -1015,7 +1015,7 @@
 }
 .pv-paywall-heading .pv-kicker {
   font-size: 6px;
-  color: #ad927e;
+  color: #80634e;
 }
 .pv-paywall-heading strong {
   display: block;
@@ -1028,7 +1028,7 @@
 .pv-concept-tag {
   margin-left: auto;
   font-size: 6px;
-  color: #b09581;
+  color: #80634e;
   border: 1px solid #eee1d6;
   border-radius: 8px;
   padding: 4px 6px;
@@ -1045,7 +1045,7 @@
   border-radius: 11px;
   background: #f9eee4;
   text-align: center;
-  color: #b28d6c;
+  color: #806044;
 }
 .pv-paywall-variant > span {
   font-size: 6px;
@@ -1081,20 +1081,20 @@
   align-items: center;
   margin-top: 15px;
   border-radius: 6px;
-  background: #ae8462;
+  background: #88623f;
   color: #fffaf4;
   padding: 8px;
   font-size: 6px;
 }
 .pv-experiment-brief .pv-kicker {
-  color: #b29c8b;
+  color: #80634e;
   font-size: 6px;
 }
 .pv-experiment-brief > b {
   display: block;
   font-size: 13px;
   font-weight: 550;
-  color: #8c705b;
+  color: #80634e;
   line-height: 1.2;
   margin-top: 7px;
 }
@@ -1107,12 +1107,12 @@
 }
 .pv-experiment-brief > div > span {
   font-size: 7px;
-  color: #c5a58d;
+  color: #80634e;
 }
 .pv-experiment-brief p {
   font-size: 7px;
   margin: 0;
-  color: #ab9481;
+  color: #80634e;
 }
 .pv-human-review {
   display: flex;

@@ -4,6 +4,7 @@ import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
 import { ProjectGrid } from "@/lib/components/ProjectGrid";
 import { ProjectVisual } from "@/lib/components/ProjectVisual";
 import { homepageProjects } from "@/lib/content/projects";
+import { ProductWalkthrough } from "@/lib/components/ProductWalkthrough";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -91,6 +92,7 @@ function Home() {
           </div>
         </section>
 
+        <ProductWalkthrough />
         <section className="approach-section" aria-labelledby="approach-title">
           <div className="page-shell approach-grid">
             <div>

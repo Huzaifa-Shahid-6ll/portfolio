@@ -1,0 +1,253 @@
+.case-study-layout {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  margin-block: 4rem 6rem;
+}
+.case-study-sidebar {
+  position: sticky;
+  top: 7.5rem;
+  display: grid;
+  gap: 2.5rem;
+}
+.case-page-nav {
+  display: grid;
+  gap: 0.25rem;
+}
+.case-page-nav > p {
+  margin-bottom: 0.65rem;
+}
+.case-page-nav > a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  transition: color 120ms;
+}
+.case-page-nav > a:hover {
+  color: var(--accent);
+}
+.case-page-nav > a > span,
+.case-section-number {
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+}
+.case-stage-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface-soft);
+}
+.case-stage-card > .status-badge {
+  font-size: 0.75rem;
+  margin-top: 0.8rem;
+}
+.case-stage-card > p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-top: 0.8rem;
+}
+.case-stage-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  font-size: 0.6875rem;
+  color: var(--accent);
+  font-weight: 550;
+  margin-top: 0.6rem;
+}
+.case-stage-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+.case-study-article {
+  min-width: 0;
+}
+.case-study-article .case-reader-section {
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 2rem;
+  padding-block: 2rem 2.75rem;
+}
+.case-reader-section h2 {
+  margin-top: 0.45rem;
+  line-height: 1.4;
+}
+.case-reader-section:not([id]) h2 {
+  margin-top: 0;
+}
+.case-study-article .case-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+.case-study-article .case-stack-list > li {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--surface-soft);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.case-build-notes {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.case-build-heading > h2 {
+  margin-top: 0.45rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.case-build-heading > p {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.case-notes-accordion {
+  margin-top: 1.75rem;
+}
+.case-note-item {
+  border-top: 1px solid var(--border);
+}
+.case-note-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+.case-note-heading {
+  margin: 0;
+}
+.case-note-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.25rem 0;
+  text-align: left;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9375rem;
+  font-weight: 550;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 0.25rem;
+}
+.case-note-trigger:hover {
+  color: var(--accent);
+}
+.case-note-trigger:active {
+  opacity: 0.7;
+}
+.case-note-trigger > svg {
+  flex-shrink: 0;
+  color: var(--text-soft);
+  transition: transform 180ms;
+}
+.case-note-trigger[data-state="open"] > svg {
+  transform: rotate(180deg);
+}
+.case-note-body {
+  padding: 0 1.5rem 1.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+.case-note-body > ul {
+  display: grid;
+  gap: 0.8rem;
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+.case-note-body li::marker {
+  color: var(--text-soft);
+}
+@media (max-width: 999px) {
+  .case-study-layout {
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .case-study-article .case-reader-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+@media (max-width: 699px) {
+  .case-study-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-block: 2.5rem 4rem;
+  }
+  .case-study-sidebar {
+    position: static;
+    gap: 1.5rem;
+  }
+  .case-page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+  }
+  .case-page-nav > p {
+    flex-basis: 100%;
+    margin-bottom: 0.25rem;
+  }
+  .case-page-nav > a {
+    gap: 0.45rem;
+    font-size: 0.75rem;
+  }
+  .case-stage-card {
+    padding: 1.25rem 1.5rem;
+  }
+  .case-stage-card > p {
+    max-width: 32rem;
+  }
+  .case-stage-link {
+    margin-top: 0.25rem;
+  }
+  .case-study-article .case-reader-section {
+    padding-block: 1.75rem 2rem;
+  }
+  .case-note-body {
+    padding-right: 0;
+    font-size: 0.875rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-note-trigger > svg {
+    transition: none;
+  }
+}
+@media (prefers-contrast: more) {
+  .case-stage-card {
+    background: var(--bg);
+    border-color: var(--border-strong);
+  }
+}
+@media print {
+  .case-study-layout {
+    display: block;
+    margin-block: 1.5rem;
+  }
+  .case-page-nav {
+    display: none;
+  }
+  .case-study-sidebar {
+    position: static;
+    margin-bottom: 2rem;
+  }
+  .case-stage-card {
+    background: none;
+  }
+  .case-note-trigger > svg {
+    display: none;
+  }
+}
