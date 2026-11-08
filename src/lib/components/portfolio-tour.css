@@ -75,16 +75,23 @@
   overscroll-behavior: contain;
   padding: 0.9rem 1rem 1rem;
   border: 1px solid var(--border-strong);
-  border-radius: 1.5rem;
+  border-radius: var(--material-radius);
   background: var(--surface);
   color: var(--text);
-  box-shadow: 0 0.7rem 2rem #0003;
+  box-shadow: var(--material-elevation);
 }
 
 @supports (backdrop-filter: blur(16px)) {
   .portfolio-tour-panel {
     background: color-mix(in srgb, var(--surface) 94%, transparent);
     backdrop-filter: blur(16px);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .portfolio-tour-panel {
+    background: var(--surface);
+    backdrop-filter: none;
   }
 }
 

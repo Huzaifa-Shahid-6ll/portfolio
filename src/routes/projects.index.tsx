@@ -29,7 +29,7 @@ function ProjectsPage() {
     <div className="min-h-screen flex flex-col">
       <SiteNav />
       <main id="main" className="flex-1">
-        <header className="page-shell projects-header">
+        <header className="page-shell projects-header material-intro">
           <p className="eyebrow">Work & experiments</p>
           <h1 className="page-heading">
             A closer look

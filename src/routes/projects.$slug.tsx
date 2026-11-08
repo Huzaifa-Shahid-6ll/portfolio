@@ -76,7 +76,7 @@ function ProjectPage() {
     <div className="min-h-screen flex flex-col">
       <SiteNav />
       <main id="main" className="flex-1">
-        <header className="page-shell case-header">
+        <header className="page-shell case-header material-intro">
           <Link to="/projects" className="text-link">
             <ArrowLeft size={14} aria-hidden />
             All work

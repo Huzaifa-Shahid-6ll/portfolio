@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
+import { Button } from "konsta/react";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
 import { site } from "@/lib/content/projects";
 
@@ -39,8 +40,8 @@ function ContactPage() {
     <div className="min-h-screen flex flex-col bg-bg">
       <SiteNav />
       <main id="main" className="flex-1">
-        <div className="page-shell grid gap-14 py-20 md:grid-cols-2 md:gap-20 md:py-28">
-          <div>
+        <div className="page-shell material-page grid gap-8 md:grid-cols-2 md:gap-10">
+          <div className="material-intro">
             <p className="eyebrow">Contact</p>
             <h1 className="page-heading mt-5">
               Let's make
@@ -78,13 +79,15 @@ function ContactPage() {
             <Field id="email" label="Email address" type="email" autoComplete="email" required />
             <Field id="building" label="What are you building?" textarea rows={3} />
             <Field id="help" label="What would you like help with?" textarea rows={4} />
-            <button
+            <Button
+              large
+              rounded
               type="submit"
-              className="btn-primary w-full"
+              className="material-action"
               aria-describedby="email-draft-help"
             >
               Open email draft <span aria-hidden="true">↗</span>
-            </button>
+            </Button>
             {draftOpened && (
               <p role="status" className="text-sm leading-relaxed text-text-muted">
                 Your email app should open with a draft. If it doesn't, email{" "}

@@ -20,11 +20,15 @@ function AboutPage() {
     <div className="min-h-screen flex flex-col bg-bg">
       <SiteNav />
       <main id="main" className="flex-1">
-        <div className="page-shell py-20 md:py-28">
-          <p className="eyebrow">About me</p>
-          <h1 className="page-heading mt-5 max-w-4xl">I care about what happens after the demo.</h1>
+        <div className="page-shell material-page">
+          <header className="material-intro">
+            <p className="eyebrow">About me</p>
+            <h1 className="page-heading mt-5 max-w-4xl">
+              I care about what happens after the demo.
+            </h1>
+          </header>
           <div className="mt-14 grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-20">
-            <div>
+            <div className="panel self-start p-6 md:p-8">
               <p className="text-2xl font-semibold tracking-tight">I'm Huzaifa Shahid.</p>
               <p className="mt-3 text-lg text-text-muted">
                 AI product builder. Curious about the details.

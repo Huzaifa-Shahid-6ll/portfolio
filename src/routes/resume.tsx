@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { Button } from "konsta/react";
 import { SiteNav, SiteFooter } from "@/lib/components/SiteChrome";
 import { homepageProjects, site } from "@/lib/content/projects";
 
@@ -22,9 +23,9 @@ function ResumePage() {
     <div className="min-h-screen flex flex-col bg-bg">
       <SiteNav />
       <main id="main" className="flex-1">
-        <div className="page-shell py-20 md:py-28 print:py-0">
+        <div className="page-shell material-page">
           <div className="mx-auto max-w-3xl">
-            <div className="flex flex-wrap items-start justify-between gap-6">
+            <div className="material-intro flex flex-wrap items-start justify-between gap-6">
               <div>
                 <p className="eyebrow">Resume</p>
                 <h1 className="page-heading mt-5">{site.name}</h1>
@@ -33,13 +34,16 @@ function ResumePage() {
                   {site.email}
                 </a>
               </div>
-              <button
+              <Button
+                tonal
+                rounded
+                inline
                 type="button"
                 onClick={() => window.print()}
-                className="btn-secondary print:hidden"
+                className="material-action material-action--secondary print:hidden"
               >
                 Print / save PDF <span aria-hidden="true">↗</span>
-              </button>
+              </Button>
             </div>
             <div className="mt-14 space-y-10">
               <Block title="Profile">

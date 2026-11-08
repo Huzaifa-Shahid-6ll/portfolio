@@ -1,8 +1,8 @@
 .bento-page {
   --bento-gutter: clamp(1rem, 3.5vw, 3.4rem);
   --bento-gap: clamp(0.75rem, 1.17vw, 1.125rem);
-  --bento-radius: 1.25rem;
-  --bento-surface: var(--surface);
+  --bento-radius: var(--material-radius);
+  --bento-surface: var(--material-fill);
   --bento-border: var(--border-strong);
   background: var(--bg);
 }
@@ -89,6 +89,7 @@
 
 .bento-rail-nav {
   gap: 0 0.55rem;
+  padding: 0.25rem 0.65rem;
 }
 
 .bento-rail-links {

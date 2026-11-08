@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-import { motion } from "motion/react";
+import { Button } from "konsta/react";
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
   const [dark, setDark] = useState(true);
@@ -13,12 +13,14 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
   }, []);
 
   return (
-    <motion.button
+    <Button
+      clear
+      rounded
+      inline
       type="button"
       className={`icon-button theme-toggle ${className}`}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       title={dark ? "Switch to light mode" : "Switch to dark mode"}
-      whileTap={{ scale: 0.92 }}
       onClick={() => {
         const next = !document.documentElement.classList.contains("dark");
         document.documentElement.classList.toggle("dark", next);
@@ -34,6 +36,6 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       }}
     >
       {dark ? <Sun size={17} aria-hidden /> : <Moon size={17} aria-hidden />}
-    </motion.button>
+    </Button>
   );
 }

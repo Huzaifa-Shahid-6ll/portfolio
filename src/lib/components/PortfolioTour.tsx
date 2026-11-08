@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { useReducedMotion } from "motion/react";
+import { Button } from "konsta/react";
 import {
   Component,
   createContext,
@@ -176,7 +177,9 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
         <p className="portfolio-tour-invite">Meet Pip, your guide to this portfolio.</p>
       )}
       <div className="portfolio-tour-launcher-actions">
-        <button
+        <Button
+          inline
+          rounded
           type="button"
           ref={launcher}
           tabIndex={!home && open ? -1 : undefined}
@@ -189,11 +192,11 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
         >
           {!home && <img src="/images/pip/ink-guide.svg" width={24} height={24} alt="" />}
           {home ? (seen ? "Replay tour" : "Take the tour") : "Meet Pip"}
-        </button>
+        </Button>
         {showInvite && (
-          <button type="button" onClick={close}>
+          <Button inline rounded type="button" onClick={close}>
             Explore on my own
-          </button>
+          </Button>
         )}
       </div>
       {open &&
@@ -246,7 +249,9 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
             <div className="portfolio-tour-actions">
               {!home ? (
                 <>
-                  <button
+                  <Button
+                    inline
+                    rounded
                     type="button"
                     className="portfolio-tour-primary"
                     onClick={() => {
@@ -255,17 +260,31 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
                     }}
                   >
                     Take the tour
-                  </button>
-                  <button type="button" className="portfolio-tour-skip" onClick={close}>
+                  </Button>
+                  <Button
+                    inline
+                    rounded
+                    type="button"
+                    className="portfolio-tour-skip"
+                    onClick={close}
+                  >
                     Close
-                  </button>
+                  </Button>
                 </>
               ) : current ? (
                 <>
-                  <button type="button" disabled={step === 0} onClick={() => setStep(step - 1)}>
+                  <Button
+                    inline
+                    rounded
+                    type="button"
+                    disabled={step === 0}
+                    onClick={() => setStep(step - 1)}
+                  >
                     Back
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                    inline
+                    rounded
                     type="button"
                     className="portfolio-tour-primary"
                     onClick={() => {
@@ -274,15 +293,27 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
                     }}
                   >
                     {step === stops.length - 1 ? "Finish tour" : "Next"}
-                  </button>
-                  <button type="button" className="portfolio-tour-skip" onClick={close}>
+                  </Button>
+                  <Button
+                    inline
+                    rounded
+                    type="button"
+                    className="portfolio-tour-skip"
+                    onClick={close}
+                  >
                     Skip tour
-                  </button>
+                  </Button>
                 </>
               ) : (
-                <button type="button" className="portfolio-tour-primary" onClick={close}>
+                <Button
+                  inline
+                  rounded
+                  type="button"
+                  className="portfolio-tour-primary"
+                  onClick={close}
+                >
                   Done
-                </button>
+                </Button>
               )}
             </div>
           </section>,
