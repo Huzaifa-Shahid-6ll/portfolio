@@ -14,6 +14,7 @@ import { MotionConfig } from "motion/react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter } from "../lib/components/SiteChrome";
+import { PortfolioTourProvider } from "../lib/components/PortfolioTour";
 
 function NotFoundComponent() {
   return (
@@ -85,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Useful software. Thought through. AI products and the interfaces around them, by Huzaifa Shahid.",
       },
       { name: "author", content: "Huzaifa Shahid" },
-      { name: "theme-color", content: "#fafaf9" },
+      { name: "theme-color", content: "#121218" },
       { property: "og:site_name", content: "Huzaifa Shahid" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -117,11 +118,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t;try{t=localStorage.getItem('theme');}catch(e){}if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}})();`,
+            __html: `(function(){var t;try{t=localStorage.getItem('theme');}catch(e){}document.documentElement.classList.toggle('dark',t!=='light');})();`,
           }}
         />
         <HeadContent />
@@ -140,7 +141,9 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <MotionConfig reducedMotion="user" transition={{ type: "spring", bounce: 0, duration: 0.4 }}>
-        <Outlet />
+        <PortfolioTourProvider>
+          <Outlet />
+        </PortfolioTourProvider>
       </MotionConfig>
     </QueryClientProvider>
   );

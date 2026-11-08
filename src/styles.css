@@ -74,9 +74,9 @@
   color-scheme: light;
 }
 .dark {
-  --bg: #101113;
+  --bg: #121218;
   --bg-soft: #18191c;
-  --surface: #1c1d21;
+  --surface: #1c1d27;
   --surface-soft: #202126;
   --surface-strong: #282a30;
   --text: #f2f2f3;
@@ -89,7 +89,7 @@
   --accent-soft: #202f48;
   --accent-strong: #b1ccff;
   --success: #8bc9a7;
-  --chrome: rgba(16, 17, 19, 0.88);
+  --chrome: rgba(18, 18, 24, 0.88);
   --shadow-tint: rgba(0, 0, 0, 0.2);
   color-scheme: dark;
 }
@@ -1101,7 +1101,7 @@
     --text-soft: #d2d4db;
     --border: #858994;
     --border-strong: #a3a8b4;
-    --chrome: #101113;
+    --chrome: #121218;
   }
   .site-header {
     backdrop-filter: none;

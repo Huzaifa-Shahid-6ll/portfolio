@@ -3,31 +3,13 @@ import { Moon, Sun } from "lucide-react";
 import { motion } from "motion/react";
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   useEffect(() => {
     const initialDark = document.documentElement.classList.contains("dark");
     setDark(initialDark);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", initialDark ? "#101113" : "#fafaf9");
-    const preference = matchMedia("(prefers-color-scheme: dark)");
-    const sync = () => {
-      let saved = null;
-      try {
-        saved = localStorage.getItem("theme");
-      } catch {
-        /* Storage is optional. */
-      }
-      if (!saved) {
-        document.documentElement.classList.toggle("dark", preference.matches);
-        document
-          .querySelector('meta[name="theme-color"]')
-          ?.setAttribute("content", preference.matches ? "#101113" : "#fafaf9");
-        setDark(preference.matches);
-      }
-    };
-    preference.addEventListener("change", sync);
-    return () => preference.removeEventListener("change", sync);
+      ?.setAttribute("content", initialDark ? "#121218" : "#fafaf9");
   }, []);
 
   return (
@@ -47,7 +29,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
         }
         document
           .querySelector('meta[name="theme-color"]')
-          ?.setAttribute("content", next ? "#101113" : "#fafaf9");
+          ?.setAttribute("content", next ? "#121218" : "#fafaf9");
         setDark(next);
       }}
     >
