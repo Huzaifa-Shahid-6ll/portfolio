@@ -37,7 +37,7 @@ function AboutPage() {
                 Get in touch <span aria-hidden="true">↗</span>
               </Link>
             </div>
-            <div className="space-y-6 text-lg leading-relaxed text-text-muted">
+            <div className="panel space-y-6 p-6 text-lg leading-relaxed text-text-muted md:p-8">
               <p>
                 A useful product has to hold up when the input is messy or a task goes wrong. That's
                 where I spend my time: the workflow and the next step the interface gives you.

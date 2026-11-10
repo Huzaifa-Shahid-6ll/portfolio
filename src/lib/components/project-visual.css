@@ -4,7 +4,7 @@
   min-width: 0;
   margin: 0;
   overflow: hidden;
-  background: #edf0f5;
+  background: var(--surface-soft);
 }
 .project-visual > img {
   display: block;

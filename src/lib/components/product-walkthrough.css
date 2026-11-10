@@ -3,22 +3,20 @@
   background: var(--bg-soft);
 }
 .walkthrough-switcher {
-  height: auto;
-  padding: 0.35rem;
-  gap: 0.3rem;
-  background: var(--surface-strong);
-  border-radius: 1rem;
+  width: min(100%, 29rem);
   margin-bottom: 1.75rem;
 }
 .walkthrough-switcher button {
   gap: 0.55rem;
   min-height: 2.75rem;
-  padding-inline: 1.1rem;
-  border-radius: 0.75rem;
-  transition-property: color, background-color, box-shadow;
+  min-width: 0;
+  color: var(--text-muted);
 }
-.walkthrough-content {
-  margin-top: 0;
+.walkthrough-switcher button[aria-selected="true"] {
+  color: var(--text);
+}
+.walkthrough-switcher button:focus-visible {
+  outline-offset: -3px;
 }
 .walkthrough-grid {
   display: grid;
@@ -26,8 +24,9 @@
   align-items: stretch;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 1.75rem;
-  background: var(--surface);
+  border-radius: var(--material-radius);
+  background: var(--material-fill);
+  box-shadow: var(--material-inset);
 }
 .walkthrough-story {
   padding: 2.75rem;
@@ -95,10 +94,10 @@
 }
 .artifact-document {
   padding: 2rem;
-  background: var(--surface);
+  background: var(--material-fill);
   border: 1px solid var(--border);
   border-radius: 1rem;
-  box-shadow: 0 20px 40px var(--shadow-tint);
+  box-shadow: var(--material-elevation);
   transform: rotate(-2deg);
 }
 .artifact-document h4 {
@@ -157,9 +156,6 @@
   }
 }
 @media (max-width: 399px) {
-  .walkthrough-switcher {
-    display: flex;
-  }
   .walkthrough-switcher button {
     flex: 1;
     padding-inline: 0.6rem;

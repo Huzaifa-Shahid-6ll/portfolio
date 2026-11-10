@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, FileText, Scissors, ShieldCheck } from "lucide-react";
 import { useReducedMotion } from "motion/react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import * as Tabs from "@radix-ui/react-tabs";
+import { Segmented, SegmentedButton } from "konsta/react";
 import { TransitionPanel } from "@/components/ui/transition-panel";
 import "./product-walkthrough.css";
 
@@ -88,16 +89,28 @@ export function ProductWalkthrough() {
           </div>
           <p>A few decisions that shape the work, from the first input to the handoff.</p>
         </div>
-        <Tabs value={selected} onValueChange={setSelected} className="walkthrough-tabs">
-          <TabsList aria-label="Explore a product workflow" className="walkthrough-switcher">
-            {workflows.map((workflow) => (
-              <TabsTrigger value={workflow.slug} key={workflow.slug}>
-                <workflow.icon size={16} aria-hidden />
-                {workflow.name}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          <TabsContent value={selected} className="walkthrough-content">
+        <Tabs.Root value={selected} onValueChange={setSelected}>
+          <Tabs.List asChild aria-label="Explore a product workflow">
+            <Segmented
+              strong
+              rounded
+              className="walkthrough-switcher"
+              colors={{
+                strongBgIos: "bg-surface-soft",
+                strongHighlightBgIos: "bg-surface dark:bg-surface-strong",
+              }}
+            >
+              {workflows.map((workflow) => (
+                <Tabs.Trigger asChild value={workflow.slug} key={workflow.slug}>
+                  <SegmentedButton active={selected === workflow.slug}>
+                    <workflow.icon size={16} aria-hidden />
+                    {workflow.name}
+                  </SegmentedButton>
+                </Tabs.Trigger>
+              ))}
+            </Segmented>
+          </Tabs.List>
+          <Tabs.Content value={selected}>
             <TransitionPanel
               activeIndex={activeIndex}
               transition={{ duration: reducedMotion ? 0 : 0.2 }}
@@ -155,8 +168,8 @@ export function ProductWalkthrough() {
                 </div>
               ))}
             </TransitionPanel>
-          </TabsContent>
-        </Tabs>
+          </Tabs.Content>
+        </Tabs.Root>
       </div>
     </section>
   );

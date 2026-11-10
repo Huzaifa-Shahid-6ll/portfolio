@@ -55,13 +55,15 @@ function ProjectFallback({ title, body }: { title: string; body: string }) {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteNav />
-      <main id="main" className="page-shell flex-1 py-24">
-        <h1 className="page-heading">{title}</h1>
-        <p className="mt-6 text-text-muted">{body}</p>
-        <Link to="/projects" className="btn-primary mt-8">
-          <ArrowLeft size={16} aria-hidden />
-          Back to work
-        </Link>
+      <main id="main" className="page-shell material-page flex-1">
+        <div className="material-intro">
+          <h1 className="page-heading">{title}</h1>
+          <p className="mt-6 text-text-muted">{body}</p>
+          <Link to="/projects" className="btn-primary mt-8">
+            <ArrowLeft size={16} aria-hidden />
+            Back to work
+          </Link>
+        </div>
       </main>
       <SiteFooter />
     </div>
@@ -183,7 +185,7 @@ function CaseSection({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="case-section case-reader-section">
+    <section id={id} className="case-section case-reader-section panel">
       <div>
         {number && (
           <span className="case-section-number" aria-hidden>
@@ -223,7 +225,11 @@ function CurrentStage({ project }: { project: Project }) {
 
 function BuildNotes({ project }: { project: Project }) {
   return (
-    <section id="build-notes" className="case-build-notes" aria-labelledby="build-notes-title">
+    <section
+      id="build-notes"
+      className="case-build-notes panel"
+      aria-labelledby="build-notes-title"
+    >
       <div className="case-build-heading">
         <span className="case-section-number" aria-hidden>
           03

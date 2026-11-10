@@ -97,7 +97,7 @@ function Home() {
       <main id="main" className="flex-1">
         <div className="bento-layout">
           <header className="bento-identity" aria-labelledby="hero-title">
-            <div className="bento-intro">
+            <div className="bento-intro panel">
               <span className="bento-mark">
                 <img src="/images/brand-mark.png" width={112} height={112} alt="" />
               </span>
@@ -212,7 +212,7 @@ function Home() {
                 A little about me <ArrowUpRight size={15} aria-hidden />
               </Link>
             </div>
-            <div>
+            <div className="panel p-6 sm:p-8">
               <div className="approach-item">
                 <span>01</span>
                 <div>
@@ -247,7 +247,7 @@ function Home() {
           </div>
         </section>
         <section
-          className="contact-close"
+          className="contact-close page-shell panel"
           aria-labelledby="contact-title"
           data-portfolio-tour="contact"
         >

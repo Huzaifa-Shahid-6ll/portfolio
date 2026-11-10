@@ -76,7 +76,8 @@
 .case-study-article .case-reader-section {
   grid-template-columns: 9.5rem minmax(0, 1fr);
   gap: 2rem;
-  padding-block: 2rem 2.75rem;
+  margin-bottom: 1rem;
+  padding: clamp(1.15rem, 3vw, 2rem);
 }
 .case-reader-section h2 {
   margin-top: 0.45rem;
@@ -102,8 +103,7 @@
   line-height: 1.6;
 }
 .case-build-notes {
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
+  padding: clamp(1.15rem, 3vw, 2rem);
 }
 .case-build-heading > h2 {
   margin-top: 0.45rem;
@@ -120,12 +120,12 @@
 }
 .case-notes-accordion {
   margin-top: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--bg-soft);
 }
-.case-note-item {
+.case-note-item + .case-note-item {
   border-top: 1px solid var(--border);
-}
-.case-note-item:last-child {
-  border-bottom: 1px solid var(--border);
 }
 .case-note-heading {
   margin: 0;
@@ -136,7 +136,7 @@
   justify-content: space-between;
   gap: 1rem;
   width: 100%;
-  padding: 1.25rem 0;
+  padding: 1rem;
   text-align: left;
   background: transparent;
   color: var(--text);
@@ -144,7 +144,10 @@
   font-weight: 550;
   line-height: 1.5;
   border: 0;
-  border-radius: 0.25rem;
+  border-radius: 0.9rem;
+}
+.case-note-trigger:focus-visible {
+  outline-offset: -3px;
 }
 .case-note-trigger:hover {
   color: var(--accent);
@@ -161,7 +164,7 @@
   transform: rotate(180deg);
 }
 .case-note-body {
-  padding: 0 1.5rem 1.5rem 0;
+  padding: 0 1rem 1.25rem;
   color: var(--text-muted);
   font-size: 0.9375rem;
   line-height: 1.85;
@@ -217,11 +220,7 @@
   .case-stage-link {
     margin-top: 0.25rem;
   }
-  .case-study-article .case-reader-section {
-    padding-block: 1.75rem 2rem;
-  }
   .case-note-body {
-    padding-right: 0;
     font-size: 0.875rem;
   }
 }
@@ -249,6 +248,9 @@
     margin-bottom: 2rem;
   }
   .case-stage-card {
+    background: none;
+  }
+  .case-notes-accordion {
     background: none;
   }
   .case-note-trigger > svg {

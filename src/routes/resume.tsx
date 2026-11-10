@@ -115,7 +115,7 @@ function ResumePage() {
 
 function Block({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section>
+    <section className="panel p-6 sm:p-8 print:p-0">
       <h2 className="eyebrow">{title}</h2>
       <div className="mt-4 leading-relaxed text-text-muted">{children}</div>
     </section>
