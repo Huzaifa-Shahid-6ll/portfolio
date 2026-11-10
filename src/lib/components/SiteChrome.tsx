@@ -1,7 +1,8 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { ArrowUpRight, Github, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
+import { Popover } from "@base-ui/react/popover";
+import { Button } from "konsta/react";
 import { ThemeToggle } from "../theme/ThemeToggle";
 import { CommandMenu } from "./CommandMenu";
 
@@ -15,110 +16,86 @@ const links = [
 export function SiteNav() {
   const [open, setOpen] = useState(false);
   const pathname = useLocation({ select: (location) => location.pathname });
-  const headerRef = useRef<HTMLElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    if (!open) return;
-    const dismiss = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
+    const desktop = window.matchMedia("(min-width: 800px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setOpen(false);
     };
-    const outside = (event: PointerEvent) => {
-      if (!headerRef.current?.contains(event.target as Node)) setOpen(false);
-    };
-    const resize = () => {
-      if (window.innerWidth >= 800) setOpen(false);
-    };
-    document.addEventListener("keydown", dismiss);
-    document.addEventListener("pointerdown", outside);
-    window.addEventListener("resize", resize);
-    return () => {
-      document.removeEventListener("keydown", dismiss);
-      document.removeEventListener("pointerdown", outside);
-      window.removeEventListener("resize", resize);
-    };
-  }, [open]);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   return (
-    <header className="site-header" ref={headerRef}>
-      <a href="#main" className="skip-link">
-        Skip to content
-      </a>
-      <div className="nav-inner">
-        <Link to="/" className="wordmark">
-          <span className="brand-mark" aria-hidden>
-            <img src="/images/brand-mark.png" alt="" width={48} height={48} />
-          </span>
-          <span>
-            Huzaifa Shahid<span className="wordmark-role">Product builder</span>
-          </span>
-        </Link>
-        <nav className="desktop-nav" aria-label="Primary">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="nav-link"
-              activeProps={{ className: "nav-link active", "aria-current": "page" }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="nav-actions">
-          <CommandMenu onOpen={() => setOpen(false)} />
-          <ThemeToggle />
-          <Link to="/contact" className="nav-contact">
-            Let’s talk <ArrowUpRight size={14} aria-hidden />
+    <Popover.Root open={open} onOpenChange={setOpen}>
+      <header className="site-header">
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <div className="nav-inner" ref={navRef}>
+          <Link to="/" className="wordmark">
+            <span className="brand-mark" aria-hidden>
+              <img src="/images/brand-mark.png" alt="" width={48} height={48} />
+            </span>
+            <span>
+              Huzaifa Shahid<span className="wordmark-role">Product builder</span>
+            </span>
           </Link>
-          <motion.button
-            ref={toggleRef}
-            type="button"
-            className="icon-button menu-toggle"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-controls="mobile-menu"
-            aria-expanded={open}
-            onClick={() => setOpen(!open)}
-            whileTap={{ scale: 0.92 }}
-          >
-            {open ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
-          </motion.button>
+          <nav className="desktop-nav" aria-label="Primary">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="nav-link"
+                activeProps={{ className: "nav-link active", "aria-current": "page" }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="nav-actions">
+            <CommandMenu onOpen={() => setOpen(false)} />
+            <ThemeToggle />
+            <Link to="/contact" className="nav-contact">
+              Let’s talk <ArrowUpRight size={14} aria-hidden />
+            </Link>
+            <Popover.Trigger
+              render={<Button clear rounded inline />}
+              className="icon-button menu-toggle"
+              aria-label={open ? "Close menu" : "Open menu"}
+            >
+              {open ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
+            </Popover.Trigger>
+          </div>
         </div>
-      </div>
-      {open && (
-        <motion.nav
-          id="mobile-menu"
-          aria-label="Mobile"
-          className="mobile-menu"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onBlur={(event) => {
-            if (!headerRef.current?.contains(event.relatedTarget as Node)) setOpen(false);
-          }}
-        >
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="nav-link"
-              activeProps={{ className: "nav-link active", "aria-current": "page" }}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-              <ArrowUpRight size={16} aria-hidden />
-            </Link>
-          ))}
-          <Link to="/contact" className="nav-link" onClick={() => setOpen(false)}>
-            Contact
-            <ArrowUpRight size={16} aria-hidden />
-          </Link>
-        </motion.nav>
-      )}
-    </header>
+        <Popover.Portal>
+          <Popover.Positioner anchor={navRef} sideOffset={6} className="mobile-menu-positioner">
+            <Popover.Popup aria-label="Site navigation" className="mobile-menu">
+              <nav aria-label="Mobile">
+                {links.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="nav-link"
+                    activeProps={{ className: "nav-link active", "aria-current": "page" }}
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                    <ArrowUpRight size={16} aria-hidden />
+                  </Link>
+                ))}
+                <Link to="/contact" className="nav-link" onClick={() => setOpen(false)}>
+                  Contact
+                  <ArrowUpRight size={16} aria-hidden />
+                </Link>
+              </nav>
+            </Popover.Popup>
+          </Popover.Positioner>
+        </Popover.Portal>
+      </header>
+    </Popover.Root>
   );
 }
 

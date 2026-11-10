@@ -10,7 +10,8 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { MotionConfig } from "motion/react";
-import { KonstaProvider } from "konsta/react";
+import { Button, KonstaProvider } from "konsta/react";
+import { ThemeProvider } from "next-themes";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -57,7 +58,10 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
           Something went wrong on our end. Try again or head home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
+          <Button
+            rounded
+            inline
+            type="button"
             onClick={() => {
               router.invalidate();
               reset();
@@ -65,7 +69,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
             className="btn-primary"
           >
             Try again
-          </button>
+          </Button>
           <a href="/" className="btn-secondary">
             Go home
           </a>
@@ -121,15 +125,12 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="k-ios dark" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var t;try{t=localStorage.getItem('theme');}catch(e){}document.documentElement.classList.toggle('dark',t!=='light');})();`,
-          }}
-        />
         <HeadContent />
       </head>
       <body>
-        <KonstaProvider theme="ios">{children}</KonstaProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <KonstaProvider theme="ios">{children}</KonstaProvider>
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>

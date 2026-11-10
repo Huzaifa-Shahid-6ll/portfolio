@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "konsta/react";
+import { useTheme } from "next-themes";
 
 export function ThemeToggle({ className = "" }: { className?: string }) {
-  const [dark, setDark] = useState(true);
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const dark = !mounted || resolvedTheme !== "light";
+  useEffect(() => setMounted(true), []);
   useEffect(() => {
-    const initialDark = document.documentElement.classList.contains("dark");
-    setDark(initialDark);
+    if (!mounted) return;
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", initialDark ? "#121218" : "#fafaf9");
-  }, []);
+      ?.setAttribute("content", dark ? "#121218" : "#fafaf9");
+  }, [dark, mounted]);
 
   return (
     <Button
@@ -21,19 +24,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       className={`icon-button theme-toggle ${className}`}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       title={dark ? "Switch to light mode" : "Switch to dark mode"}
-      onClick={() => {
-        const next = !document.documentElement.classList.contains("dark");
-        document.documentElement.classList.toggle("dark", next);
-        try {
-          localStorage.setItem("theme", next ? "dark" : "light");
-        } catch {
-          /* Storage is optional. */
-        }
-        document
-          .querySelector('meta[name="theme-color"]')
-          ?.setAttribute("content", next ? "#121218" : "#fafaf9");
-        setDark(next);
-      }}
+      onClick={() => setTheme(dark ? "light" : "dark")}
     >
       {dark ? <Sun size={17} aria-hidden /> : <Moon size={17} aria-hidden />}
     </Button>

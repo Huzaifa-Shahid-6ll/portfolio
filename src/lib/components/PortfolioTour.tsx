@@ -1,4 +1,5 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
+import { Dialog } from "@base-ui/react/dialog";
 import { useReducedMotion } from "motion/react";
 import { Button } from "konsta/react";
 import {
@@ -15,7 +16,6 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from "react";
-import { createPortal } from "react-dom";
 import "./portfolio-tour.css";
 
 const PipAnimation = lazy(() => import("./PortfolioTourPip"));
@@ -137,24 +137,8 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
   const close = useCallback(() => {
     if (home) finish(complete ? "completed" : "skipped");
     setStep(null);
-    launcher.current?.focus();
-  }, [complete, finish, home]);
-
-  useEffect(() => {
-    if (!open) return;
-    const handleKey = (event: KeyboardEvent) => {
-      if (event.key !== "Escape" || event.defaultPrevented) return;
-      if (
-        event.target instanceof Element &&
-        event.target.closest("[role='dialog'], [role='menu'], #mobile-menu")
-      )
-        return;
-      event.preventDefault();
-      close();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [close, open]);
+    if (!open) launcher.current?.focus();
+  }, [complete, finish, home, open]);
 
   useEffect(() => {
     if (!open) return;
@@ -172,39 +156,61 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
   );
 
   return (
-    <div className={`portfolio-tour-launcher${home ? "" : " portfolio-tour-launcher--site"}`}>
-      {showInvite && (
-        <p className="portfolio-tour-invite">Meet Pip, your guide to this portfolio.</p>
-      )}
-      <div className="portfolio-tour-launcher-actions">
-        <Button
-          inline
-          rounded
-          type="button"
-          ref={launcher}
-          tabIndex={!home && open ? -1 : undefined}
-          aria-expanded={open}
-          aria-controls={open ? panelId : undefined}
-          onClick={() => {
-            if (open) stepHeading.current?.focus({ preventScroll: true });
-            else setStep(0);
-          }}
-        >
-          {!home && <img src="/images/pip/ink-guide.svg" width={24} height={24} alt="" />}
-          {home ? (seen ? "Replay tour" : "Take the tour") : "Meet Pip"}
-        </Button>
+    <Dialog.Root
+      modal={false}
+      disablePointerDismissal
+      open={open}
+      onOpenChange={(next, details) => {
+        if (next) return;
+        if (details.reason === "escape-key") {
+          const { event } = details;
+          const activeDialog =
+            event.target instanceof Element ? event.target.closest("[role='dialog']") : null;
+          if (event.defaultPrevented || (activeDialog && activeDialog.id !== panelId)) {
+            details.cancel();
+            details.allowPropagation();
+            return;
+          }
+        }
+        close();
+      }}
+    >
+      <div className={`portfolio-tour-launcher${home ? "" : " portfolio-tour-launcher--site"}`}>
         {showInvite && (
-          <Button inline rounded type="button" onClick={close}>
-            Explore on my own
-          </Button>
+          <p className="portfolio-tour-invite">Meet Pip, your guide to this portfolio.</p>
         )}
-      </div>
-      {open &&
-        createPortal(
-          <section
+        <div className="portfolio-tour-launcher-actions">
+          <Button
+            inline
+            rounded
+            type="button"
+            ref={launcher}
+            tabIndex={!home && open ? -1 : undefined}
+            aria-expanded={open}
+            aria-haspopup="dialog"
+            aria-controls={open ? panelId : undefined}
+            onClick={() => {
+              if (open) stepHeading.current?.focus({ preventScroll: true });
+              else setStep(0);
+            }}
+          >
+            {!home && <img src="/images/pip/ink-guide.svg" width={24} height={24} alt="" />}
+            {home ? (seen ? "Replay tour" : "Take the tour") : "Meet Pip"}
+          </Button>
+          {showInvite && (
+            <Button inline rounded type="button" onClick={close}>
+              Explore on my own
+            </Button>
+          )}
+        </div>
+        <Dialog.Portal>
+          <Dialog.Popup
+            render={<section />}
             id={panelId}
             className="portfolio-tour-panel"
             aria-labelledby={headingId}
+            initialFocus={stepHeading}
+            finalFocus={launcher}
             data-lenis-prevent
           >
             <div className="portfolio-tour-header">
@@ -221,22 +227,27 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
               </div>
               <div>
                 <p className="portfolio-tour-progress" id={progressId}>
-                  {current
+                  {current && step !== null
                     ? `Pip · Step ${step + 1} of ${stops.length}`
                     : home
                       ? "Pip · Tour complete"
                       : "Portfolio guide"}
                 </p>
-                <h2 id={headingId} ref={stepHeading} tabIndex={-1} aria-describedby={progressId}>
+                <Dialog.Title
+                  id={headingId}
+                  ref={stepHeading}
+                  tabIndex={-1}
+                  aria-describedby={progressId}
+                >
                   {home ? (current?.title ?? "Thanks for exploring.") : "Hi, I’m Pip."}
-                </h2>
+                </Dialog.Title>
               </div>
             </div>
-            <p className="portfolio-tour-copy">
+            <Dialog.Description className="portfolio-tour-copy">
               {home
                 ? (current?.copy ?? "You can revisit the work or replay the tour any time.")
                 : "Want to see how it all fits together? I can walk you through the portfolio."}
-            </p>
+            </Dialog.Description>
             {current && (
               <div className="portfolio-tour-links">
                 {current.destinations.map(({ label, ...destination }) => (
@@ -271,7 +282,7 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
                     Close
                   </Button>
                 </>
-              ) : current ? (
+              ) : current && step !== null ? (
                 <>
                   <Button
                     inline
@@ -316,9 +327,9 @@ export function PortfolioTour({ placement = "home" }: { placement?: "home" | "si
                 </Button>
               )}
             </div>
-          </section>,
-          document.body,
-        )}
-    </div>
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </div>
+    </Dialog.Root>
   );
 }
